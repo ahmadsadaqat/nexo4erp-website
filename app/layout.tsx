@@ -6,6 +6,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -35,6 +37,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
+          <SpeedInsights />
           {children}
           <Footer />
         </ThemeProvider>

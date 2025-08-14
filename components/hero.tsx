@@ -45,7 +45,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4.5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4.5 justify-items-center-safe">
           {[
             { value: "99.9%", label: "Uptime" },
             { value: "24/7", label: "Support" },
@@ -54,7 +54,7 @@ export function Hero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-white dark:bg-slate-800/60 border border-teal-500/12 dark:border-teal-500/25 rounded-2xl p-5 text-center shadow-lg backdrop-blur"
+              className="bg-white dark:bg-slate-800/60 border border-teal-500/12 dark:border-teal-500/25 rounded-2xl p-6 text-center shadow-lg backdrop-blur"
             >
               <div className="text-2xl font-bold text-teal-700 dark:text-teal-400 mb-1">{stat.value}</div>
               <div className="text-sm text-slate-600 dark:text-slate-300">{stat.label}</div>
