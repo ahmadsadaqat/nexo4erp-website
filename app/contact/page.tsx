@@ -32,7 +32,7 @@ export default function ContactPage() {
       <section className="py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">Contact Us</h1>
         <p className="text-slate-600 text-lg mb-8 max-w-3xl">
-          We'd love to learn about your processes and show you a tailored demo.
+          We&apos;d love to learn about your processes and show you a tailored demo.
         </p>
 
         <form onSubmit={handleSubmit} className="grid gap-3 max-w-lg">
