@@ -21,7 +21,6 @@ export function Header() {
               { href: "/industries", label: "Industries" },
               { href: "/about", label: "About" },
               { href: "/careers", label: "Careers" },
-              { href: "/pricing", label: "Pricing" },
               { href: "/contact", label: "Contact" },
             ].map((item) => (
               <Link

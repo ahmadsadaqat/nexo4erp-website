@@ -68,7 +68,7 @@ export default function ContactPage() {
         </form>
 
         <div className="mt-6 text-slate-500">
-          Email: nexo4brother@gmail.com • Phone: 0313-4859727 • Website: nexo4erp.com
+          Email: info@nexo4erp.com • Phone: 0313-4859727 • Website: nexo4erp.com
         </div>
       </section>
     </main>
