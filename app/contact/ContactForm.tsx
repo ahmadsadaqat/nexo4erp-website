@@ -5,22 +5,22 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-// 1. Update this import path
+import { useRouter } from "next/navigation";
 import {
   contactSchema,
   ContactFormData,
   FormState,
 } from "./schema";
-// 2. This import remains the same
 import { submitContactForm } from "./actions";
 
 
 export function ContactForm() {
   const [serverState, setServerState] = useState<FormState | null>(null);
-
+  const router = useRouter();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema), // Connect Zod to react-hook-form
@@ -30,11 +30,10 @@ export function ContactForm() {
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
     const response = await submitContactForm(data);
     setServerState(response);
-
-    // You could also reset the form on success
-    // if (response.success) {
-    //   reset();
-    // }
+    if (response.success) {
+      reset();
+      router.push("/");
+    }
   };
 
   return (
