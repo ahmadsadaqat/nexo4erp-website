@@ -30,12 +30,7 @@ export function Hero() {
         </p>
 
         <div className="flex gap-3 mb-6">
-          <Button
-            asChild
-            className="bg-teal-700 hover:bg-teal-800 text-white shadow-lg hover:-translate-y-0.5 transition-transform dark:shadow-teal-900/40"
-          >
-            <Link href="/pricing">Get Started</Link>
-          </Button>
+
           <Button
             asChild
             variant="outline"
