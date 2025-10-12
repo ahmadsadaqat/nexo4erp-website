@@ -2,6 +2,7 @@
 
 import { Menu, X } from 'lucide-react'
 import { Button } from './button'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
 import React from 'react'
 import { useRouter } from 'next/navigation'
@@ -110,6 +111,7 @@ export const Navbar = () => {
                 </ul>
               </div>
               <div className='flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit'>
+                <ThemeToggle />
                 <Button
                   asChild
                   variant='outline'
