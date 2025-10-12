@@ -7,7 +7,6 @@ export default function HomePage() {
   return (
     <>
       <main className='container mx-auto px-5 max-w-[1150px] '>
-        {/* <Hero /> */}
         <HeroSection />
         <Features />
         <Pricing />

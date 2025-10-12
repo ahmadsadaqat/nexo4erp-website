@@ -2,10 +2,9 @@ import type React from 'react'
 import type { Metadata } from 'next'
 import { Inter, Roboto } from 'next/font/google'
 import './globals.css'
-// import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
 import { ThemeProvider } from '@/components/theme-provider'
-
+import { Footer } from '@/components/blocks/footer-section'
+import { Navbar } from '@/components/ui/navbar'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({
@@ -22,10 +21,9 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'Nexo4 ERP — Zero Chaos. Maximum Control.',
+  title: 'ERP implementation and customization services | Nexo ERP',
   description:
     'Transforming complexity into clarity with a modern ERP built for speed, visibility, and growth.',
-  generator: 'v0.app',
 }
 
 export default function RootLayout({
@@ -46,7 +44,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Header /> */}
+          <Navbar />
           <SpeedInsights />
           {children}
           <Footer />
