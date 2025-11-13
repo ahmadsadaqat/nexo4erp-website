@@ -70,7 +70,7 @@ export function ContactForm() {
             <Input
               id='name'
               name='name'
-              placeholder='Jane Doe'
+              placeholder='Ahmad'
               required
               aria-required='true'
               autoComplete='name'
@@ -84,7 +84,7 @@ export function ContactForm() {
               name='email'
               type='email'
               inputMode='email'
-              placeholder='jane@example.com'
+              placeholder='ahmad@nexo4erp.com'
               required
               aria-required='true'
               autoComplete='email'
