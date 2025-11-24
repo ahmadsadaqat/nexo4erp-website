@@ -291,131 +291,192 @@ export function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className='text-center'>
+              <div className=''>
                 <h2 className='text-2xl md:text-3xl font-semibold'>
                   Industries we serve
                 </h2>
-                <p className='text-muted-foreground mt-2 max-w-3xl mx-auto text-sm md:text-base'>
+                <p className='text-muted-foreground mt-2 max-w-3xl text-sm md:text-base'>
                   Tailored ERP solutions across sectors to streamline
                   operations, amplify insights, and scale with confidence.
                 </p>
               </div>
 
               <div className='group relative m-auto mt-10'>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                   {/* Manufacturing */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 21h18' />
                           <path d='M19 21V8l-3 2-4-3-4 3-3-2v13' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Manufacturing</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Plan production, orchestrate supply chains, and track inventory with real-time shop-floor insights.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Manufacturing</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Plan production, orchestrate supply chains, and track inventory with real-time shop-floor insights.
+                    </p>
                   </div>
 
                   {/* Financial Services */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 21h18' />
                           <path d='M5 21V8l7-4 7 4v13' />
                           <path d='M9 13h6' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Financial Services</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Automate accounting, compliance, and reporting with unified ledgers and instant analytics.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Financial Services</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Automate accounting, compliance, and reporting with unified ledgers and instant analytics.
+                    </p>
                   </div>
 
-                  {/* Health Care */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  {/* Healthcare */}
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M12 8v8' />
                           <path d='M8 12h8' />
                           <rect x='3' y='3' width='18' height='18' rx='2' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Healthcare</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Coordinate patient services, procurement, and billing with audit-ready records.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Healthcare</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Coordinate patient services, procurement, and billing with audit-ready records.
+                    </p>
                   </div>
 
                   {/* Hospitality */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 10h18' />
                           <path d='M7 10v11' />
                           <path d='M17 10v11' />
                           <path d='M12 6V3' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Hospitality</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Manage reservations, inventory, and operations with centralized insights.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Hospitality</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Manage reservations, inventory, and operations with centralized insights.
+                    </p>
                   </div>
 
                   {/* Online Retail */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <Image src='/globe.svg' alt='Online' width={20} height={20} className='dark:invert' />
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <Image
+                          src='/globe.svg'
+                          alt='Online'
+                          width={24}
+                          height={24}
+                          className='dark:invert'
+                        />
                       </span>
-                      <h3 className='text-base font-semibold'>Online Retail</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Unify product, pricing, and promotions with seamless omnichannel experiences.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Online Retail</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Unify product, pricing, and promotions with seamless omnichannel experiences.
+                    </p>
                   </div>
 
                   {/* Ecommerce */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M6 6h15l-1.5 9h-12z' />
                           <circle cx='9' cy='20' r='1' />
                           <circle cx='18' cy='20' r='1' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Ecommerce</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Connect storefronts, payments, and fulfillment to boost conversion and loyalty.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Ecommerce</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Connect storefronts, payments, and fulfillment to boost conversion and loyalty.
+                    </p>
                   </div>
 
                   {/* Education */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M22 10L12 4 2 10l10 6 10-6z' />
                           <path d='M6 12v5c3 1 9 1 12 0v-5' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Education</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Streamline admissions, finance, and assets with transparent reporting.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Education</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Streamline admissions, finance, and assets with transparent reporting.
+                    </p>
                   </div>
 
                   {/* Transport & Logistics */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M10 17h4' />
                           <path d='M3 7h13v10H3z' />
                           <path d='M16 13h3l2 2v2h-5z' />
@@ -423,73 +484,152 @@ export function HeroSection() {
                           <circle cx='17.5' cy='17.5' r='1.5' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Transport & Logistics</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Optimize fleet, warehousing, and last‑mile delivery with live visibility.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Transport & Logistics</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Optimize fleet, warehousing, and last‑mile delivery with live visibility.
+                    </p>
                   </div>
 
                   {/* Oil & Gas */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M12 3c3 3 4 5 4 7a4 4 0 0 1-8 0c0-2 1-4 4-7z' />
                           <path d='M8 17h8' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Oil & Gas</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Oversee upstream to downstream operations with cost controls and asset visibility.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Oil & Gas</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Oversee upstream to downstream operations with cost controls and asset visibility.
+                    </p>
                   </div>
 
                   {/* Mining */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 12l6-6 3 3-6 6z' />
                           <path d='M14 7l7 7' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Mining</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Track assets, materials, and safety metrics from pit to port.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Mining</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Track assets, materials, and safety metrics from pit to port.
+                    </p>
                   </div>
 
                   {/* Trading & Distribution */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 12h18' />
                           <path d='M7 8l-4 4 4 4' />
                           <path d='M17 16l4-4-4-4' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Trading & Distribution</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Balance demand, pricing, and logistics across multi-warehouse networks.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Trading & Distribution</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Balance demand, pricing, and logistics across multi-warehouse networks.
+                    </p>
                   </div>
 
                   {/* Construction */}
-                  <div className='rounded-2xl border border-teal-500/20 bg-white/70 dark:bg-slate-800/60 p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md duration-300 backdrop-blur'>
-                    <div className='h-1 w-10 rounded-full bg-emerald-400/80 dark:bg-emerald-300/70 mb-4'></div>
-                    <div className='flex items-center gap-3 mb-2'>
-                      <span className='inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200 to-teal-300 dark:from-teal-500/30 dark:to-emerald-400/20 text-slate-900 dark:text-teal-100'>
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' className='size-5'>
+                  <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
+                    <div className='mb-5'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          className='size-6'
+                        >
                           <path d='M3 20h18' />
                           <path d='M6 20V9l6-4 6 4v11' />
                           <path d='M9 20v-4h6v4' />
                         </svg>
                       </span>
-                      <h3 className='text-base font-semibold'>Construction</h3>
                     </div>
-                    <p className='text-sm text-muted-foreground'>Control project costs, contractors, and materials with live dashboards.</p>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Construction</h3>
+                    <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
+                      Control project costs, contractors, and materials with live dashboards.
+                    </p>
                   </div>
                 </div>
+                <section className='py-16' id='features'>
+                  <h2 className='text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white'>
+                    Integrate with your favourite Apps
+                  </h2>
+                  <p className='text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-3xl'>
+                    To achieve your business goals, we seamlessly integrate your
+                    applications with your existing systems, ensuring smooth
+                    data flow and enhanced functionality.
+                  </p>
+
+                  <div className='mt-6'>
+                    <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center'>
+                      {[
+                        {
+                          src: 'https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg',
+                          alt: 'PayPal',
+                        },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg', alt: 'Dropbox' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg', alt: 'Razorpay' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg', alt: 'Slack' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg', alt: 'Google' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg', alt: 'Stripe' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg', alt: 'AWS' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/WooCommerce_logo.svg', alt: 'WooCommerce' },
+                        { src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg', alt: 'Shopify' },
+                      ].map(({ src, alt }) => (
+                        <div
+                          key={alt}
+                          className='flex items-center justify-center rounded-xl bg-white p-4 shadow-sm border border-slate-200 dark:border-transparent h-24 transition-transform hover:-translate-y-1'
+                          role='img'
+                          aria-label={alt}
+                        >
+                          <Image
+                            src={src}
+                            alt={alt}
+                            width={160}
+                            height={60}
+                            className='h-10 w-full object-contain'
+                            priority={false}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </div>
             </AnimatedGroup>
           </div>

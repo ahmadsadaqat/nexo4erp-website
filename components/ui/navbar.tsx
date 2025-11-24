@@ -12,8 +12,8 @@ import Link from 'next/link'
 const menuItems = [
   { name: 'Features', href: '/features' },
   { name: 'Industries', href: '/industries' },
-  { name: 'Pricing', href: '#link' },
-  { name: 'About', href: '#link' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'About', href: '/about' },
 ]
 
 export const Navbar = () => {
@@ -113,21 +113,20 @@ export const Navbar = () => {
               <div className='flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit'>
                 <ThemeToggle />
                 <Button
-                  asChild
                   variant='outline'
                   size='sm'
                   className={cn(isScrolled && 'lg:hidden')}
                   onClick={handleRedirect}
                 >
-                  <span>Login</span>
+                  Login
                 </Button>
                 <Button
                   asChild
                   size='sm'
                   className={cn(isScrolled && 'lg:hidden')}
                 >
-                  <Link href='#'>
-                    <span>Sign Up</span>
+                  <Link href='/contact'>
+                    <span>Contact Us</span>
                   </Link>
                 </Button>
                 <Button
