@@ -31,6 +31,7 @@ const footerLinks: FooterSection[] = [
     links: [
       { title: 'FAQs', href: '/faqs' },
       { title: 'About Us', href: '/about' },
+      { title: 'Refund Policy', href: '/refund-policy' },
       { title: 'Privacy Policy', href: '/privacy' },
       { title: 'Terms of Services', href: '/terms' },
     ],
