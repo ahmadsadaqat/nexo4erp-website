@@ -130,15 +130,16 @@ export function HeroSection() {
                 >
                   <div
                     key={1}
-                    className='bg-foreground/10 rounded-[14px] border p-0.5'
+                    className='rounded-[14px] border border-primary/30 p-0.5'
                   >
                     <Button
                       asChild
                       size='lg'
-                      className='rounded-xl px-5 text-base'
+                      className='rounded-xl px-5 text-base bg-primary text-white hover:bg-primary/90'
                     >
                       <Link href='contact'>
-                        <span className='text-nowrap'>Book A free Demo</span>
+                        <span className='text-nowrap'>Book A Free Demo</span>
+                        <ChevronRight className='ml-1 size-4' />
                       </Link>
                     </Button>
                   </div>
@@ -320,9 +321,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Manufacturing</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Manufacturing
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Plan production, orchestrate supply chains, and track inventory with real-time shop-floor insights.
+                      Plan production, orchestrate supply chains, and track
+                      inventory with real-time shop-floor insights.
                     </p>
                   </div>
 
@@ -344,9 +348,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Financial Services</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Financial Services
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Automate accounting, compliance, and reporting with unified ledgers and instant analytics.
+                      Automate accounting, compliance, and reporting with
+                      unified ledgers and instant analytics.
                     </p>
                   </div>
 
@@ -368,9 +375,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Healthcare</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Healthcare
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Coordinate patient services, procurement, and billing with audit-ready records.
+                      Coordinate patient services, procurement, and billing with
+                      audit-ready records.
                     </p>
                   </div>
 
@@ -393,9 +403,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Hospitality</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Hospitality
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Manage reservations, inventory, and operations with centralized insights.
+                      Manage reservations, inventory, and operations with
+                      centralized insights.
                     </p>
                   </div>
 
@@ -412,9 +425,12 @@ export function HeroSection() {
                         />
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Online Retail</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Online Retail
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Unify product, pricing, and promotions with seamless omnichannel experiences.
+                      Unify product, pricing, and promotions with seamless
+                      omnichannel experiences.
                     </p>
                   </div>
 
@@ -436,9 +452,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Ecommerce</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Ecommerce
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Connect storefronts, payments, and fulfillment to boost conversion and loyalty.
+                      Connect storefronts, payments, and fulfillment to boost
+                      conversion and loyalty.
                     </p>
                   </div>
 
@@ -459,9 +478,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Education</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Education
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Streamline admissions, finance, and assets with transparent reporting.
+                      Streamline admissions, finance, and assets with
+                      transparent reporting.
                     </p>
                   </div>
 
@@ -485,9 +507,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Transport & Logistics</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Transport & Logistics
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Optimize fleet, warehousing, and last‑mile delivery with live visibility.
+                      Optimize fleet, warehousing, and last‑mile delivery with
+                      live visibility.
                     </p>
                   </div>
 
@@ -508,9 +533,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Oil & Gas</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Oil & Gas
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Oversee upstream to downstream operations with cost controls and asset visibility.
+                      Oversee upstream to downstream operations with cost
+                      controls and asset visibility.
                     </p>
                   </div>
 
@@ -531,9 +559,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Mining</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Mining
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Track assets, materials, and safety metrics from pit to port.
+                      Track assets, materials, and safety metrics from pit to
+                      port.
                     </p>
                   </div>
 
@@ -555,9 +586,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Trading & Distribution</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Trading & Distribution
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Balance demand, pricing, and logistics across multi-warehouse networks.
+                      Balance demand, pricing, and logistics across
+                      multi-warehouse networks.
                     </p>
                   </div>
 
@@ -579,9 +613,12 @@ export function HeroSection() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>Construction</h3>
+                    <h3 className='text-lg font-semibold mb-3 text-slate-900 dark:text-white'>
+                      Construction
+                    </h3>
                     <p className='text-sm text-slate-600 dark:text-slate-300 leading-relaxed'>
-                      Control project costs, contractors, and materials with live dashboards.
+                      Control project costs, contractors, and materials with
+                      live dashboards.
                     </p>
                   </div>
                 </div>
@@ -602,14 +639,38 @@ export function HeroSection() {
                           src: 'https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg',
                           alt: 'PayPal',
                         },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg', alt: 'Dropbox' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg', alt: 'Razorpay' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg', alt: 'Slack' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg', alt: 'Google' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg', alt: 'Stripe' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg', alt: 'AWS' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/WooCommerce_logo.svg', alt: 'WooCommerce' },
-                        { src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg', alt: 'Shopify' },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg',
+                          alt: 'Dropbox',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg',
+                          alt: 'Razorpay',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg',
+                          alt: 'Slack',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+                          alt: 'Google',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg',
+                          alt: 'Stripe',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
+                          alt: 'AWS',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/WooCommerce_logo.svg',
+                          alt: 'WooCommerce',
+                        },
+                        {
+                          src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg',
+                          alt: 'Shopify',
+                        },
                       ].map(({ src, alt }) => (
                         <div
                           key={alt}
