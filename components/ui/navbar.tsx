@@ -1,8 +1,9 @@
 'use client'
 
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Languages } from 'lucide-react'
 import { Button } from './button'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { useLanguage } from '@/components/language-provider'
 import { cn } from '@/lib/utils'
 import React from 'react'
 import { useRouter } from 'next/navigation'
@@ -10,9 +11,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const menuItems = [
+  { name: 'Solutions', href: '/#solutions' },
   { name: 'Features', href: '/features' },
   { name: 'Industries', href: '/industries' },
-  { name: 'Pricing', href: '/pricing' },
+  { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
 ]
 
@@ -20,6 +22,7 @@ export const Navbar = () => {
   const [menuState, setMenuState] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
   const router = useRouter()
+  const { isArabic, toggleLanguage } = useLanguage()
 
   const handleRedirect = () => {
     router.push('https://portal.nexo4erp.com')
@@ -42,7 +45,7 @@ export const Navbar = () => {
           className={cn(
             'mx-auto mt-2 w-full max-w-6xl px-6 transition-all duration-300 lg:px-12',
             isScrolled &&
-              'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5'
+              'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5',
           )}
         >
           <div className='relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4'>
@@ -110,7 +113,15 @@ export const Navbar = () => {
                   ))}
                 </ul>
               </div>
-              <div className='flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit'>
+              <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit'>
+                <button
+                  onClick={toggleLanguage}
+                  aria-label='Toggle language'
+                  title={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}
+                  className='inline-flex items-center justify-center rounded-md text-xs font-semibold px-2 py-1.5 text-muted-foreground hover:text-accent-foreground hover:bg-accent transition-colors'
+                >
+                  {isArabic ? 'EN' : 'AR'}
+                </button>
                 <ThemeToggle />
                 <Button
                   variant='outline'

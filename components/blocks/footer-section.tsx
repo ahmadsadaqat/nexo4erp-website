@@ -2,13 +2,15 @@
 import React from 'react'
 import type { ComponentProps, ReactNode } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { FacebookIcon, InstagramIcon, LinkedinIcon } from 'lucide-react'
+import { InstagramIcon, LinkedinIcon, Settings } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface FooterLink {
   title: string
   href: string
   icon?: React.ComponentType<{ className?: string }>
+  onClick?: (e: React.MouseEvent) => void
 }
 
 interface FooterSection {
@@ -20,38 +22,36 @@ const footerLinks: FooterSection[] = [
   {
     label: 'Product',
     links: [
-      { title: 'Features', href: '#features' },
-      { title: 'Pricing', href: '#pricing' },
-      { title: 'Testimonials', href: '#testimonials' },
-      { title: 'Integration', href: '/' },
-    ],
-  },
-  {
-    label: 'Company',
-    links: [
-      { title: 'FAQs', href: '/faqs' },
-      { title: 'About Us', href: '/about' },
-      { title: 'Refund Policy', href: '/refund-policy' },
-      { title: 'Privacy Policy', href: '/privacy' },
-      { title: 'Terms of Services', href: '/terms' },
+      { title: 'Solutions', href: '/#solutions' },
+      { title: 'Features', href: '/features' },
+      { title: 'Industries', href: '/industries' },
+      { title: 'NEXO Editions', href: '/pricing' },
+      { title: 'About', href: '/about' },
     ],
   },
   {
     label: 'Resources',
     links: [
       { title: 'Blog', href: '/blog' },
-      { title: 'Changelog', href: '/changelog' },
-      { title: 'Brand', href: '/brand' },
-      { title: 'Help', href: '/help' },
+      { title: 'Documentation', href: 'mailto:info@nexo4erp.com' },
+      { title: 'Testimonials', href: '/testimonials' },
+      { title: 'FAQs', href: '/faqs' },
+    ],
+  },
+  {
+    label: 'Legal',
+    links: [
+      { title: 'Privacy Policy', href: '/privacy' },
+      { title: 'Terms of Service', href: '/terms' },
+      { title: 'Refund Policy', href: '/refund-policy' },
     ],
   },
   {
     label: 'Social Links',
     links: [
-      { title: 'Facebook', href: '#', icon: FacebookIcon },
       {
         title: 'Instagram',
-        href: 'http://instagram.com/nexo4erp',
+        href: 'https://www.instagram.com/nexo4erp',
         icon: InstagramIcon,
       },
       {
@@ -77,7 +77,12 @@ export function Footer() {
             height={200}
           />
           <p className='text-muted-foreground mt-8 text-sm md:mt-0'>
-            © {new Date().getFullYear()} Nexo ERP. All rights reserved.
+            Engineering the next wave of intelligent enterprises through a fully
+            integrated suite of custom software, data-driven ERP, and
+            frictionless digital commerce.
+          </p>
+          <p className='text-muted-foreground text-sm'>
+            © {new Date().getFullYear()} NEXO 4 ERP. All rights reserved.
           </p>
         </AnimatedContainer>
 
@@ -89,13 +94,16 @@ export function Footer() {
                 <ul className='text-muted-foreground mt-4 space-y-2 text-sm'>
                   {section.links.map((link) => (
                     <li key={link.title}>
-                      <a
+                      <Link
                         href={link.href}
                         className='hover:text-foreground inline-flex items-center transition-all duration-300'
+                        {...(link.href.startsWith('http')
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
                       >
                         {link.icon && <link.icon className='me-1 size-4' />}
                         {link.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
