@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 type JsonLdProps = {
@@ -13,6 +11,7 @@ export default function JsonLd({ data }: JsonLdProps) {
     <script
       type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: json }}
+        suppressHydrationWarning
     />
   )
 }
