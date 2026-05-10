@@ -1,24 +1,14 @@
 'use client'
 
 import React from 'react'
-import { Linkedin, Instagram, Settings } from 'lucide-react'
+import { Linkedin, Instagram } from 'lucide-react'
 import { SOCIALS, TRANSLATIONS } from '@/lib/constants'
 import { useLanguage } from '@/components/language-provider'
+import Link from 'next/link'
 
 const Footer: React.FC = () => {
   const { isArabic } = useLanguage()
   const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
-
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault()
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   const openPrivacy = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -82,49 +72,34 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6">{t.footerProduct}</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a
-                  href="#solutions"
-                  onClick={(e) => handleScroll(e, '#solutions')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
-                  {t.solutions}
-                </a>
+                <Link href='/services/erpnext' className="hover:text-primary-400 transition-colors">
+                  ERPNext
+                </Link>
               </li>
               <li>
-                <a
-                  href="#features"
-                  onClick={(e) => handleScroll(e, '#features')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/services/odoo' className="hover:text-primary-400 transition-colors">
+                  Odoo
+                </Link>
+              </li>
+              <li>
+                <Link href='/features' className="hover:text-primary-400 transition-colors">
                   {t.features}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#industries"
-                  onClick={(e) => handleScroll(e, '#industries')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/industries' className="hover:text-primary-400 transition-colors">
                   {t.industries}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#packages"
-                  onClick={(e) => handleScroll(e, '#packages')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/pricing' className="hover:text-primary-400 transition-colors">
                   {t.editions}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
-                  onClick={(e) => handleScroll(e, '#about')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/about' className="hover:text-primary-400 transition-colors">
                   {t.about}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -135,30 +110,29 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a
-                  href="#blog"
-                  onClick={(e) => handleScroll(e, '#blog')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/blog' className="hover:text-primary-400 transition-colors">
                   {t.blog}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="mailto:info@nexo4erp.com"
-                  className="hover:text-primary-400 transition-colors"
-                >
-                  {isArabic ? 'وثائق البرنامج' : 'Documentation'}
-                </a>
+                <Link href='/blog/erpnext-vs-odoo-pakistan' className="hover:text-primary-400 transition-colors">
+                  {isArabic ? 'ERPNext مقابل Odoo في باكستان' : 'ERPNext vs Odoo in Pakistan'}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#faq"
-                  onClick={(e) => handleScroll(e, '#faq')}
-                  className="hover:text-primary-400 transition-colors cursor-pointer"
-                >
+                <Link href='/testimonials' className="hover:text-primary-400 transition-colors">
+                  {isArabic ? 'شهادات العملاء' : 'Testimonials'}
+                </Link>
+              </li>
+              <li>
+                <Link href='/faqs' className="hover:text-primary-400 transition-colors">
                   {isArabic ? 'الأسئلة الشائعة' : 'FAQs'}
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/careers' className="hover:text-primary-400 transition-colors">
+                  {isArabic ? 'وظائف' : 'Careers'}
+                </Link>
               </li>
             </ul>
           </div>

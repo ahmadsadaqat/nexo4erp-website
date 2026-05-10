@@ -12,6 +12,7 @@ import ContactModal from '@/components/ContactModal'
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal'
 import CookiePolicyModal from '@/components/CookiePolicyModal'
 import TermsModal from '@/components/TermsModal'
+import JsonLd from '@/components/JsonLd'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,27 +20,55 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Nexo4ERP',
+  url: 'https://www.nexo4erp.com',
+  logo: 'https://www.nexo4erp.com/LOGO.png',
+  sameAs: ['https://www.linkedin.com'],
+}
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Nexo4ERP',
+  url: 'https://www.nexo4erp.com',
+  areaServed: ['Pakistan', 'Lahore', 'Karachi', 'Islamabad'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lahore',
+    addressCountry: 'PK',
+  },
+  telephone: '+92 322 9400079',
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nexo4erp.com'),
-  title: 'NEXO 4 ERP - Architecting Your Digital Future',
+  metadataBase: new URL('https://www.nexo4erp.com'),
+  title: 'ERPNext & Odoo Implementation Services in Pakistan | Nexo4ERP',
   description:
-    'NEXO 4 ERP is a high-performance, unified business management suite designed to streamline operations, automate workflows, and drive unparalleled growth for modern enterprises.',
+    'Nexo4ERP delivers expert ERPNext and Odoo implementation, customization, and support across Pakistan. Extensive Frappe expertise. Based in Lahore. Free consultation.',
   keywords: [
-    'ERP system',
-    'enterprise resource planning',
-    'NEXO ERP',
-    'NEXO 4 ERP',
-    'cloud ERP software',
-    'business management software',
-    'finance automation',
-    'inventory management',
-    'HR management software',
-    'scalable business solutions',
-    'SaaS ERP'
+    'ERPNext implementation Pakistan',
+    'Odoo implementation Pakistan',
+    'ERPNext Lahore',
+    'Odoo Lahore',
+    'Frappe ERPNext',
+    'nexoERP',
+    'ERP Pakistan',
+    'ERPNext customization',
+    'Odoo customization Pakistan',
+    'ERP consultants Lahore',
+    'open source ERP Pakistan',
+    'ERPNext migration',
+    'Odoo migration',
+    'FBR tax ERP',
+    'manufacturing ERP Pakistan',
+    'retail ERP Pakistan',
   ],
-  authors: [{ name: 'NEXO 4 ERP Team', url: 'https://nexo4erp.com' }],
-  creator: 'NEXO 4 ERP',
-  publisher: 'NEXO 4 ERP',
+  authors: [{ name: 'Nexo4ERP', url: 'https://www.nexo4erp.com' }],
+  creator: 'Nexo4ERP',
+  publisher: 'Nexo4ERP',
   formatDetection: {
     email: false,
     address: false,
@@ -47,27 +76,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://nexo4erp.com',
-    siteName: 'NEXO 4 ERP',
-    title: 'NEXO 4 ERP - Architecting Your Digital Future',
+    url: 'https://www.nexo4erp.com',
+    siteName: 'Nexo4ERP',
+    title: 'ERPNext & Odoo Implementation Services in Pakistan | Nexo4ERP',
     description:
-      'A high-performance, unified business management suite designed to streamline operations and drive growth. Book a free demo today.',
+      'Expert ERPNext and Odoo implementation, customization, and support across Pakistan. Lahore-based team with extensive Frappe expertise. Free consultation.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'NEXO 4 ERP - Architecting Your Digital Future',
+        alt: 'Nexo4ERP — ERPNext & Odoo Implementation Services in Pakistan',
       },
     ],
     locale: 'en_US',
-    alternateLocale: 'ar_AE',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NEXO 4 ERP - Architecting Your Digital Future',
+    title: 'ERPNext & Odoo Implementation Services in Pakistan | Nexo4ERP',
     description:
-      'High-performance ERP solutions for industry leaders. Simplify complexity and gain maximum control over your operations.',
+      'Expert ERPNext and Odoo implementation for manufacturing, retail, healthcare, and logistics businesses across Pakistan. Free consultation.',
     images: ['/og-image.png'],
     creator: '@Nexo4ERP',
   },
@@ -83,11 +111,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://nexo4erp.com',
-    languages: {
-      'en-US': 'https://nexo4erp.com',
-      'ar-AE': 'https://nexo4erp.com/ar',
-    },
+    canonical: 'https://www.nexo4erp.com',
   },
   icons: {
     icon: '/Favicon.png',
@@ -103,19 +127,23 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang='en'
       className={`${inter.variable} antialiased`}
       suppressHydrationWarning
       style={{ scrollBehavior: 'smooth', scrollPaddingTop: '100px' }}
     >
-      <body className="bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <body
+        className='bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300'
+        suppressHydrationWarning
+      >
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
+          attribute='class'
+          defaultTheme='dark'
           enableSystem
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <JsonLd data={[organizationSchema, localBusinessSchema]} />
             <BackgroundParticles />
             <Navbar />
             <ContactModal isArabic={false} />

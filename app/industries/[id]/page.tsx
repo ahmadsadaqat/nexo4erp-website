@@ -2,8 +2,10 @@
 
 import { INDUSTRIES } from '@/lib/constants'
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
+import JsonLd from '@/components/JsonLd'
 
 export default function IndustryDetailPage() {
   const params = useParams()
@@ -30,14 +32,42 @@ export default function IndustryDetailPage() {
       {/* Hero */}
       <section className='relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden'>
         <div className='absolute inset-0 z-0'>
-          <img
+          <Image
             src={industry.bgImage}
             alt={industry.name}
-            className='w-full h-full object-cover opacity-20'
+            fill
+            sizes='100vw'
+            className='object-cover opacity-20'
           />
           <div className='absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/95 dark:from-black/80 dark:to-black/95' />
         </div>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
+          <JsonLd
+            data={{
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://www.nexo4erp.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Industries',
+                  item: 'https://www.nexo4erp.com/industries',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: industry.name,
+                  item: `https://www.nexo4erp.com/industries/${industry.id}`,
+                },
+              ],
+            }}
+          />
           <Link
             href='/industries'
             className='inline-flex items-center text-primary-400 hover:text-primary-300 mb-8 text-sm font-semibold'

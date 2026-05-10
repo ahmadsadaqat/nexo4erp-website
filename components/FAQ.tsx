@@ -48,7 +48,7 @@ const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
                   className="w-full flex items-center justify-between p-6 text-left rtl:text-right focus:outline-none"
                 >
                   <span className={`text-lg font-medium transition-colors duration-300 ${openIndex === index ? 'text-primary-700 dark:text-primary-400' : 'text-gray-900 dark:text-white'}`}>
-                      {faq.question}
+                      {isArabic ? faq.questionAr ?? faq.question : faq.question}
                   </span>
                   <div className={`transform transition-transform duration-500 ease-in-out ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}>
                     <ChevronDown className={`w-5 h-5 ${openIndex === index ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`} />
@@ -62,7 +62,7 @@ const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
                 >
                   <div className="overflow-hidden">
                     <div className="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right">
-                      {faq.answer}
+                      {isArabic ? faq.answerAr ?? faq.answer : faq.answer}
                     </div>
                   </div>
                 </div>

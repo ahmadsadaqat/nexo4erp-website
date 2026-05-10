@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState } from 'react';
-import { SOLUTIONS_CONTENT, TRANSLATIONS } from '@/lib/constants';
-import { ArrowRight, Code, Database, Smartphone, Cloud } from 'lucide-react';
+import { SOLUTIONS_CONTENT, TRANSLATIONS, TRUST_POINTS } from '@/lib/constants';
+import { ArrowRight, CheckCircle2, Code, Database, Smartphone, Cloud } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 
 interface SolutionsProps {
@@ -70,7 +70,7 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                           <div className="w-14 h-14 bg-primary-50 dark:bg-primary-900/10 rounded-full flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400">
                             <item.icon className="w-7 h-7" />
                          </div>
-                         <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
+                         <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isArabic ? item.titleAr : item.title}</h4>
                          
                          <p className="text-xs text-gray-400 mt-2 opacity-70">{isArabic ? 'انقر للكشف عن التفاصيل' : 'Click to reveal details'}</p>
                          
@@ -90,10 +90,10 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                             <item.icon className="w-5 h-5" />
                          </div>
 
-                         <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                         <h4 className="text-base font-bold text-white mb-2">{isArabic ? item.titleAr : item.title}</h4>
                          
                          <p className="text-gray-300 text-xs leading-relaxed mb-4">
-                            {item.description}
+                            {isArabic ? item.descriptionAr : item.description}
                          </p>
                          
                          <div className="mt-auto">
@@ -151,7 +151,7 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                        <a 
                         href="#" 
                         onClick={openModal}
-                        className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary-700 to-primary-600 hover:from-primary-600 hover:to-primary-500 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary-600/50 transition-all duration-300 transform hover:-translate-y-1"
+                        className="inline-flex items-center px-8 py-3 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 transform hover:-translate-y-1"
                        >
                           {isArabic ? 'استشر مهندساً' : 'Consult an Architect'} <ArrowRight className="mx-2 w-4 h-4 rtl:rotate-180"/>
                        </a>
@@ -195,3 +195,44 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
 };
 
 export default Solutions;
+
+export const PakistanTrustSection: React.FC<SolutionsProps> = ({ isArabic }) => {
+  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+
+  return (
+    <section className="py-20 bg-white/70 dark:bg-zinc-950/80 border-y border-gray-100 dark:border-zinc-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">
+              {isArabic ? 'ثقة محلية' : 'Local Trust'}
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              {t.aboutHeader}
+            </h3>
+            <p className="text-lg text-gray-500 dark:text-gray-400">
+              {isArabic
+                ? 'خبرة تنفيذ عملية، فهم للامتثال الباكستاني، وملكية كاملة للمشروع من أول اجتماع حتى الدعم المستمر.'
+                : 'Hands-on implementation experience, Pakistani compliance fluency, and one accountable team from discovery through long-term support.'}
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {TRUST_POINTS.map((point, index) => (
+            <ScrollReveal key={point.text} delay={index * 75}>
+              <div className="h-full bg-gray-50/90 dark:bg-zinc-900/90 rounded-2xl border border-gray-100 dark:border-zinc-800 p-5 shadow-sm backdrop-blur-md rtl:text-right">
+                <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                  {isArabic ? point.textAr : point.text}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

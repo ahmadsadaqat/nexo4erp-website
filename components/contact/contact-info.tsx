@@ -11,10 +11,10 @@ export function ContactInfo() {
           <p className='text-sm text-muted-foreground'>Email</p>
           <p className='font-medium'>
             <a
-              href='mailto:admin@nexo4erp.com'
+              href='mailto:info@nexo4erp.com'
               className='text-primary hover:underline'
             >
-              admin@nexo4erp.com
+              info@nexo4erp.com
             </a>
           </p>
         </div>
@@ -22,10 +22,10 @@ export function ContactInfo() {
           <p className='text-sm text-muted-foreground'>Phone</p>
           <p className='font-medium'>
             <a
-              href='tel:+923134859727'
+              href='tel:+923229400079'
               className='text-primary hover:underline'
             >
-              +92 313 485 9727
+              +92 322 9400079
             </a>
           </p>
         </div>

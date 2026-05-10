@@ -73,7 +73,7 @@ const Packages: React.FC<PackagesProps> = ({ isArabic }) => {
                       onClick={(e) => openModal(e, tier.name)}
                       className={`mt-auto w-full py-3 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 cursor-pointer flex items-center justify-center gap-2 ${
                         tier.isPopular 
-                          ? 'bg-gradient-to-r from-primary-700 to-primary-600 hover:from-primary-600 hover:to-primary-500 text-white shadow-xl hover:shadow-2xl hover:shadow-primary-600/50' 
+                          ? 'bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 shadow-xl dark:shadow-white/10' 
                           : 'bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-900 dark:text-white'
                       }`}
                     >

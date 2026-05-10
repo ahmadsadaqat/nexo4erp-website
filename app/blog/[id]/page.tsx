@@ -2,8 +2,10 @@
 
 import { BLOG_POSTS } from '@/lib/constants'
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import JsonLd from '@/components/JsonLd'
 
 export default function BlogPostPage() {
   const params = useParams()
@@ -29,6 +31,32 @@ export default function BlogPostPage() {
     <main className='relative z-10'>
       <article className='pt-32 pb-20 lg:pt-40 lg:pb-32'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <JsonLd
+            data={{
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://www.nexo4erp.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Blog',
+                  item: 'https://www.nexo4erp.com/blog',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: post.title,
+                  item: `https://www.nexo4erp.com/blog/${post.id}`,
+                },
+              ],
+            }}
+          />
           <Link
             href='/blog'
             className='inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-500 mb-8 text-sm font-semibold'
@@ -55,10 +83,12 @@ export default function BlogPostPage() {
           </div>
 
           <div className='relative h-64 md:h-96 rounded-2xl overflow-hidden mb-12'>
-            <img
+            <Image
               src={post.image}
               alt={post.title}
-              className='w-full h-full object-cover'
+              fill
+              sizes='(max-width: 768px) 100vw, 80vw'
+              className='object-cover'
             />
           </div>
 

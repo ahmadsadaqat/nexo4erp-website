@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import Image from 'next/image'
 
 import { INDUSTRIES, TRANSLATIONS } from '@/lib/constants';
 
@@ -27,28 +28,15 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
 
 
   return (
-
-    <section id="industries" className="py-24 bg-gray-50/50 dark:bg-black/50 backdrop-blur-sm">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <ScrollReveal>
-
-          <div className="text-center mb-16">
-
-            <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">{t.industries}</h2>
-
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t.sectorsHeader}</h3>
-
-            <p className="max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
-
-              {t.sectorsSub}
-
-            </p>
-
-          </div>
-
-        </ScrollReveal>
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">{t.industries}</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t.sectorsHeader}</h3>
+          <p className="max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
+            {t.sectorsSub}
+          </p>
+        </div>
 
 
 
@@ -58,7 +46,7 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
 
             <ScrollReveal key={index} delay={index * 50}>
 
-              <div 
+              <div
 
                 onClick={() => onSelectIndustry?.(industry)}
 
@@ -67,38 +55,30 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
               >
 
                 {/* Background Image Layer */}
-
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-
-                  <img 
-
-  src={industry.bgImage} 
-
-  alt={industry.name} 
-
-  className="w-full h-full object-cover"
-
-  // Only lazy load cards after the first row
-
-  loading={index < 3 ? "eager" : "lazy"} 
-
-/>
-
+                  <Image
+                    src={industry.bgImage}
+                    alt={industry.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="w-full h-full object-cover"
+                    priority={index < 3}
+                  />
                 </div>
 
-                
+
 
                 {/* Overlay Layers - Darker by default for better text visibility */}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:via-black/70 transition-colors duration-300"></div>
 
-                
+
 
                 {/* Accent Line */}
 
                 <div className="absolute top-0 left-0 rtl:left-auto rtl:right-0 w-2 h-full bg-primary-500 transform -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20"></div>
 
-                
+
 
                 {/* Content Layer */}
 
@@ -110,7 +90,7 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
 
                   </div>
 
-                  
+
 
                   <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
 
@@ -118,7 +98,7 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
 
                   </h4>
 
-                  
+
 
                   <p className="text-gray-300 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0 line-clamp-2">
 
@@ -126,7 +106,7 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
 
                   </p>
 
-                  
+
 
                   <div className="flex items-center text-primary-400 font-bold text-sm">
 
@@ -147,13 +127,9 @@ const Industries: React.FC<IndustriesProps> = ({ isArabic, onSelectIndustry }) =
             </ScrollReveal>
 
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
 
 };

@@ -40,8 +40,8 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
     }
   };
 
-  const rawPhoneNumber = "+923134859727";
-  const whatsappLink = `https://wa.me/923134859727?text=${encodeURIComponent(isArabic ? 'مرحباً، أود الاستفسار عن حلول NEXO 4 ERP.' : 'Hello, I would like to inquire about NEXO 4 ERP solutions.')}`;
+  const rawPhoneNumber = "+923229400079";
+  const whatsappLink = `https://wa.me/923229400079?text=${encodeURIComponent(isArabic ? 'مرحباً، أود الاستفسار عن حلول NEXO 4 ERP.' : 'Hello, I would like to inquire about NEXO 4 ERP solutions.')}`;
 
   return (
     <section id="contact" className="py-24 bg-gray-50/50 dark:bg-black/50 backdrop-blur-sm">
@@ -77,7 +77,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">{t.callUs}</p>
-                      <span className="text-lg font-bold text-gray-900 dark:text-white" dir="ltr">+92 313 485 9727</span>
+                      <span className="text-lg font-bold text-gray-900 dark:text-white" dir="ltr">+92 322 9400079</span>
                     </div>
                   </div>
                   

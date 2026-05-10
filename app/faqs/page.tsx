@@ -1,78 +1,154 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { FAQS } from '@/lib/constants'
+import { ArrowLeft, ChevronDown, MessageCircle } from 'lucide-react'
+import Link from 'next/link'
+import { useState } from 'react'
+import JsonLd from '@/components/JsonLd'
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.nexo4erp.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'FAQs',
+      item: 'https://www.nexo4erp.com/faqs',
+    },
+  ],
+}
 
 export default function FAQsPage() {
-  const faqs = [
-    {
-      question: "What is Nexo4 ERP?",
-      answer: "Nexo4 ERP is a comprehensive Enterprise Resource Planning solution designed to streamline business operations, including finance, inventory, sales, HR, and more, into a single integrated platform."
-    },
-    {
-      question: "Is Nexo4 ERP suitable for small businesses?",
-      answer: "Yes! Nexo4 ERP is built with modularity in mind. You can start with the essential modules you need and scale up as your business grows."
-    },
-    {
-      question: "Can I customize the workflows?",
-      answer: "Absolutely. We understand that every business is unique. Our platform allows for extensive customization of workflows, reports, and forms to match your specific operational requirements."
-    },
-    {
-      question: "Is my data secure?",
-      answer: "Security is our top priority. We use industry-standard encryption, regular backups, and strict access controls to ensure your data remains safe and confidential."
-    },
-    {
-      question: "Do you offer implementation support?",
-      answer: "Yes, we provide end-to-end implementation support, including data migration, user training, and post-launch assistance to ensure a smooth transition."
-    },
-    {
-      question: "How is pricing determined?",
-      answer: "Our pricing is tailored based on the modules you need, the number of users, and the level of customization required. Contact our sales team for a personalized quote."
-    }
-  ]
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-background py-24">
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500/20 via-background to-background pointer-events-none" />
-
-      <div className="container mx-auto px-5 max-w-[1150px] relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto"
-        >
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900 dark:text-white">
-              Frequently Asked Questions
+    <main className='relative z-10'>
+      {/* Hero */}
+      <section className='pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden'>
+        <div className='absolute inset-0 pointer-events-none'>
+          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-500/15 via-transparent to-transparent' />
+        </div>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
+          <Link
+            href='/'
+            className='inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-500 mb-10 text-sm font-semibold'
+          >
+            <ArrowLeft className='w-4 h-4 mr-2' /> Back to Home
+          </Link>
+          <div className='text-center max-w-4xl mx-auto'>
+            <h2 className='text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-3'>
+              Support
+            </h2>
+            <h1 className='text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6'>
+              Frequently Asked{' '}
+              <span className='text-primary-600 dark:text-primary-400'>
+                Questions
+              </span>
             </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              Everything you need to know about Nexo4 ERP. Can't find the answer you're looking for? <a href="/contact" className="text-teal-600 hover:underline font-medium">Contact us</a>.
+            <p className='text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto'>
+              Everything you need to know about NEXO 4 ERP. Can&apos;t find the
+              answer?{' '}
+              <Link
+                href='/contact'
+                className='text-primary-600 dark:text-primary-400 hover:underline font-medium'
+              >
+                Contact our team.
+              </Link>
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-slate-200 dark:border-slate-800">
-                  <AccordionTrigger className="text-left text-lg font-medium text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors px-2">
+      {/* FAQ Accordion */}
+      <section className='pb-20 bg-gray-50 dark:bg-zinc-950'>
+        <div className='max-w-3xl mx-auto px-4 sm:px-6'>
+          <JsonLd data={[faqSchema, breadcrumbSchema]} />
+          <div className='space-y-4'>
+            {FAQS.map((faq, index) => (
+              <div
+                key={index}
+                className={`bg-white dark:bg-zinc-900 rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  openIndex === index
+                    ? 'border-primary-200 dark:border-primary-900/40 shadow-lg shadow-primary-600/5'
+                    : 'border-gray-100 dark:border-zinc-800 shadow-sm'
+                }`}
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className='w-full flex items-center justify-between gap-4 p-6 text-left'
+                >
+                  <span className='font-bold text-gray-900 dark:text-white text-base leading-snug'>
                     {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 dark:text-slate-300 leading-relaxed px-2 text-base">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 transition-transform duration-300 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openIndex === index && (
+                  <div className='px-6 pb-6'>
+                    <p className='text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-zinc-800 pt-4'>
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
+
+      {/* Still have questions CTA */}
+      <section className='py-20 bg-white dark:bg-black border-t border-gray-100 dark:border-zinc-900'>
+        <div className='max-w-4xl mx-auto px-4 text-center'>
+          <div className='w-16 h-16 rounded-2xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center mx-auto mb-6'>
+            <MessageCircle className='w-8 h-8 text-primary-600 dark:text-primary-400' />
+          </div>
+          <h2 className='text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4'>
+            Still have questions?
+          </h2>
+          <p className='text-gray-600 dark:text-gray-400 mb-8'>
+            Our team of experts is ready to help you find the right solution for
+            your business.
+          </p>
+          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            <button
+              onClick={() =>
+                window.dispatchEvent(new Event('open-contact-modal'))
+              }
+              className='px-8 py-4 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 hover:-translate-y-0.5'
+            >
+              Talk to an Expert
+            </button>
+            <Link
+              href='/contact'
+              className='px-8 py-4 bg-gray-100 dark:bg-zinc-800 text-gray-800 dark:text-white font-bold rounded-xl hover:bg-gray-200 dark:hover:bg-zinc-700 transition-all duration-300'
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
