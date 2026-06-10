@@ -117,6 +117,7 @@ export const TRANSLATIONS: any = {
     scheduleDemo: 'Schedule a Demo',
     fullName: 'Full Name',
     bizEmail: 'Business Email',
+    phone: 'Phone Number',
     message: 'Message',
     sendMessage: 'Send Message',
     footerProduct: 'Services',
@@ -183,6 +184,7 @@ export const TRANSLATIONS: any = {
     scheduleDemo: 'احجز عرضاً تجريبياً',
     fullName: 'الاسم الكامل',
     bizEmail: 'البريد الإلكتروني للعمل',
+    phone: 'رقم الهاتف',
     message: 'الرسالة',
     sendMessage: 'إرسال الرسالة',
     footerProduct: 'الخدمات',
@@ -1503,7 +1505,7 @@ export const FAQS: FAQItem[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: '1',
+    id: 'erpnext-vs-odoo-pakistan-guide',
     title:
       'ERPNext vs Odoo in Pakistan: Which ERP Is Better for Your Business?',
     excerpt:
@@ -1518,7 +1520,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
   },
   {
-    id: '2',
+    id: 'erpnext-implementation-cost-pakistan',
     title: 'ERPNext Implementation Cost in Pakistan: What to Expect in 2025',
     excerpt:
       'A practical pricing guide for ERPNext implementation, migration, customization, and support for Pakistani businesses.',
@@ -1532,7 +1534,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
   },
   {
-    id: '3',
+    id: 'erp-consultant-pakistan',
     title: 'How to Choose the Right ERP Consultant in Pakistan',
     excerpt:
       'A buyer-focused checklist for selecting an ERP implementation partner with local support, industry knowledge, and delivery discipline.',

@@ -36,13 +36,14 @@ export async function submitContactForm(data: ContactFormData): Promise<FormStat
       to: process.env.ZOHO_EMAIL_TO || "admin@nexo4erp.com",
       subject: `New Message from ${result.data.name}`,
       replyTo: result.data.email,
-      text: `Name: ${result.data.name}\nEmail: ${result.data.email}\nMessage:\n${result.data.message}`,
+      text: `Name: ${result.data.name}\nEmail: ${result.data.email}\nPhone: ${result.data.phone || 'Not provided'}\nMessage:\n${result.data.message}`,
       html: `
         <h1 style="font-family:system-ui,Arial,sans-serif;">New Contact Form Submission</h1>
         <p style="font-family:system-ui,Arial,sans-serif;">You have received a new message from your website's contact form.</p>
         <hr style="margin:16px 0;" />
         <p><strong>Name:</strong> ${escapeHtml(result.data.name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(result.data.email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(result.data.phone || 'Not provided')}</p>
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(result.data.message).replace(/\n/g, "<br>")}</p>
       `,

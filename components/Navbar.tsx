@@ -15,8 +15,6 @@ const Navbar: React.FC = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === '/'
-
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -31,27 +29,9 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleSectionClick = (e: React.MouseEvent, anchor?: string) => {
-    setIsOpen(false)
-    if (isHome && anchor) {
-      e.preventDefault()
-      const targetId = anchor.replace('#', '')
-      const element = document.getElementById(targetId)
-      if (element) {
-        const offset = 80
-        const bodyRect = document.body.getBoundingClientRect().top
-        const elementRect = element.getBoundingClientRect().top
-        const elementPosition = elementRect - bodyRect
-        const offsetPosition = elementPosition - offset
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-      }
-    }
-    // If not home, Next.js Link will navigate to the page route naturally
-  }
-
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    if (isHome) {
+    if (pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       window.location.href = '/'
@@ -66,25 +46,11 @@ const Navbar: React.FC = () => {
   ]
 
   const navLinks = [
-    {
-      name: t.features,
-      href: '/features',
-      anchor: 'features',
-      page: '/features',
-    },
-    {
-      name: t.industries,
-      href: '/industries',
-      anchor: 'industries',
-      page: '/industries',
-    },
-    {
-      name: t.editions,
-      href: '/pricing',
-      anchor: 'packages',
-      page: '/pricing',
-    },
-    { name: t.blog, href: '/blog', anchor: 'blog', page: '/blog' },
+    { name: t.features, href: '/features' },
+    { name: t.industries, href: '/industries' },
+    { name: t.editions, href: '/pricing' },
+    { name: t.blog, href: '/blog' },
+    { name: t.about, href: '/about' },
   ]
 
   return (
@@ -147,9 +113,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => handleSectionClick(e, link.anchor)}
               className={`font-bold text-[12px] uppercase tracking-widest transition-colors duration-150 hover:text-primary-600 ${
-                pathname === (link.page ?? '')
+                pathname === link.href
                   ? 'text-primary-600 dark:text-primary-400'
                   : 'text-gray-900 dark:text-gray-100'
               }`}
@@ -259,8 +224,12 @@ const Navbar: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => handleSectionClick(e, link.anchor)}
-              className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter'
+              onClick={() => setIsOpen(false)}
+              className={`text-3xl font-black uppercase tracking-tighter ${
+                pathname === link.href
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-gray-900 dark:text-white'
+              }`}
             >
               {link.name}
             </Link>

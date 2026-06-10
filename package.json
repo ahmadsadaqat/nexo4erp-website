@@ -67,6 +67,13 @@
     "vaul": "^0.9.9",
     "zod": "3.25.76"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "@vercel/speed-insights",
+      "sharp"
+    ]
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.9",
     "@tailwindcss/typography": "^0.5.19",

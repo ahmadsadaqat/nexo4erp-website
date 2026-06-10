@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/favicon.ico', '/api/'],
     },
     sitemap: 'https://www.nexo4erp.com/sitemap.xml',
     host: 'https://www.nexo4erp.com',

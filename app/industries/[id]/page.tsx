@@ -1,31 +1,18 @@
-'use client'
-
 import { INDUSTRIES } from '@/lib/constants'
-import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import JsonLd from '@/components/JsonLd'
+import { notFound } from 'next/navigation'
 
-export default function IndustryDetailPage() {
-  const params = useParams()
+export function generateStaticParams() {
+  return INDUSTRIES.map((industry) => ({ id: industry.id }))
+}
+
+export default function IndustryDetailPage({ params }: { params: { id: string } }) {
   const industry = INDUSTRIES.find((ind) => ind.id === params.id)
 
-  if (!industry) {
-    return (
-      <main className='relative z-10 pt-32 pb-20 text-center'>
-        <h1 className='text-3xl font-bold text-gray-900 dark:text-white'>
-          Industry not found
-        </h1>
-        <Link
-          href='/industries'
-          className='text-primary-600 hover:text-primary-500 mt-4 inline-block'
-        >
-          ← Back to Industries
-        </Link>
-      </main>
-    )
-  }
+  if (!industry) notFound()
 
   return (
     <main className='relative z-10'>

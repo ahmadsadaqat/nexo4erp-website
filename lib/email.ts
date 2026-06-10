@@ -7,6 +7,7 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
 export const sendContactEmail = async (formData: {
   name: string
   email: string
+  phone?: string
   message: string
 }) => {
   try {
@@ -16,6 +17,7 @@ export const sendContactEmail = async (formData: {
       {
         name: formData.name,
         email: formData.email,
+        phone: formData.phone || 'Not provided',
         message: formData.message,
       },
       PUBLIC_KEY

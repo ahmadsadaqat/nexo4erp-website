@@ -1,9 +1,8 @@
-'use client'
-
 import { INDUSTRIES } from '@/lib/constants'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
+import OpenContactButton from '@/components/OpenContactButton'
 
 export default function IndustriesPage() {
   return (
@@ -44,10 +43,9 @@ export default function IndustriesPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {INDUSTRIES.map((industry) => (
-              <Link
+              <div
                 key={industry.id}
-                href={`/industries/${industry.id}`}
-                className='group relative bg-white dark:bg-zinc-900 rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2'
+                className='group relative bg-white dark:bg-zinc-900 rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500'
               >
                 {/* Image */}
                 <div className='relative h-52 overflow-hidden'>
@@ -56,7 +54,7 @@ export default function IndustriesPage() {
                     alt={industry.name}
                     fill
                     sizes='(max-width: 768px) 100vw, 33vw'
-                    className='object-cover group-hover:scale-110 transition-transform duration-700'
+                    className='object-cover group-hover:scale-105 transition-transform duration-700'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
                   <div className='absolute bottom-4 left-4 flex items-center gap-2'>
@@ -74,7 +72,7 @@ export default function IndustriesPage() {
                   <p className='text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4'>
                     {industry.description}
                   </p>
-                  <div className='flex flex-wrap gap-2 mb-5'>
+                  <div className='flex flex-wrap gap-2'>
                     {industry.coreModules.slice(0, 3).map((mod) => (
                       <span
                         key={mod.name}
@@ -89,12 +87,8 @@ export default function IndustriesPage() {
                       </span>
                     )}
                   </div>
-                  <div className='flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group-hover:gap-3 gap-1.5 transition-all duration-300'>
-                    <span>Explore Solution</span>
-                    <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform duration-300' />
-                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -104,21 +98,17 @@ export default function IndustriesPage() {
       <section className='py-16 bg-white dark:bg-black border-t border-gray-100 dark:border-zinc-900'>
         <div className='max-w-4xl mx-auto px-4 text-center'>
           <h2 className='text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4'>
-            Don't see your industry?
+            Don&apos;t see your industry?
           </h2>
           <p className='text-gray-600 dark:text-gray-400 mb-8'>
             NEXO 4 ERP is built on a flexible, API-first architecture that can
             be tailored to virtually any vertical. Talk to our team about a
             custom solution.
           </p>
-          <button
-            onClick={() =>
-              window.dispatchEvent(new Event('open-contact-modal'))
-            }
-            className='px-8 py-4 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 hover:-translate-y-0.5'
-          >
-            Talk to a Specialist
-          </button>
+          <OpenContactButton
+            label='Talk to a Specialist'
+            className='px-8 py-4 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center gap-2'
+          />
         </div>
       </section>
     </main>

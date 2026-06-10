@@ -15,7 +15,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
   useEffect(() => {
     const handleOpen = (e: any) => {
@@ -48,13 +48,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
       const result = await sendContactEmail({
         name: formState.name,
         email: formState.email,
-        // Combining subject and message so both appear in your email body
+        phone: formState.phone,
         message: `Subject: ${formState.subject}\n\nMessage: ${formState.message}`
       });
 
       if (result.success) {
         setIsSuccess(true);
-        setFormState({ name: '', email: '', subject: '', message: '' });
+        setFormState({ name: '', email: '', phone: '', subject: '', message: '' });
         
         setTimeout(() => {
           handleClose();
@@ -127,6 +127,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                       className="w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all"
                       placeholder="name@company.com"
                       required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold uppercase text-gray-400 mb-2 tracking-widest">{t.phone}</label>
+                    <input
+                      type="tel"
+                      value={formState.phone}
+                      onChange={(e) => setFormState({...formState, phone: e.target.value})}
+                      className="w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all"
+                      placeholder={isArabic ? '+92 3XX XXXXXXX' : '+92 3XX XXXXXXX'}
                     />
                   </div>
 

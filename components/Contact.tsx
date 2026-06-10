@@ -11,7 +11,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ isArabic }) => {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -27,7 +27,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
 
       if (result.success) {
         setIsSuccess(true);
-        setFormState({ name: '', email: '', message: '' });
+        setFormState({ name: '', email: '', phone: '', message: '' });
         // Success message stays for 8 seconds
         setTimeout(() => setIsSuccess(false), 8000);
       } else {
@@ -162,6 +162,19 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       />
                     </div>
                     
+                    <div className="group">
+                      <label htmlFor="phone" className="block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500">{t.phone}</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        value={formState.phone}
+                        onChange={(e) => setFormState({...formState, phone: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-zinc-800 transition-all outline-none"
+                        placeholder={isArabic ? '+92 3XX XXXXXXX' : '+92 3XX XXXXXXX'}
+                        disabled={isSubmitting}
+                      />
+                    </div>
+
                     <div className="group">
                       <label htmlFor="message" className="block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500">{t.message}</label>
                       <textarea

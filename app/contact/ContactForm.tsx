@@ -78,6 +78,19 @@ export function ContactForm() {
         </div>
 
         <div>
+          <label htmlFor='phone' className='block text-sm font-medium'>
+            Phone Number
+          </label>
+          <input
+            id='phone'
+            type='tel'
+            {...register('phone')}
+            placeholder='+92 3XX XXXXXXX'
+            className='mt-1 block w-full rounded-md border-gray-300 shadow-sm'
+          />
+        </div>
+
+        <div>
           <label htmlFor='message' className='block text-sm font-medium'>
             Message
           </label>

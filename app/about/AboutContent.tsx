@@ -1,16 +1,8 @@
-'use client'
-
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  Check,
-  ChevronRight,
-  Users,
-  MapPin,
-  Clock,
-  Shield,
-} from 'lucide-react'
+import { Check, ChevronRight, Users, MapPin, Clock, Shield } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { TRUST_POINTS } from '@/lib/constants'
+import OpenContactButton from '@/components/OpenContactButton'
 
 const DIFFERENTIATORS = [
   {
@@ -208,15 +200,7 @@ export default function AboutContent() {
             We&apos;ll assess your current setup, identify the right solution,
             and give you a clear implementation roadmap — no obligation.
           </p>
-          <button
-            onClick={() =>
-              window.dispatchEvent(new Event('open-contact-modal'))
-            }
-            className='px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 hover:-translate-y-0.5 shadow-xl inline-flex items-center gap-2'
-          >
-            Book Free Consultation
-            <ChevronRight className='w-4 h-4' />
-          </button>
+          <OpenContactButton />
         </div>
       </section>
     </main>

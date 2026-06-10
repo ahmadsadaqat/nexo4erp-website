@@ -1,31 +1,18 @@
-'use client'
-
 import { BLOG_POSTS } from '@/lib/constants'
-import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import JsonLd from '@/components/JsonLd'
+import { notFound } from 'next/navigation'
 
-export default function BlogPostPage() {
-  const params = useParams()
+export function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({ id: post.id }))
+}
+
+export default function BlogPostPage({ params }: { params: { id: string } }) {
   const post = BLOG_POSTS.find((p) => p.id === params.id)
 
-  if (!post) {
-    return (
-      <main className='relative z-10 pt-32 pb-20 text-center'>
-        <h1 className='text-3xl font-bold text-gray-900 dark:text-white'>
-          Post not found
-        </h1>
-        <Link
-          href='/blog'
-          className='text-primary-600 hover:text-primary-500 mt-4 inline-block'
-        >
-          ← Back to Blog
-        </Link>
-      </main>
-    )
-  }
+  if (!post) notFound()
 
   return (
     <main className='relative z-10'>

@@ -1,9 +1,8 @@
-'use client'
-
 import { BLOG_POSTS } from '@/lib/constants'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight, Clock, User } from 'lucide-react'
+import OpenContactButton from '@/components/OpenContactButton'
 
 const CATEGORIES = [
   'All',
@@ -157,7 +156,7 @@ export default function BlogListPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* CTA */}
       <section className='py-20 bg-primary-600 dark:bg-primary-900/30'>
         <div className='max-w-4xl mx-auto px-4 text-center'>
           <h2 className='text-3xl font-bold text-white mb-4'>
@@ -167,14 +166,7 @@ export default function BlogListPage() {
             Get the latest ERP insights, industry news, and product updates
             delivered to your inbox.
           </p>
-          <button
-            onClick={() =>
-              window.dispatchEvent(new Event('open-contact-modal'))
-            }
-            className='px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 hover:-translate-y-0.5 shadow-xl'
-          >
-            Get in Touch
-          </button>
+          <OpenContactButton label='Get in Touch' />
         </div>
       </section>
     </main>

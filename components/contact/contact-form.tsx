@@ -31,6 +31,7 @@ export function ContactForm() {
     const payload = {
       name: String(formData.get('name') || '').trim(),
       email: String(formData.get('email') || '').trim(),
+      phone: String(formData.get('phone') || '').trim(),
       message: String(formData.get('message') || '').trim(),
     }
 
@@ -88,6 +89,18 @@ export function ContactForm() {
               required
               aria-required='true'
               autoComplete='email'
+            />
+          </div>
+
+          <div className='grid gap-2'>
+            <Label htmlFor='phone'>Phone Number</Label>
+            <Input
+              id='phone'
+              name='phone'
+              type='tel'
+              inputMode='tel'
+              placeholder='+92 3XX XXXXXXX'
+              autoComplete='tel'
             />
           </div>
 
