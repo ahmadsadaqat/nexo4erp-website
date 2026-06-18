@@ -10,6 +10,7 @@ import BackgroundParticles from '@/components/BackgroundParticles'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ContactModal from '@/components/ContactModal'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal'
 import CookiePolicyModal from '@/components/CookiePolicyModal'
 import TermsModal from '@/components/TermsModal'
@@ -41,7 +42,7 @@ const localBusinessSchema = {
     addressLocality: 'Lahore',
     addressCountry: 'PK',
   },
-  telephone: '+92 322 9400079',
+  telephone: '+92 332 9400079',
 }
 
 export const metadata: Metadata = {
@@ -163,6 +164,7 @@ export default function RootLayout({
             <CookiePolicyModal isArabic={false} />
             <TermsModal isArabic={false} />
             <SpeedInsights />
+            <WhatsAppButton />
             {children}
             <Footer />
           </LanguageProvider>

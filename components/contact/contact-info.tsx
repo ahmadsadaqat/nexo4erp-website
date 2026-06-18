@@ -22,10 +22,10 @@ export function ContactInfo() {
           <p className='text-sm text-muted-foreground'>Phone</p>
           <p className='font-medium'>
             <a
-              href='tel:+923229400079'
+              href='tel:+923329400079'
               className='text-primary hover:underline'
             >
-              +92 322 9400079
+              0332 9400079
             </a>
           </p>
         </div>

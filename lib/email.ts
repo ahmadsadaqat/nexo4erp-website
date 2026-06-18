@@ -28,7 +28,7 @@ export const sendContactEmail = async (formData: {
         time,
         message: formData.message,
       },
-      PUBLIC_KEY
+      PUBLIC_KEY,
     )
     return { success: true, data: response }
   } catch (error) {

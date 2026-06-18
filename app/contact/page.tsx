@@ -16,8 +16,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: 'Call Us',
-    value: '+92 322 9400079',
-    href: 'tel:+923229400079',
+    value: '0332 9400079',
+    href: 'tel:+923329400079',
     color: 'text-emerald-500',
     bg: 'bg-emerald-100 dark:bg-emerald-900/20',
   },
@@ -49,6 +49,7 @@ export default function ContactPage() {
     message: '',
   })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent('Hello, I would like to chat on WhatsApp about NEXO 4 ERP services.')}`
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -131,14 +132,25 @@ export default function ContactPage() {
                   See NEXO 4 ERP live with a personalised walkthrough tailored
                   to your industry.
                 </p>
-                <button
-                  onClick={() =>
-                    window.dispatchEvent(new Event('open-contact-modal'))
-                  }
-                  className='w-full py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300'
-                >
-                  Schedule Demo
-                </button>
+                <div className='grid gap-3 sm:grid-cols-2'>
+                  <button
+                    onClick={() =>
+                      window.dispatchEvent(new Event('open-contact-modal'))
+                    }
+                    className='w-full py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300'
+                  >
+                    Schedule Demo
+                  </button>
+                  <a
+                    href={whatsappLink}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-white/20 bg-emerald-500 text-white font-bold hover:bg-emerald-400 transition-all duration-300'
+                  >
+                    <MessageCircle className='w-4 h-4' />
+                    WhatsApp Chat
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -214,7 +226,7 @@ export default function ContactPage() {
                           type='tel'
                           value={form.whatsapp}
                           onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
-                          placeholder='+92 322 9400079'
+                          placeholder='0332 9400079'
                           className='w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                         />
                       </div>
@@ -240,6 +252,15 @@ export default function ContactPage() {
                     <Send className='w-4 h-4' />
                     Send Message
                   </button>
+                  <a
+                    href={whatsappLink}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-full flex items-center justify-center gap-2 py-4 bg-emerald-500 text-white hover:bg-emerald-400 font-bold rounded-xl shadow-xl shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 text-sm'
+                  >
+                    <MessageCircle className='w-4 h-4' />
+                    WhatsApp Chat
+                  </a>
                 </form>
               </div>
             </div>

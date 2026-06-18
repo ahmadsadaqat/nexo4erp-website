@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     ) {
       return Response.json(
         { error: 'Please provide a valid name, email, phone, and message.' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       console.error('Missing ZOHO_EMAIL_USER or ZOHO_EMAIL_APP_PASS env vars')
       return Response.json(
         { error: 'Email service not configured. Please try again later.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -118,7 +118,11 @@ export async function POST(req: Request) {
 
     const info = await transporter.sendMail(mailOptions)
     if (process.env.NODE_ENV !== 'production') {
-      console.log('[contact] Mail sent', { id: info.messageId, accepted: info.accepted, rejected: info.rejected })
+      console.log('[contact] Mail sent', {
+        id: info.messageId,
+        accepted: info.accepted,
+        rejected: info.rejected,
+      })
     }
 
     return Response.json({ ok: true })
