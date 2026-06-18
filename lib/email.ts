@@ -8,9 +8,15 @@ export const sendContactEmail = async (formData: {
   name: string
   email: string
   phone?: string
+  subject: string
   message: string
 }) => {
   try {
+    const time = new Date().toLocaleString('en-GB', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    })
+
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
@@ -18,6 +24,8 @@ export const sendContactEmail = async (formData: {
         name: formData.name,
         email: formData.email,
         phone: formData.phone || 'Not provided',
+        subject: formData.subject,
+        time,
         message: formData.message,
       },
       PUBLIC_KEY

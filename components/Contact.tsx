@@ -23,7 +23,10 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
     
     try {
       // Use the EmailJS service instead of the old fetch/Formspree
-      const result = await sendContactEmail(formState);
+      const result = await sendContactEmail({
+        ...formState,
+        subject: isArabic ? 'استفسار من نموذج التواصل' : 'Website Contact Form',
+      });
 
       if (result.success) {
         setIsSuccess(true);

@@ -49,7 +49,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
         name: formState.name,
         email: formState.email,
         phone: formState.phone,
-        message: `Subject: ${formState.subject}\n\nMessage: ${formState.message}`
+        subject: formState.subject,
+        message: formState.message,
       });
 
       if (result.success) {
