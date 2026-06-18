@@ -1,6 +1,14 @@
 'use client'
 
-import { ArrowLeft, Mail, Phone, Clock, MapPin, Send, MessageCircle } from 'lucide-react'
+import {
+  ArrowLeft,
+  Mail,
+  Phone,
+  Clock,
+  MapPin,
+  Send,
+  MessageCircle,
+} from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -48,7 +56,9 @@ export default function ContactPage() {
     service: 'ERPNext',
     message: '',
   })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
+    'idle',
+  )
   const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent('Hello, I would like to chat on WhatsApp about NEXO 4 ERP services.')}`
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -102,7 +112,9 @@ export default function ContactPage() {
                   key={item.label}
                   className='bg-white dark:bg-zinc-900 rounded-2xl p-5 border border-gray-100 dark:border-zinc-800 shadow-sm flex items-start gap-4'
                 >
-                  <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center flex-shrink-0`}>
+                  <div
+                    className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center flex-shrink-0`}
+                  >
                     <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
                   <div>
@@ -170,7 +182,9 @@ export default function ContactPage() {
                         type='text'
                         required
                         value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, name: e.target.value })
+                        }
                         placeholder='e.g. Ahmad Sadaqat'
                         className='w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                       />
@@ -183,7 +197,9 @@ export default function ContactPage() {
                         type='email'
                         required
                         value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, email: e.target.value })
+                        }
                         placeholder='you@company.com'
                         className='w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                       />
@@ -196,7 +212,9 @@ export default function ContactPage() {
                     <input
                       type='text'
                       value={form.company}
-                      onChange={(e) => setForm({ ...form, company: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, company: e.target.value })
+                      }
                       placeholder='Your Company Ltd.'
                       className='w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                     />
@@ -208,7 +226,9 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={form.service}
-                        onChange={(e) => setForm({ ...form, service: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, service: e.target.value })
+                        }
                         className='w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                       >
                         <option>ERPNext</option>
@@ -225,7 +245,9 @@ export default function ContactPage() {
                         <input
                           type='tel'
                           value={form.whatsapp}
-                          onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
+                          onChange={(e) =>
+                            setForm({ ...form, whatsapp: e.target.value })
+                          }
                           placeholder='0332 9400079'
                           className='w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm'
                         />
@@ -240,7 +262,9 @@ export default function ContactPage() {
                       required
                       rows={5}
                       value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, message: e.target.value })
+                      }
                       placeholder="Tell us about your business and what you're looking to achieve..."
                       className='w-full px-4 py-3 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all text-sm resize-none'
                     />

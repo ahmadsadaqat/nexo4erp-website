@@ -26,7 +26,9 @@ export default function WhatsAppButton() {
       className='fixed bottom-5 right-5 z-[90] inline-flex items-center gap-3 rounded-full bg-emerald-500 px-4 py-3 text-white shadow-2xl shadow-emerald-500/30 transition-transform duration-300 hover:-translate-y-1 hover:bg-emerald-600 md:bottom-6 md:right-6'
     >
       <MessageCircle className='h-5 w-5' />
-      <span className='hidden sm:inline text-sm font-semibold'>{t.whatsappChat}</span>
+      <span className='hidden sm:inline text-sm font-semibold'>
+        {t.whatsappChat}
+      </span>
     </Link>
   )
 }
