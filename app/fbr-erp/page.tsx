@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'NEXO ERP',
-    images: [{ url: '/og-image.png' }],
     title: 'FBR-Integrated ERP for Pakistan — NexoERP',
     description:
       'Automate FBR digital invoicing, sales tax, withholding tax and payroll compliance in one ERP — built for Pakistani businesses.',

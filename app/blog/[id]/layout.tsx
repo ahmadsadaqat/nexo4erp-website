@@ -23,9 +23,7 @@ export function generateMetadata({
       canonical: `https://www.nexo4erp.com/blog/${post.id}`,
     },
     openGraph: {
-    type: 'website',
-    siteName: 'NEXO ERP',
-    images: [{ url: '/og-image.png' }],
+      siteName: 'NEXO ERP',
       title: `${post.title} | NEXO ERP Blog`,
       description: post.excerpt,
       url: `https://www.nexo4erp.com/blog/${post.id}`,

@@ -24,9 +24,7 @@ export async function generateMetadata({
       canonical: `https://www.nexo4erp.com/industries/${industry.id}`,
     },
     openGraph: {
-    type: 'website',
-    siteName: 'NEXO ERP',
-    images: [{ url: '/og-image.png' }],
+      siteName: 'NEXO ERP',
       title: `${industry.name} ERP Solutions in Pakistan | NEXO ERP`,
       description: industry.description,
       url: `https://www.nexo4erp.com/industries/${industry.id}`,

@@ -10,7 +10,6 @@ const staticRoutes = [
   '/cookie-policy',
   '/faqs',
   '/features',
-  '/industries',
   '/locations',
   '/pricing',
   '/privacy',
@@ -20,6 +19,7 @@ const staticRoutes = [
   '/terms',
   '/testimonials',
   '/fbr-erp',
+  '/blog/erpnext-vs-odoo-pakistan',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     canonical: 'https://www.nexo4erp.com/blog/erpnext-vs-odoo-pakistan',
   },
   openGraph: {
-    type: 'website',
     siteName: 'NEXO ERP',
     images: [{ url: '/og-image.png' }],
     title:
