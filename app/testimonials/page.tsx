@@ -31,7 +31,7 @@ export default function TestimonialsPage() {
             </h1>
             <p className='text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto'>
               See what industry leaders and enterprise teams have to say about
-              their journey with NEXO 4 ERP.
+              their journey with NEXO ERP.
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function TestimonialsPage() {
             Ready to Write Your Success Story?
           </h2>
           <p className='text-gray-600 dark:text-gray-400 mb-8'>
-            Join hundreds of businesses that trust NEXO 4 ERP to run their
+            Join hundreds of businesses that trust NEXO ERP to run their
             operations.
           </p>
           <button

@@ -142,7 +142,7 @@ export default function IndustriesSection() {
             Industries We Serve
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Nexo4 ERP adapts intelligently across sectors—delivering real-time
+            NEXO ERP adapts intelligently across sectors—delivering real-time
             visibility, compliance, and process excellence from the factory floor
             to field service, retail counters, and strategic operations.
           </p>

@@ -74,7 +74,7 @@ export const TRANSLATIONS: any = {
     heroHeadline:
       'ERPNext & Odoo Implementation Services for Pakistani Businesses',
     heroSubheadline:
-      'Nexo4ERP is a Lahore-based ERP implementation company with extensive hands-on Frappe ERPNext and Odoo experience. We help manufacturing, retail, healthcare, and logistics businesses across Pakistan eliminate manual processes, unify operations, and grow \u2014 with open-source ERP that actually fits your business.',
+      'NEXO ERP is a Lahore-based ERP implementation company with extensive hands-on Frappe ERPNext and Odoo experience. We help manufacturing, retail, healthcare, and logistics businesses across Pakistan eliminate manual processes, unify operations, and grow \u2014 with open-source ERP that actually fits your business.',
     solutions: 'Services',
     features: 'Features',
     industries: 'Industries',
@@ -98,7 +98,7 @@ export const TRANSLATIONS: any = {
       'A complete suite of tools designed to optimize every aspect of your business operations.',
     integrationsHeader: 'Seamlessly integrated with your favourite tools',
     trustedClientsHeader: 'Trusted by Industry Leaders',
-    aboutHeader: 'Why Businesses in Pakistan Choose Nexo4ERP',
+    aboutHeader: 'Why Businesses in Pakistan Choose NEXO ERP',
     supportHeader: 'ERPNext & Odoo Questions, Answered',
     supportSub:
       'Clear answers about implementation timelines, migration, compliance, support, and choosing the right ERP for Pakistan.',
@@ -128,12 +128,12 @@ export const TRANSLATIONS: any = {
     testimonialsHeader: 'Testimonials',
     testimonialsSub: 'Chosen By The Best',
     testimonialsDesc:
-      'See what our partners have to say about their journey with Nexo4ERP.',
+      'See what our partners have to say about their journey with NEXO ERP.',
     blogHeader: 'Insights',
     blogSub: 'Latest News & Articles',
     blogDesc:
       'Stay ahead of the curve with expert insights on ERPNext, Odoo, and ERP implementation in Pakistan.',
-    modalConnect: 'Connect with Nexo4ERP',
+    modalConnect: 'Connect with NEXO ERP',
     modalSub: 'Complete the details below to start your journey.',
     modalSubject: 'Subject',
     modalSubjectPlaceholder: 'e.g. ERPNext Implementation',
@@ -145,7 +145,7 @@ export const TRANSLATIONS: any = {
     heroTag: 'شريك تنفيذ ERPNext و Odoo',
     heroHeadline: 'خدمات تنفيذ ERPNext و Odoo للشركات في باكستان',
     heroSubheadline:
-      'Nexo4ERP شركة تنفيذ ERP مقرها لاهور، بخبرة عملية واسعة في Frappe ERPNext و Odoo. نساعد شركات التصنيع والتجزئة والرعاية الصحية والخدمات اللوجستية في باكستان على التخلص من العمل اليدوي وتوحيد العمليات والنمو عبر أنظمة ERP مفتوحة المصدر تناسب طريقة عملها فعلاً.',
+      'NEXO ERP شركة تنفيذ ERP مقرها لاهور، بخبرة عملية واسعة في Frappe ERPNext و Odoo. نساعد شركات التصنيع والتجزئة والرعاية الصحية والخدمات اللوجستية في باكستان على التخلص من العمل اليدوي وتوحيد العمليات والنمو عبر أنظمة ERP مفتوحة المصدر تناسب طريقة عملها فعلاً.',
     solutions: 'الخدمات',
     features: 'المميزات',
     industries: 'الصناعات',
@@ -167,7 +167,7 @@ export const TRANSLATIONS: any = {
       'مجموعة كاملة من الأدوات المصممة لتحسين كل جانب من جوانب عمليات عملك.',
     integrationsHeader: 'تكامل سلس مع أدواتك المفضلة',
     trustedClientsHeader: 'موثوق به من قبل قادة الصناعة',
-    aboutHeader: 'لماذا تختار الشركات في باكستان Nexo4ERP',
+    aboutHeader: 'لماذا تختار الشركات في باكستان NEXO ERP',
     supportHeader: 'أسئلة ERPNext و Odoo، بإجابات واضحة',
     supportSub:
       'إجابات مباشرة حول مدة التنفيذ، نقل البيانات، الامتثال المحلي، الدعم، واختيار نظام ERP الأنسب في باكستان.',
@@ -196,7 +196,7 @@ export const TRANSLATIONS: any = {
     footerLegal: 'قانوني',
     testimonialsHeader: 'آراء العملاء',
     testimonialsSub: 'موثوق به من قبل قادة الصناعة',
-    testimonialsDesc: 'اطلع على ما يقوله شركاؤنا عن رحلتهم مع NEXO 4 ERP.',
+    testimonialsDesc: 'اطلع على ما يقوله شركاؤنا عن رحلتهم مع NEXO ERP.',
     blogHeader: 'رؤى',
     blogSub: 'أحدث الأخبار والمقالات',
     blogDesc:
@@ -335,7 +335,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     solvesDescription:
-      'NEXO 4 ERP integrates manufacturing, inventory, finance, and quality into one cohesive ecosystem. Designed for growing and enterprise-scale manufacturers, it provides the authoritative oversight needed to manage complex multi-level BOMs and high-volume production cycles with absolute confidence.',
+      'NEXO ERP integrates manufacturing, inventory, finance, and quality into one cohesive ecosystem. Designed for growing and enterprise-scale manufacturers, it provides the authoritative oversight needed to manage complex multi-level BOMs and high-volume production cycles with absolute confidence.',
     packages: [
       {
         name: 'Manufacturing Edition Pro',
@@ -452,7 +452,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     solvesDescription:
-      'NEXO 4 ERP connects POS, inventory, finance, and HR in real time—giving retailers complete control across single or multi-store operations. Our unified architecture ensures that every transaction is instantly reflected in your ledger and stock levels.',
+      'NEXO ERP connects POS, inventory, finance, and HR in real time—giving retailers complete control across single or multi-store operations. Our unified architecture ensures that every transaction is instantly reflected in your ledger and stock levels.',
     packages: [
       {
         name: 'Retail Edition Essentials',
@@ -756,7 +756,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     solvesDescription:
-      'Speed and transparency are the pillars of logistics. NEXO 4 ERP automates the heavy lifting of route planning and fleet maintenance, letting you focus on growth.',
+      'Speed and transparency are the pillars of logistics. NEXO ERP automates the heavy lifting of route planning and fleet maintenance, letting you focus on growth.',
     packages: [
       {
         name: 'Logistics Edition Pro',
@@ -1115,7 +1115,7 @@ export const INDUSTRIES: Industry[] = [
       },
     ],
     solvesDescription:
-      'NEXO 4 ERP provides the structural integrity and technical security that financial firms demand. By unifying loan processing, client relationship management, and institutional accounting, we create an immutable audit trail for every transaction.',
+      'NEXO ERP provides the structural integrity and technical security that financial firms demand. By unifying loan processing, client relationship management, and institutional accounting, we create an immutable audit trail for every transaction.',
     packages: [
       {
         name: 'Finance Edition Essentials',
@@ -1431,7 +1431,7 @@ export const TESTIMONIALS: Testimonial[] = [
     image:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80',
     quote:
-      'NEXO 4 ERP transformed our financial closing process from weeks to days. The real-time insights are a game-changer for our strategic planning.',
+      'NEXO ERP transformed our financial closing process from weeks to days. The real-time insights are a game-changer for our strategic planning.',
   },
   {
     name: 'Michael Chen',

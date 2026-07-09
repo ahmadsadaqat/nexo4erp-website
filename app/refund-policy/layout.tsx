@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import type React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Refund Policy | Nexo4ERP',
+  title: 'Refund Policy | NEXO ERP',
   description:
-    'Read the refund policy for Nexo4ERP consulting and implementation services.',
+    'Read the refund policy for NEXO ERP consulting and implementation services.',
   alternates: {
     canonical: 'https://www.nexo4erp.com/refund-policy',
   },

@@ -3,6 +3,16 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      {
+        source: '/blog/1',
+        destination: '/blog/erpnext-vs-odoo-pakistan-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/2',
+        destination: '/blog/erpnext-implementation-cost-pakistan',
+        permanent: true,
+      },
       { source: '/ar', destination: '/', permanent: true },
       { source: '/ar/:path*', destination: '/', permanent: true },
     ]

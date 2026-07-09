@@ -23,7 +23,7 @@ const CITIES = [
 ]
 
 export const metadata: Metadata = {
-  title: 'ERP Services Locations in Pakistan | Nexo4ERP',
+  title: 'ERP Services Locations in Pakistan | NEXO ERP',
   description:
     'Find ERPNext and Odoo services by city across Pakistan, including Lahore, Karachi, and Islamabad.',
   alternates: {

@@ -57,7 +57,7 @@ export const Navbar = () => {
               >
                 <Image
                   src='/nexoerp-black.svg'
-                  alt='Nexo4 ERP Logo'
+                  alt='NEXO ERP Logo'
                   width={136}
                   height={34}
                   className='h-[34px] w-auto dark:hidden'
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 />
                 <Image
                   src='/nexoerp-white.svg'
-                  alt='Nexo4 ERP Logo'
+                  alt='NEXO ERP Logo'
                   width={136}
                   height={34}
                   className='hidden h-[34px] w-auto dark:block'

@@ -20,7 +20,7 @@ export default function RefundPolicyPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">1. Overview</h2>
             <p>
-              At Nexo4 ERP, we are committed to ensuring your complete satisfaction with our products and services.
+              At NEXO ERP, we are committed to ensuring your complete satisfaction with our products and services.
               This Refund & Return Policy outlines the terms and conditions under which refunds and returns are processed
               for our Enterprise Resource Planning (ERP) software solutions and related services.
             </p>
@@ -116,7 +116,7 @@ export default function RefundPolicyPage() {
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li>One-time setup fees</li>
               <li>Data migration services that have been completed</li>
-              <li>Third-party licenses or services purchased through Nexo4 ERP</li>
+              <li>Third-party licenses or services purchased through NEXO ERP</li>
               <li>Subscriptions that have been active for more than 6 months (for annual plans)</li>
               <li>Services rendered and accepted as complete</li>
             </ul>

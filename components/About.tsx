@@ -60,8 +60,8 @@ const About: React.FC<AboutProps> = ({ isArabic }) => {
              <div className="text-lg text-gray-600 dark:text-gray-300 space-y-4 leading-relaxed text-left md:text-center rtl:text-right md:rtl:text-center">
                <p>
                  {isArabic 
-                   ? 'في NEXO 4 ERP، نؤمن بأن التكنولوجيا يجب أن تمكن الشركات لا أن تعقدها. تأسست NEXO 4 ERP برؤية تتمثل في إنشاء منصة ERP متكاملة وسهلة الاستخدام حقًا، وهي تساعد المؤسسات على تحقيق فوضى صفرية - تحكم أقصى في عملياتها.'
-                   : 'At NEXO 4 ERP, we believe that technology should empower businesses, not complicate them. Founded with the vision of creating a truly integrated and user-friendly ERP platform, NEXO 4 ERP helps organizations gain Zero Chaos – Maximum Control over their operations.'
+                   ? 'في NEXO ERP، نؤمن بأن التكنولوجيا يجب أن تمكن الشركات لا أن تعقدها. تأسست NEXO ERP برؤية تتمثل في إنشاء منصة ERP متكاملة وسهلة الاستخدام حقًا، وهي تساعد المؤسسات على تحقيق فوضى صفرية - تحكم أقصى في عملياتها.'
+                   : 'At NEXO ERP, we believe that technology should empower businesses, not complicate them. Founded with the vision of creating a truly integrated and user-friendly ERP platform, NEXO ERP helps organizations gain Zero Chaos – Maximum Control over their operations.'
                  }
                </p>
                <p>
@@ -131,7 +131,7 @@ const About: React.FC<AboutProps> = ({ isArabic }) => {
                      </div>
                      <div className="flex-1 order-2 md:order-3 rtl:text-right md:rtl:text-left">
                          <h5 className="text-xl font-bold text-gray-900 dark:text-white">{isArabic ? 'أكتوبر 2025: التحول' : 'Oct 2025: The Pivot'}</h5>
-                         <p className="text-gray-600 dark:text-gray-400 mt-2">{isArabic ? 'الانتقال إلى نموذج SaaS ، وإطلاق منصة NEXO 4 ERP السحابية الأساسية ، وجلب ERP للشركات في أي مكان وفي أي وقت.' : 'Transitioned to a SaaS model, launching the core NEXO 4 ERP cloud platform, bringing ERP to businesses anywhere, anytime.'}</p>
+                         <p className="text-gray-600 dark:text-gray-400 mt-2">{isArabic ? 'الانتقال إلى نموذج SaaS ، وإطلاق منصة NEXO ERP السحابية الأساسية ، وجلب ERP للشركات في أي مكان وفي أي وقت.' : 'Transitioned to a SaaS model, launching the core NEXO ERP cloud platform, bringing ERP to businesses anywhere, anytime.'}</p>
                      </div>
                  </div>
                   {/* Nov 2025: Full-Suite Launch */}
@@ -195,7 +195,7 @@ const About: React.FC<AboutProps> = ({ isArabic }) => {
         {/* Why Choose Nexo4 */}
         <div className="mb-20">
             <ScrollReveal>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-10 text-center">{isArabic ? 'لماذا تختار NEXO 4 ERP؟' : 'Why Choose NEXO 4 ERP?'}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-10 text-center">{isArabic ? 'لماذا تختار NEXO ERP؟' : 'Why Choose NEXO ERP?'}</h3>
             </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
@@ -265,8 +265,8 @@ const About: React.FC<AboutProps> = ({ isArabic }) => {
                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">{isArabic ? 'بني من أجل الوضوح، صمم من أجل النمو.' : 'Built for clarity, designed for growth.'}</h3>
                <p className="text-primary-100 dark:text-gray-300 mb-8 max-w-2xl mx-auto relative z-10 text-lg">
                   {isArabic 
-                    ? 'سواء كنت تستبدل جداول البيانات أو تقوم بالترقية من الأنظمة القديمة ، فإن NEXO 4 ERP يمنحك التحكم والوضوح وقابلية التوسع التي تحتاجها للعمل بثقة.'
-                    : 'Whether you are replacing spreadsheets or upgrading from outdated systems, NEXO 4 ERP gives you the control, visibility, and scalability you need to operate with confidence.'
+                    ? 'سواء كنت تستبدل جداول البيانات أو تقوم بالترقية من الأنظمة القديمة ، فإن NEXO ERP يمنحك التحكم والوضوح وقابلية التوسع التي تحتاجها للعمل بثقة.'
+                    : 'Whether you are replacing spreadsheets or upgrading from outdated systems, NEXO ERP gives you the control, visibility, and scalability you need to operate with confidence.'
                   }
                </p>
                

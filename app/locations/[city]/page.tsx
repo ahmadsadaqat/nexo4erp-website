@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 const CITY_PAGES = {
   lahore: {
     name: 'Lahore',
-    title: 'ERPNext & Odoo Consultants in Lahore | Nexo4ERP',
+    title: 'ERPNext & Odoo Consultants in Lahore | NEXO ERP',
     description:
       'ERP implementation, migration, customization, and support services for businesses in Lahore.',
     content:
@@ -13,7 +13,7 @@ const CITY_PAGES = {
   },
   karachi: {
     name: 'Karachi',
-    title: 'ERPNext & Odoo Consultants in Karachi | Nexo4ERP',
+    title: 'ERPNext & Odoo Consultants in Karachi | NEXO ERP',
     description:
       'ERPNext and Odoo consulting services for companies operating in Karachi and surrounding areas.',
     content:
@@ -21,7 +21,7 @@ const CITY_PAGES = {
   },
   islamabad: {
     name: 'Islamabad',
-    title: 'ERPNext & Odoo Consultants in Islamabad | Nexo4ERP',
+    title: 'ERPNext & Odoo Consultants in Islamabad | NEXO ERP',
     description:
       'ERP implementation and support for companies in Islamabad looking to modernize operations with ERPNext or Odoo.',
     content:
@@ -29,16 +29,17 @@ const CITY_PAGES = {
   },
 } as const
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { city: string }
-}): Metadata {
-  const city = CITY_PAGES[params.city as keyof typeof CITY_PAGES]
+  params: Promise<{ city: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const city = CITY_PAGES[resolvedParams.city as keyof typeof CITY_PAGES]
 
   if (!city) {
     return {
-      title: 'Location Not Found | Nexo4ERP',
+      title: 'Location Not Found | NEXO ERP',
       description: 'The requested location page was not found.',
     }
   }
@@ -47,7 +48,7 @@ export function generateMetadata({
     title: city.title,
     description: city.description,
     alternates: {
-      canonical: `https://www.nexo4erp.com/locations/${params.city}`,
+      canonical: `https://www.nexo4erp.com/locations/${resolvedParams.city}`,
     },
   }
 }
@@ -56,8 +57,9 @@ export function generateStaticParams() {
   return Object.keys(CITY_PAGES).map((city) => ({ city }))
 }
 
-export default function CityPage({ params }: { params: { city: string } }) {
-  const city = CITY_PAGES[params.city as keyof typeof CITY_PAGES]
+export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
+  const resolvedParams = await params;
+  const city = CITY_PAGES[resolvedParams.city as keyof typeof CITY_PAGES]
 
   if (!city) notFound()
 

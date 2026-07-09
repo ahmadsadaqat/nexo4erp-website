@@ -9,8 +9,9 @@ export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ id: post.id }))
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = BLOG_POSTS.find((p) => p.id === params.id)
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.id === resolvedParams.id)
 
   if (!post) notFound()
 

@@ -11,19 +11,22 @@ export function generateMetadata({
 
   if (!post) {
     return {
-      title: 'Blog Post Not Found | Nexo4ERP',
+      title: 'Blog Post Not Found | NEXO ERP',
       description: 'The requested blog post could not be found.',
     }
   }
 
   return {
-    title: `${post.title} | Nexo4ERP Blog`,
+    title: `${post.title} | NEXO ERP Blog`,
     description: post.excerpt,
     alternates: {
       canonical: `https://www.nexo4erp.com/blog/${post.id}`,
     },
     openGraph: {
-      title: `${post.title} | Nexo4ERP Blog`,
+    type: 'website',
+    siteName: 'NEXO ERP',
+    images: [{ url: '/og-image.png' }],
+      title: `${post.title} | NEXO ERP Blog`,
       description: post.excerpt,
       url: `https://www.nexo4erp.com/blog/${post.id}`,
       type: 'article',

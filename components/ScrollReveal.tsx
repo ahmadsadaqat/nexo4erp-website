@@ -45,7 +45,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = "", d
       // Initial state: opacity-0, blur, translate-y-8 (starts slightly down)
       // Final state: opacity-100, no blur, translate-y-0
       className={`
-        transform transition-all duration-1000 ease-in-out will-change-[transform,opacity,filter]
+        transform transition duration-1000 ease-in-out will-change-[transform,opacity,filter]
         ${width === 'full' ? 'w-full' : 'w-auto'}
         ${className}
         ${isVisible 

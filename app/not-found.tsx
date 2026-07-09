@@ -3,7 +3,7 @@ import { ArrowLeft, Home, Search } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Page Not Found | Nexo4ERP',
+  title: 'Page Not Found | NEXO ERP',
   description: 'The page you are looking for could not be found.',
   robots: { index: false, follow: false },
 }
@@ -50,7 +50,7 @@ export default function NotFound() {
           </p>
           <div className='flex flex-wrap gap-3 justify-center'>
             {[
-              { label: 'ERPNext Services', href: '/services/erpnext' },
+              { label: 'ERPNext Services', href: '/services/erpnext-pakistan' },
               { label: 'Odoo Services', href: '/services/odoo' },
               { label: 'Industries', href: '/industries' },
               { label: 'Pricing', href: '/pricing' },

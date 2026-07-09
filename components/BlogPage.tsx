@@ -58,8 +58,8 @@ const BlogPage: React.FC<BlogPageProps> = ({
     const shareUrl = `${window.location.origin}/?blogId=${selectedPost?.id}`
 
     const shareData = {
-      title: selectedPost?.title || 'NEXO 4 ERP Insights',
-      text: selectedPost?.excerpt || 'Check out this article from NEXO 4 ERP',
+      title: selectedPost?.title || 'NEXO ERP Insights',
+      text: selectedPost?.excerpt || 'Check out this article from NEXO ERP',
       url: shareUrl,
     }
 

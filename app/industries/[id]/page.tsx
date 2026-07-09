@@ -9,8 +9,9 @@ export function generateStaticParams() {
   return INDUSTRIES.map((industry) => ({ id: industry.id }))
 }
 
-export default function IndustryDetailPage({ params }: { params: { id: string } }) {
-  const industry = INDUSTRIES.find((ind) => ind.id === params.id)
+export default async function IndustryDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const industry = INDUSTRIES.find((ind) => ind.id === resolvedParams.id)
 
   if (!industry) notFound()
 

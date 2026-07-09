@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from 'react'
 import { Menu, X, Moon, Sun, Languages, ChevronDown } from 'lucide-react'
-import { TRANSLATIONS } from '@/lib/constants'
+import { TRANSLATIONS, INDUSTRIES } from '@/lib/constants'
 import { useLanguage } from '@/components/language-provider'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,6 +15,8 @@ const Navbar: React.FC = () => {
   const { isArabic, toggleLanguage } = useLanguage()
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false)
   const pathname = usePathname()
   useEffect(() => {
     setMounted(true)
@@ -41,13 +44,13 @@ const Navbar: React.FC = () => {
   const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
 
   const serviceLinks = [
-    { name: 'ERPNext', href: '/services/erpnext' },
+    { name: 'ERPNext', href: '/services/erpnext-pakistan' },
     { name: 'Odoo', href: '/services/odoo' },
+    { name: 'FBR Integration', href: '/fbr-erp' },
   ]
 
   const navLinks = [
     { name: t.features, href: '/features' },
-    { name: t.industries, href: '/industries' },
     { name: t.editions, href: '/pricing' },
     { name: t.blog, href: '/blog' },
     { name: t.about, href: '/about' },
@@ -69,15 +72,26 @@ const Navbar: React.FC = () => {
           className='flex items-center cursor-pointer'
           onClick={handleLogoClick}
         >
-          {mounted && (
-            <img
-              src={isDark ? '/White-logo.png' : '/LOGO.png'}
-              alt='Nexo ERP'
-              className={`w-auto transition-all duration-300 ${
-                isScrolled ? 'h-8 md:h-9' : 'h-10 md:h-12'
-              }`}
-            />
-          )}
+          <Image
+            src='/nexoerp-black.svg'
+            alt='Nexo ERP'
+            width={150}
+            height={48}
+            className={`w-auto transition-all duration-300 dark:hidden ${
+              isScrolled ? 'h-8 md:h-9' : 'h-10 md:h-12'
+            }`}
+            priority
+          />
+          <Image
+            src='/nexoerp-white.svg'
+            alt='Nexo ERP'
+            width={150}
+            height={48}
+            className={`w-auto transition-all duration-300 hidden dark:block ${
+              isScrolled ? 'h-8 md:h-9' : 'h-10 md:h-12'
+            }`}
+            priority
+          />
         </a>
 
         {/* Desktop Links */}
@@ -101,9 +115,46 @@ const Navbar: React.FC = () => {
                 <Link
                   key={service.href}
                   href={service.href}
+                  onClick={() => {
+                    if (document.activeElement instanceof HTMLElement) {
+                      document.activeElement.blur()
+                    }
+                  }}
                   className='block rounded-xl px-4 py-3 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
                 >
                   {service.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className='relative group'>
+            <button
+              type='button'
+              aria-haspopup='true'
+              aria-expanded='false'
+              className={`font-bold text-[12px] uppercase tracking-widest transition-colors duration-150 hover:text-primary-600 inline-flex items-center gap-1 ${
+                pathname.startsWith('/industries')
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-gray-900 dark:text-gray-100'
+              }`}
+            >
+              {t.industries}
+              <ChevronDown className='h-3.5 w-3.5 transition-transform group-hover:rotate-180' />
+            </button>
+            <div className='invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-2xl border border-gray-200/70 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 p-2 shadow-xl backdrop-blur-xl transition-all'>
+              {INDUSTRIES.map((industry) => (
+                <Link
+                  key={industry.id}
+                  href={`/industries/${industry.id}`}
+                  onClick={() => {
+                    if (document.activeElement instanceof HTMLElement) {
+                      document.activeElement.blur()
+                    }
+                  }}
+                  className='block rounded-xl px-4 py-3 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
+                >
+                  {industry.name}
                 </Link>
               ))}
             </div>
@@ -166,18 +217,29 @@ const Navbar: React.FC = () => {
 
       {/* FULL SCREEN MOBILE OVERLAY */}
       <div
-        className={`fixed inset-0 h-screen w-full bg-white dark:bg-zinc-950 z-[120] transition-all duration-500 md:hidden pointer-events-auto ${
+        className={`fixed inset-0 h-screen w-full bg-white dark:bg-zinc-950 z-[120] transition-all duration-500 md:hidden pointer-events-auto overflow-y-auto ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
         <div className='flex items-center justify-between px-8 py-8 w-full'>
-          {mounted && (
-            <img
-              src={isDark ? '/White-logo.png' : '/LOGO.png'}
+          <>
+            <Image
+              src='/nexoerp-black.svg'
               alt='Nexo ERP'
-              className='h-10 w-auto'
+              width={150}
+              height={40}
+              className='h-10 w-auto dark:hidden'
+              priority
             />
-          )}
+            <Image
+              src='/nexoerp-white.svg'
+              alt='Nexo ERP'
+              width={150}
+              height={40}
+              className='h-10 w-auto hidden dark:block'
+              priority
+            />
+          </>
           <div className='flex items-center space-x-6'>
             <button
               onClick={() => setTheme(isDark ? 'light' : 'dark')}
@@ -201,12 +263,16 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className='flex flex-col items-center justify-center flex-grow space-y-8 px-6 mt-10'>
-          <div className='text-center space-y-4'>
-            <p className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter'>
+        <div className='flex flex-col items-center justify-center flex-grow space-y-8 px-6 mt-10 pb-24'>
+          <div className='w-full text-center'>
+            <button
+              onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+              className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter flex items-center justify-center gap-2 w-full focus:outline-none'
+            >
               {t.solutions}
-            </p>
-            <div className='flex flex-col gap-3'>
+              <ChevronDown className={`w-6 h-6 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileSolutionsOpen ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
               {serviceLinks.map((service) => (
                 <Link
                   key={service.href}
@@ -215,6 +281,28 @@ const Navbar: React.FC = () => {
                   className='text-lg font-bold text-primary-600 dark:text-primary-400'
                 >
                   {service.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className='w-full text-center'>
+            <button
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter flex items-center justify-center gap-2 w-full focus:outline-none'
+            >
+              {t.industries}
+              <ChevronDown className={`w-6 h-6 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileIndustriesOpen ? 'max-h-[800px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+              {INDUSTRIES.map((industry) => (
+                <Link
+                  key={industry.id}
+                  href={`/industries/${industry.id}`}
+                  onClick={() => setIsOpen(false)}
+                  className='text-lg font-bold text-primary-600 dark:text-primary-400'
+                >
+                  {industry.name}
                 </Link>
               ))}
             </div>

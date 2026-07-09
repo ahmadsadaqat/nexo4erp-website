@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     }
 
     const mailOptions = {
-      from: `Nexo4ERP Contact <${user}>`,
+      from: `NEXO ERP Contact <${user}>`,
       to: process.env.ZOHO_EMAIL_TO || 'admin@nexo4erp.com',
       subject: `New Message from ${name}`,
       replyTo: email,
@@ -109,7 +109,7 @@ export async function POST(req: Request) {
             </div>
 
             <div style="text-align:center; color:#94a3b8; font-size:12px; padding:14px 0 0;">
-              Sent from the Nexo4ERP contact form
+              Sent from the NEXO ERP contact form
             </div>
           </div>
         </div>

@@ -14,23 +14,15 @@ import {
   FileText,
   Settings,
 } from 'lucide-react'
-import ScrollReveal from '@/components/ScrollReveal'
+
 import { TRANSLATIONS } from '@/lib/constants'
+import Image from 'next/image'
 
 interface HeroProps {
   isArabic: boolean
 }
 
 const Hero: React.FC<HeroProps> = ({ isArabic }) => {
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const openModal = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -49,17 +41,14 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
     <section className='relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-transparent dark:bg-transparent'>
       {/* Background Elements with Parallax Effect */}
       <div
-        className='absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-100 dark:bg-primary-900/10 rounded-full blur-3xl opacity-50 z-0 will-change-transform transition-transform duration-75 ease-out'
-        style={{ transform: `translate3d(0, ${scrollY * 0.3}px, 0)` }}
+        className='absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-100 dark:bg-primary-900/10 rounded-full blur-3xl opacity-50 z-0'
       />
       <div
-        className='absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-primary-100 dark:bg-primary-900/10 rounded-full blur-3xl opacity-50 z-0 will-change-transform transition-transform duration-75 ease-out'
-        style={{ transform: `translate3d(0, ${scrollY * -0.2}px, 0)` }}
+        className='absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-primary-100 dark:bg-primary-900/10 rounded-full blur-3xl opacity-50 z-0'
       />
 
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
-        <ScrollReveal>
-          <div className='text-center max-w-4xl mx-auto'>
+          <div className='text-center max-w-4xl mx-auto animate-fade-in-up'>
             <div className='inline-flex items-center px-4 py-2 rounded-full bg-primary-50 dark:bg-zinc-900 text-primary-600 dark:text-primary-400 font-medium text-sm mb-8 border border-transparent dark:border-zinc-800'>
               <span className='w-2 h-2 rounded-full bg-primary-600 mx-2 animate-pulse'></span>
               {t.heroTag}
@@ -77,27 +66,28 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
               <a
                 href='#'
                 onClick={openModal}
-                className='w-full sm:w-auto px-10 py-5 bg-primary hover:bg-[#366872] text-white text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3'
+                className='w-full sm:w-auto px-10 py-5 bg-primary hover:bg-[#366872] text-white text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary/50 transition duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3'
               >
                 {t.demo}
                 <ChevronRight className='w-6 h-6 rtl:rotate-180' />
               </a>
             </div>
           </div>
-        </ScrollReveal>
 
         {/* Dashboard Preview / Visual */}
-        <ScrollReveal delay={200}>
-          <div className='mt-16 md:mt-24 relative rounded-xl bg-gray-900/70 dark:bg-[#0f1115]/60 backdrop-blur-xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/30 mx-auto max-w-6xl group hover:shadow-primary-500/10 transition-all duration-500'>
+          <div className='mt-16 md:mt-24 relative rounded-xl bg-gray-900/70 dark:bg-[#0f1115]/60 backdrop-blur-xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/30 mx-auto max-w-6xl group hover:shadow-primary-500/10 transition-all duration-500 animate-fade-in-up' style={{ animationDelay: '200ms' }}>
             <div className='flex h-auto md:h-[650px] text-gray-400 font-sans text-xs md:text-sm'>
               {/* Mock Sidebar */}
               <div className='w-60 bg-transparent border-r rtl:border-r-0 rtl:border-l border-gray-200/20 dark:border-gray-800/50 hidden md:flex flex-col flex-shrink-0'>
                 {/* Logo Section */}
                 <div className='p-6 mb-2'>
-                  <img
-                    src='/White-logo.png'
+                  <Image
+                    src='/nexoerp-white.svg'
                     alt='NEXO Logo'
+                    width={100}
+                    height={32}
                     className='h-8 w-auto object-contain'
+                    priority
                   />
                 </div>
 
@@ -181,7 +171,7 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
                   {/* Graphs Grid */}
                   <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8'>
                     {/* Main Revenue Chart */}
-                    <div className='lg:col-span-2 bg-white/5 p-5 rounded-lg border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all'>
+                    <div className='lg:col-span-2 bg-white/5 p-5 rounded-lg border border-white/10 backdrop-blur-sm hover:border-white/20 transition'>
                       <div className='flex justify-between items-start mb-6'>
                         <div>
                           <h4 className='text-white font-medium text-sm'>
@@ -272,7 +262,7 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
                     </div>
 
                     {/* Activity Bar Chart */}
-                    <div className='bg-white/5 p-5 rounded-lg border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all flex flex-col'>
+                    <div className='bg-white/5 p-5 rounded-lg border border-white/10 backdrop-blur-sm hover:border-white/20 transition flex flex-col'>
                       <div className='mb-6'>
                         <h4 className='text-white font-medium text-sm'>
                           Weekly Activity
@@ -282,17 +272,17 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
                         </p>
                       </div>
                       <div className='flex-1 flex items-end justify-between gap-2 h-48 px-2'>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[40%] hover:bg-[#42808b] transition-all'></div>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[65%] hover:bg-[#42808b] transition-all'></div>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[30%] hover:bg-[#42808b] transition-all'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[40%] hover:bg-[#42808b] transition'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[65%] hover:bg-[#42808b] transition'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[30%] hover:bg-[#42808b] transition'></div>
                         <div className='w-full bg-[#42808b] rounded-t-sm h-[85%] relative group'>
                           <div className='absolute -top-6 left-1/2 -translate-x-1/2 bg-white text-black text-[9px] px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity'>
                             85%
                           </div>
                         </div>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[50%] hover:bg-[#42808b] transition-all'></div>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[60%] hover:bg-[#42808b] transition-all'></div>
-                        <div className='w-full bg-[#366872] rounded-t-sm h-[45%] hover:bg-[#42808b] transition-all'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[50%] hover:bg-[#42808b] transition'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[60%] hover:bg-[#42808b] transition'></div>
+                        <div className='w-full bg-[#366872] rounded-t-sm h-[45%] hover:bg-[#42808b] transition'></div>
                       </div>
                       <div className='flex justify-between text-[10px] text-gray-500 mt-2'>
                         <span>M</span>
@@ -473,7 +463,6 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
               </div>
             </div>
           </div>
-        </ScrollReveal>
       </div>
     </section>
   )

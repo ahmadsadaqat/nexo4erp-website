@@ -73,7 +73,7 @@ export default function AboutContent() {
           </Link>
           <div className='text-center max-w-4xl mx-auto'>
             <h2 className='text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-3'>
-              About Nexo4ERP
+              About NEXO ERP
             </h2>
             <h1 className='text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6'>
               Pakistan&apos;s ERPNext & Odoo{' '}
@@ -93,7 +93,7 @@ export default function AboutContent() {
           </h2>
           <div className='space-y-6 text-gray-600 dark:text-gray-400 text-lg leading-relaxed'>
             <p>
-              Nexo4ERP was founded with a straightforward belief: Pakistani
+              NEXO ERP was founded with a straightforward belief: Pakistani
               businesses deserve enterprise-grade ERP without enterprise-grade
               licensing costs. For many years, we&apos;ve been implementing
               Frappe ERPNext and Odoo for businesses across Pakistan — cutting
@@ -139,7 +139,7 @@ export default function AboutContent() {
       <section className='py-16 bg-white dark:bg-zinc-950'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-gray-900 dark:text-white mb-8'>
-            Why Businesses in Pakistan Choose Nexo4ERP
+            Why Businesses in Pakistan Choose NEXO ERP
           </h2>
           <div className='space-y-4'>
             {TRUST_POINTS.map((point, idx) => (

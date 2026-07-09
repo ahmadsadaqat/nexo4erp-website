@@ -5,11 +5,14 @@ export const metadata: Metadata = {
   title:
     'ERPNext vs Odoo in Pakistan — Which ERP Should You Choose? (2025)',
   description:
-    'Comparing ERPNext and Odoo for Pakistani businesses? We break down cost, features, customization, local support, and which industries each suits best. Honest comparison from a team that implements both.',
+    'Comparing ERPNext vs Odoo for Pakistani businesses? We break down costs, features & local support. Honest comparison from a team that implements both.',
   alternates: {
     canonical: 'https://www.nexo4erp.com/blog/erpnext-vs-odoo-pakistan',
   },
   openGraph: {
+    type: 'website',
+    siteName: 'NEXO ERP',
+    images: [{ url: '/og-image.png' }],
     title:
       'ERPNext vs Odoo in Pakistan — Which ERP Should You Choose? (2025)',
     description:

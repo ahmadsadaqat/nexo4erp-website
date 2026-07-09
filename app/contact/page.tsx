@@ -59,7 +59,7 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
   )
-  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent('Hello, I would like to chat on WhatsApp about NEXO 4 ERP services.')}`
+  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent('Hello, I would like to chat on WhatsApp about NEXO ERP services.')}`
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -141,7 +141,7 @@ export default function ContactPage() {
               <div className='bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-6 text-white'>
                 <h3 className='font-bold text-lg mb-2'>Book a Free Demo</h3>
                 <p className='text-primary-100 text-sm mb-4'>
-                  See NEXO 4 ERP live with a personalised walkthrough tailored
+                  See NEXO ERP live with a personalised walkthrough tailored
                   to your industry.
                 </p>
                 <div className='grid gap-3 sm:grid-cols-2'>

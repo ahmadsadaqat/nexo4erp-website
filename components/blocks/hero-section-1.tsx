@@ -85,7 +85,7 @@ export function HeroSection() {
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
                     href='#link'
-                    className='hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950'
+                    className='hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition duration-300 dark:border-t-white/5 dark:shadow-zinc-950'
                   >
                     <span className='text-foreground text-sm'>
                       Introducing Support for ERP Software
@@ -199,7 +199,7 @@ export function HeroSection() {
                 <ChevronRight className='ml-1 inline-block size-3' />
               </Link>
             </div>
-            <div className='group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14'>
+            <div className='group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14'>
               <div className='flex'>
                 <Image
                   className='mx-auto h-5 w-fit dark:invert'
@@ -307,7 +307,7 @@ export function HeroSection() {
                   {/* Manufacturing */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -333,7 +333,7 @@ export function HeroSection() {
                   {/* Financial Services */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -360,7 +360,7 @@ export function HeroSection() {
                   {/* Healthcare */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -387,7 +387,7 @@ export function HeroSection() {
                   {/* Hospitality */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -415,7 +415,7 @@ export function HeroSection() {
                   {/* Online Retail */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <Image
                           src='/globe.svg'
                           alt='Online'
@@ -437,7 +437,7 @@ export function HeroSection() {
                   {/* Ecommerce */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -464,7 +464,7 @@ export function HeroSection() {
                   {/* Education */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -490,7 +490,7 @@ export function HeroSection() {
                   {/* Transport & Logistics */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -519,7 +519,7 @@ export function HeroSection() {
                   {/* Oil & Gas */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -545,7 +545,7 @@ export function HeroSection() {
                   {/* Mining */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -571,7 +571,7 @@ export function HeroSection() {
                   {/* Trading & Distribution */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'
@@ -598,7 +598,7 @@ export function HeroSection() {
                   {/* Construction */}
                   <div className='group/card rounded-2xl border border-slate-200/80 dark:border-slate-700/50 bg-white dark:bg-slate-800/80 p-6 shadow-sm hover:shadow-xl hover:border-teal-500/30 duration-300 backdrop-blur-sm hover:-translate-y-1'>
                     <div className='mb-5'>
-                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition-all'>
+                      <span className='inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-teal-600 dark:text-teal-400 ring-1 ring-teal-500/20 group-hover/card:ring-teal-500/40 transition'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 24 24'

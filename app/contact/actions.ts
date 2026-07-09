@@ -32,7 +32,7 @@ export async function submitContactForm(data: ContactFormData): Promise<FormStat
     }
 
     const mailOptions = {
-      from: `Nexo4ERP Contact <${user}>`,
+      from: `NEXO ERP Contact <${user}>`,
       to: process.env.ZOHO_EMAIL_TO || "admin@nexo4erp.com",
       subject: `New Message from ${result.data.name}`,
       replyTo: result.data.email,

@@ -40,8 +40,7 @@ const Integrations: React.FC<IntegrationsProps> = ({ isArabic }) => {
                     alt={app.name}
                     width={120}
                     height={48}
-                    className='max-h-12 w-auto object-contain transition-all duration-300'
-                    style={{ width: 'auto', height: 'auto' }}
+                    className='max-h-12 w-auto h-auto object-contain transition-all duration-300'
                   />
                 </div>
                 {/* Name below */}

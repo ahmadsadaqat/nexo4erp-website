@@ -5,13 +5,14 @@ import Image from 'next/image'
 import { TRANSLATIONS } from '@/lib/constants'
 
 const ClientLogo = ({ src, alt }: { src: string; alt: string }) => (
-  <div className='flex items-center px-8 md:px-12 transition-all duration-300 transform cursor-pointer hover:scale-110 hover:z-30 relative shrink-0'>
-    <Image
+  <div className='flex items-center px-8 md:px-12 transition duration-300 transform cursor-pointer hover:scale-110 hover:z-30 relative shrink-0'>
+    <img
       src={src}
       alt={alt}
       width={200}
       height={80}
-      className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition-all duration-300 dark:brightness-110'
+      loading="eager"
+      className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition duration-300 dark:brightness-110'
     />
   </div>
 )
@@ -26,10 +27,10 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
   const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
 
   const logos = [
-    { src: '/Vital.png', alt: 'Vital' },
-    { src: '/Lal.png', alt: 'Lal Khan' },
-    { src: '/United.png', alt: 'United' },
-    { src: '/saheeb.png', alt: 'Saheeb Trading' },
+    { src: '/Vital-petroleum.svg', alt: 'Vital petroleum' },
+    { src: '/lalkhan-oil-mill.svg', alt: 'Lal Khan oil mill' },
+    { src: '/united-bakers-and-sweets.svg', alt: 'United bakers and sweets' },
+    { src: '/saheeb-trading-company.svg', alt: 'Saheeb Trading' },
   ]
 
   // Compliance Data
@@ -42,7 +43,7 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
       link: '#',
     },
     {
-      src: '/FBR.png',
+      src: '/FBR.svg',
       alt: 'FBR',
       label: isArabic ? 'فواتير إلكترونية معتمدة' : 'Authorized E-Invoicing',
       link: '#',
@@ -63,10 +64,9 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
         <div className='absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-gray-50 dark:from-black to-transparent z-10'></div>
         <div className='absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-gray-50 dark:from-black to-transparent z-10'></div>
 
-        {/* Animating Track - duplicated for seamless loop */}
-        <div className='flex animate-scroll-right whitespace-nowrap py-8 hover:[animation-play-state:paused]'>
+        <div className='flex animate-scroll-right whitespace-nowrap py-8 hover:[animation-play-state:paused] will-change-transform'>
           {/* Using a larger multiplier to ensure the track is long enough for the slow 80s scroll */}
-          {[...Array(8)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <div key={i} className='flex items-center'>
               {logos.map((logo, index) => (
                 <ClientLogo
@@ -89,21 +89,21 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
               href={item.link}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex flex-col items-center group transition-all duration-500'
+              className='flex flex-col items-center group transition duration-500'
             >
               <div className='relative'>
                 {item.alt === 'PSEB' ? (
                   <>
                     <Image
-                      src='/PSEB.png'
-                      alt='PSEB'
+                      src='/PSEB.svg'
+                      alt='pakistan software export board'
                       width={280}
                       height={112}
                       className='h-20 md:h-28 w-auto block dark:hidden group-hover:scale-110 transition-transform drop-shadow-lg'
                     />
                     <Image
-                      src='/White-PSEB.png'
-                      alt='PSEB'
+                      src='/White-PSEB.svg'
+                      alt='pakistan software export board'
                       width={280}
                       height={112}
                       className='h-20 md:h-28 w-auto hidden dark:block group-hover:scale-110 transition-transform drop-shadow-lg'

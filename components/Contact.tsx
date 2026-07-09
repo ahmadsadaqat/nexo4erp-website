@@ -61,7 +61,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
   }
 
   const rawPhoneNumber = '+923329400079'
-  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent(isArabic ? 'مرحباً، أود الاستفسار عن حلول NEXO 4 ERP.' : 'Hello, I would like to inquire about NEXO 4 ERP solutions.')}`
+  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent(isArabic ? 'مرحباً، أود الاستفسار عن حلول NEXO ERP.' : 'Hello, I would like to inquire about NEXO ERP solutions.')}`
 
   return (
     <section
@@ -128,7 +128,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                     <a
                       href={whatsappLink}
                       target='_blank'
-                      rel='noopener noreferrer'
+                      rel='noopener noreferrer nofollow'
                       className='flex items-center justify-center gap-2 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-sm transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-600/20 active:scale-95'
                     >
                       <MessageCircle size={18} /> WhatsApp

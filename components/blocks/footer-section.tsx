@@ -75,6 +75,7 @@ export function Footer() {
             alt='Nexo ERP'
             width={200}
             height={200}
+            className='w-auto h-auto'
           />
           <p className='text-muted-foreground mt-8 text-sm md:mt-0'>
             Engineering the next wave of intelligent enterprises through a fully
@@ -82,7 +83,7 @@ export function Footer() {
             frictionless digital commerce.
           </p>
           <p className='text-muted-foreground text-sm'>
-            © {new Date().getFullYear()} NEXO 4 ERP. All rights reserved.
+            © {new Date().getFullYear()} NEXO ERP. All rights reserved.
           </p>
         </AnimatedContainer>
 

@@ -5,6 +5,7 @@ import TrustedClients from '@/components/TrustedClients'
 import Solutions, { PakistanTrustSection } from '@/components/Solutions'
 import Industries from '@/components/Industries'
 import Integrations from '@/components/Integrations'
+import FbrIntegrationBanner from '@/components/FbrIntegrationBanner'
 import Features from '@/components/Features'
 import Testimonials from '@/components/Testimonials'
 import Packages from '@/components/Packages'
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Hero isArabic={isArabic} />
       <TrustedClients isArabic={isArabic} />
       <Solutions isArabic={isArabic} />
+      <FbrIntegrationBanner isArabic={isArabic} />
       <PakistanTrustSection isArabic={isArabic} />
       <Industries onSelectIndustry={() => {}} isArabic={isArabic} />
       <Integrations isArabic={isArabic} />

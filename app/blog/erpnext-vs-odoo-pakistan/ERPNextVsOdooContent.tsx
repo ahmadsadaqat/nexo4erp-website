@@ -86,7 +86,7 @@ export default function ERPNextVsOdooContent() {
             Pakistan. So which one should you choose?
           </p>
           <p className='text-gray-500 dark:text-gray-500 mt-4'>
-            We implement both at Nexo4ERP — so this isn&apos;t a sales pitch for
+            We implement both at NEXO ERP — so this isn&apos;t a sales pitch for
             one over the other. This is an honest breakdown of where each
             excels, where each falls short, and which types of businesses in
             Pakistan tend to be better suited to each platform.
@@ -278,7 +278,7 @@ export default function ERPNextVsOdooContent() {
             requirements.
           </p>
           <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
-            At Nexo4ERP, we implement both. If you&apos;d like an honest
+            At NEXO ERP, we implement both. If you&apos;d like an honest
             assessment of which is the right fit for your business, book a free
             30-minute consultation — we&apos;ll tell you straight.
           </p>
@@ -310,7 +310,7 @@ export default function ERPNextVsOdooContent() {
               <ChevronRight className='w-4 h-4' />
             </button>
             <Link
-              href='/services/erpnext'
+              href='/services/erpnext-pakistan'
               className='px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5'
             >
               ERPNext Services

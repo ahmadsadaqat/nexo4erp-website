@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { INDUSTRIES, TRANSLATIONS } from '@/lib/constants'
 
@@ -39,9 +40,9 @@ const Industries: React.FC<IndustriesProps> = ({
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {INDUSTRIES.map((industry, index) => (
             <ScrollReveal key={index} delay={index * 50}>
-              <div
-                onClick={() => onSelectIndustry?.(industry)}
-                className='relative h-80 group rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-800 overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br from-primary-900 via-primary-800 to-black'
+              <Link
+                href={`/industries/${industry.id}`}
+                className='block relative h-80 group rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-800 overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br from-primary-900 via-primary-800 to-black'
               >
                 {/* Background Image Layer */}
                 <div className='absolute inset-0 transition-transform duration-700 group-hover:scale-110'>
@@ -89,7 +90,7 @@ const Industries: React.FC<IndustriesProps> = ({
                 {/* Glass effect on top */}
 
                 <div className='absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-white to-transparent transition-opacity duration-500 pointer-events-none'></div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

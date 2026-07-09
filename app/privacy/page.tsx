@@ -20,7 +20,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">1. Introduction</h2>
             <p>
-              Welcome to Nexo4 ERP. We respect your privacy and are committed to protecting your personal data.
+              Welcome to NEXO ERP. We respect your privacy and are committed to protecting your personal data.
               This privacy policy will inform you as to how we look after your personal data when you visit our website
               and tell you about your privacy rights and how the law protects you.
             </p>

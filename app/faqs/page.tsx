@@ -63,7 +63,7 @@ export default function FAQsPage() {
               </span>
             </h1>
             <p className='text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto'>
-              Everything you need to know about NEXO 4 ERP. Can&apos;t find the
+              Everything you need to know about NEXO ERP. Can&apos;t find the
               answer?{' '}
               <Link
                 href='/contact'

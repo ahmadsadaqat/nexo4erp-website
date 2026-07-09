@@ -2,28 +2,32 @@ import type { Metadata } from 'next'
 import type React from 'react'
 import { INDUSTRIES } from '@/lib/constants'
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { id: string }
-}): Metadata {
-  const industry = INDUSTRIES.find((ind) => ind.id === params.id)
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const industry = INDUSTRIES.find((ind) => ind.id === resolvedParams.id)
 
   if (!industry) {
     return {
-      title: 'Industry Solution Not Found | Nexo4ERP',
+      title: 'Industry Solution Not Found | NEXO ERP',
       description: 'The requested industry solution page could not be found.',
     }
   }
 
   return {
-    title: `${industry.name} ERP Solutions in Pakistan | Nexo4ERP`,
+    title: `${industry.name} ERP Solutions in Pakistan | NEXO ERP`,
     description: industry.description,
     alternates: {
       canonical: `https://www.nexo4erp.com/industries/${industry.id}`,
     },
     openGraph: {
-      title: `${industry.name} ERP Solutions in Pakistan | Nexo4ERP`,
+    type: 'website',
+    siteName: 'NEXO ERP',
+    images: [{ url: '/og-image.png' }],
+      title: `${industry.name} ERP Solutions in Pakistan | NEXO ERP`,
       description: industry.description,
       url: `https://www.nexo4erp.com/industries/${industry.id}`,
       type: 'article',

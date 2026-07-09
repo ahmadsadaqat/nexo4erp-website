@@ -89,7 +89,7 @@ const serviceSchema = {
   name: 'Odoo Implementation Services',
   provider: {
     '@type': 'Organization',
-    name: 'Nexo4ERP',
+    name: 'NEXO ERP',
   },
   areaServed: 'Pakistan',
   serviceType: 'Odoo implementation, customization, migration, and support',
@@ -156,7 +156,7 @@ export default function OdooServicesContent() {
               </span>
             </h1>
             <p className='text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl'>
-              Looking for an Odoo implementation partner in Pakistan? Nexo4ERP
+              Looking for an Odoo implementation partner in Pakistan? NEXO ERP
               provides complete Odoo ERP services — from initial module setup
               and configuration through to custom app development and long-term
               support. We&apos;ve implemented Odoo for manufacturing, wholesale,
@@ -183,7 +183,7 @@ export default function OdooServicesContent() {
               is free to deploy.
             </p>
             <p className='text-gray-500 dark:text-gray-500 leading-relaxed'>
-              Nexo4ERP brings local expertise: our team understands Pakistani
+              NEXO ERP brings local expertise: our team understands Pakistani
               tax structures, FBR compliance, Urdu-language requirements, and
               the specific challenges of operating ERP in Pakistan&apos;s
               business environment.
@@ -320,7 +320,7 @@ export default function OdooServicesContent() {
               <ChevronRight className='w-4 h-4' />
             </button>
             <Link
-              href='/services/erpnext'
+              href='/services/erpnext-pakistan'
               className='px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5'
             >
               View ERPNext Services

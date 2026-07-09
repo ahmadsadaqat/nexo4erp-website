@@ -25,7 +25,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">2. Intellectual Property Rights</h2>
             <p>
-              Unless otherwise indicated, the Site and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by Nexo4 ERP, its licensors, or other providers of such material and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+              Unless otherwise indicated, the Site and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by NEXO ERP, its licensors, or other providers of such material and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">3. User Representations</h2>
