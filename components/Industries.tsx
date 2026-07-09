@@ -23,7 +23,7 @@ const Industries: React.FC<IndustriesProps> = ({
   const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
 
   return (
-    <section className='py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black'>
+    <section id='industries' className='py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black'>
       <div className='max-w-7xl mx-auto'>
         <div className='text-center mb-16'>
           <h2 className='text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2'>

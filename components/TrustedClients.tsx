@@ -12,7 +12,8 @@ const ClientLogo = ({ src, alt }: { src: string; alt: string }) => (
       width={200}
       height={80}
       loading="eager"
-      className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition duration-300 dark:brightness-110'
+      style={{ width: 'auto' }}
+            className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition duration-300 dark:brightness-110'
     />
   </div>
 )
@@ -99,14 +100,16 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
                       alt='pakistan software export board'
                       width={280}
                       height={112}
-                      className='h-20 md:h-28 w-auto block dark:hidden group-hover:scale-110 transition-transform drop-shadow-lg'
+                      style={{ width: 'auto' }}
+            className='h-20 md:h-28 w-auto block dark:hidden group-hover:scale-110 transition-transform drop-shadow-lg'
                     />
                     <Image
                       src='/White-PSEB.svg'
                       alt='pakistan software export board'
                       width={280}
                       height={112}
-                      className='h-20 md:h-28 w-auto hidden dark:block group-hover:scale-110 transition-transform drop-shadow-lg'
+                      style={{ width: 'auto' }}
+            className='h-20 md:h-28 w-auto hidden dark:block group-hover:scale-110 transition-transform drop-shadow-lg'
                     />
                   </>
                 ) : (
@@ -115,7 +118,8 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
                     alt={item.alt}
                     width={280}
                     height={112}
-                    className='h-20 md:h-28 w-auto block group-hover:scale-110 transition-transform drop-shadow-lg'
+                    style={{ width: 'auto' }}
+            className='h-20 md:h-28 w-auto block group-hover:scale-110 transition-transform drop-shadow-lg'
                   />
                 )}
               </div>

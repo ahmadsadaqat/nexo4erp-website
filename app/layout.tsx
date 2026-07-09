@@ -126,7 +126,8 @@ export default function RootLayout({
       lang='en'
       className={`${inter.variable} antialiased`}
       suppressHydrationWarning
-      style={{ scrollBehavior: 'smooth', scrollPaddingTop: '100px' }}
+      style={{ scrollPaddingTop: '100px' }}
+      data-scroll-behavior='smooth'
     >
       <body
         className='bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300'

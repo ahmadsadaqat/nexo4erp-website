@@ -408,3 +408,6 @@
 [dir='rtl'] .lg\:rtl\:pr-6 {
   padding-right: 1.5rem;
 }
+html {
+  scroll-behavior: smooth;
+}

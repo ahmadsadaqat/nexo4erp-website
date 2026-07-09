@@ -66,7 +66,8 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
               <a
                 href='#'
                 onClick={openModal}
-                className='w-full sm:w-auto px-10 py-5 bg-primary hover:bg-[#366872] text-white text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary/50 transition duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3'
+                style={{ width: 'auto' }}
+            className='w-full sm:w-auto px-10 py-5 bg-primary hover:bg-[#366872] text-white text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary/50 transition duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3'
               >
                 {t.demo}
                 <ChevronRight className='w-6 h-6 rtl:rotate-180' />
@@ -86,7 +87,8 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
                     alt='NEXO Logo'
                     width={100}
                     height={32}
-                    className='h-8 w-auto object-contain'
+                    style={{ width: 'auto' }}
+            className='h-8 w-auto object-contain'
                     priority
                   />
                 </div>

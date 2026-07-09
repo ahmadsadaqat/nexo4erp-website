@@ -228,7 +228,8 @@ const Navbar: React.FC = () => {
               alt='Nexo ERP'
               width={150}
               height={40}
-              className='h-10 w-auto dark:hidden'
+              style={{ width: 'auto' }}
+            className='h-10 w-auto dark:hidden'
               priority
             />
             <Image
@@ -236,7 +237,8 @@ const Navbar: React.FC = () => {
               alt='Nexo ERP'
               width={150}
               height={40}
-              className='h-10 w-auto hidden dark:block'
+              style={{ width: 'auto' }}
+            className='h-10 w-auto hidden dark:block'
               priority
             />
           </>

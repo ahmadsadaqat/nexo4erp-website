@@ -9,8 +9,12 @@ export function generateStaticParams() {
   return INDUSTRIES.map((industry) => ({ id: industry.id }))
 }
 
-export default async function IndustryDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = await params;
+export default async function IndustryDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const resolvedParams = await params
   const industry = INDUSTRIES.find((ind) => ind.id === resolvedParams.id)
 
   if (!industry) notFound()
@@ -25,6 +29,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
             alt={industry.name}
             fill
             sizes='100vw'
+            priority
             className='object-cover opacity-20'
           />
           <div className='absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900/95 dark:from-black/80 dark:to-black/95' />
@@ -57,10 +62,10 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
             }}
           />
           <Link
-            href='/industries'
+            href='/#industries'
             className='inline-flex items-center text-primary-400 hover:text-primary-300 mb-8 text-sm font-semibold'
           >
-            <ArrowLeft className='w-4 h-4 mr-2' /> Back to Industries
+            <ArrowLeft className='w-4 h-4 mr-2' /> Back to Home
           </Link>
           <div className='flex items-center gap-3 mb-4'>
             <industry.icon className='w-8 h-8 text-primary-400' />
