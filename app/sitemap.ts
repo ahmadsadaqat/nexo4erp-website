@@ -13,7 +13,6 @@ const staticRoutes = [
   '/locations',
   '/pricing',
   '/privacy',
-  '/refund-policy',
   '/services/erpnext-pakistan',
   '/services/odoo',
   '/terms',

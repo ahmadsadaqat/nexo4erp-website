@@ -30,39 +30,48 @@ import OpenContactButton from '@/components/OpenContactButton'
 const COMPLIANCE_FEATURES = [
   {
     title: 'FBR Digital Invoicing (SRO 709)',
-    description: 'Real-time invoice transmission to FBR via PRAL API with automatic IRN and QR code generation.',
+    description:
+      'Real-time invoice transmission to FBR via PRAL API with automatic IRN and QR code generation.',
   },
   {
     title: 'Withholding Tax (Sec. 236 WHT)',
-    description: 'Automatic WHT calculation and deduction at source for every applicable transaction.',
+    description:
+      'Automatic WHT calculation and deduction at source for every applicable transaction.',
   },
   {
     title: 'Advance Income Tax',
-    description: 'Precise advance tax computation and reporting across all revenue streams.',
+    description:
+      'Precise advance tax computation and reporting across all revenue streams.',
   },
   {
     title: 'SRB (Sindh Revenue Board)',
-    description: 'Full integration with SRB for Sindh-based businesses handling provincial sales tax.',
+    description:
+      'Full integration with SRB for Sindh-based businesses handling provincial sales tax.',
   },
   {
     title: 'PRA (Punjab Revenue Authority)',
-    description: 'Seamless PRA compliance for Punjab-registered service providers and businesses.',
+    description:
+      'Seamless PRA compliance for Punjab-registered service providers and businesses.',
   },
   {
     title: 'KPRA (KP Revenue Authority)',
-    description: 'KP provincial tax compliance built into the same system — no separate tools required.',
+    description:
+      'KP provincial tax compliance built into the same system — no separate tools required.',
   },
   {
     title: 'EOBI Payroll Deductions',
-    description: 'Automatic EOBI contribution calculation and deduction integrated with your payroll.',
+    description:
+      'Automatic EOBI contribution calculation and deduction integrated with your payroll.',
   },
   {
     title: 'PESSI Deductions',
-    description: 'Punjab Employees Social Security deductions handled seamlessly alongside payroll processing.',
+    description:
+      'Punjab Employees Social Security deductions handled seamlessly alongside payroll processing.',
   },
   {
     title: 'Pakistani Chart of Accounts',
-    description: 'Pre-configured chart of accounts aligned with Pakistani accounting standards and FBR requirements.',
+    description:
+      'Pre-configured chart of accounts aligned with Pakistani accounting standards and FBR requirements.',
   },
 ]
 
@@ -70,25 +79,29 @@ const INTEGRATION_STEPS = [
   {
     step: '01',
     title: 'Record Sale',
-    description: 'Your team creates a sales invoice in NexoERP — business as usual.',
+    description:
+      'Your team creates a sales invoice in NexoERP — business as usual.',
     icon: FileText,
   },
   {
     step: '02',
     title: 'Invoice Auto-Formatted',
-    description: 'NexoERP structures the invoice in FBR\'s exact required format automatically.',
+    description:
+      "NexoERP structures the invoice in FBR's exact required format automatically.",
     icon: FileCheck,
   },
   {
     step: '03',
     title: 'Transmitted to PRAL',
-    description: 'The formatted invoice is sent to FBR via PRAL API in real time — no manual step.',
+    description:
+      'The formatted invoice is sent to FBR via PRAL API in real time — no manual step.',
     icon: Send,
   },
   {
     step: '04',
     title: 'IRN + QR Returned',
-    description: 'FBR returns a unique Invoice Reference Number and QR code — printed on customer receipt.',
+    description:
+      'FBR returns a unique Invoice Reference Number and QR code — printed on customer receipt.',
     icon: QrCode,
   },
 ]
@@ -97,42 +110,48 @@ const INDUSTRIES = [
   {
     name: 'Manufacturers',
     subtitle: 'FMCG, textile, chemical',
-    description: 'FBR compliance is critical for manufacturers managing high-volume raw material purchases and finished goods sales — every transaction must be invoiced electronically.',
+    description:
+      'FBR compliance is critical for manufacturers managing high-volume raw material purchases and finished goods sales — every transaction must be invoiced electronically.',
     icon: Factory,
     href: '/industries/manufacturing',
   },
   {
     name: 'Wholesalers & Distributors',
     subtitle: 'B2B bulk operations',
-    description: 'Distributors handle hundreds of invoices daily across multiple buyers — automated FBR integration eliminates the compliance bottleneck entirely.',
+    description:
+      'Distributors handle hundreds of invoices daily across multiple buyers — automated FBR integration eliminates the compliance bottleneck entirely.',
     icon: Truck,
     href: '/industries/distribution',
   },
   {
     name: 'Retail Chains',
     subtitle: 'Multi-location POS',
-    description: 'Every point-of-sale transaction must reach FBR in real time. NexoERP connects your retail POS directly to PRAL across all outlets.',
+    description:
+      'Every point-of-sale transaction must reach FBR in real time. NexoERP connects your retail POS directly to PRAL across all outlets.',
     icon: ShoppingBag,
     href: '/industries/retail',
   },
   {
     name: 'Import/Export Businesses',
     subtitle: 'Cross-border trade',
-    description: 'Import duties, customs integration, and export rebates require precise FBR reporting — NexoERP handles the full compliance trail.',
+    description:
+      'Import duties, customs integration, and export rebates require precise FBR reporting — NexoERP handles the full compliance trail.',
     icon: Building2,
     href: '/industries/trading',
   },
   {
     name: 'Service Companies',
     subtitle: 'Restaurants, clinics, couriers',
-    description: 'SRO 288(I)/2026 now extends FBR integration to service businesses — early compliance gives you a competitive advantage.',
+    description:
+      'SRO 288(I)/2026 now extends FBR integration to service businesses — early compliance gives you a competitive advantage.',
     icon: UtensilsCrossed,
     href: '/industries/healthcare',
   },
   {
     name: 'Trading Companies',
     subtitle: 'Buy-sell operations',
-    description: 'Trading companies with high transaction volumes need seamless FBR invoicing to avoid penalties and maintain smooth tax refund cycles.',
+    description:
+      'Trading companies with high transaction volumes need seamless FBR invoicing to avoid penalties and maintain smooth tax refund cycles.',
     icon: Briefcase,
     href: '/industries/logistics',
   },
@@ -140,28 +159,35 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: 'Is FBR digital invoicing mandatory for all businesses in Pakistan?',
-    answer: 'Yes. Since August 2025, under SRO 709(I)/2025, all sales-tax-registered businesses in Pakistan are required to electronically transmit every invoice to FBR in real time. Non-compliance can result in penalties, blocked tax refunds, and business registration suspension.',
+    question:
+      'Is FBR digital invoicing mandatory for all businesses in Pakistan?',
+    answer:
+      'Yes. Since August 2025, under SRO 709(I)/2025, all sales-tax-registered businesses in Pakistan are required to electronically transmit every invoice to FBR in real time. Non-compliance can result in penalties, blocked tax refunds, and business registration suspension.',
   },
   {
     question: 'What is PRAL and how does NexoERP connect to it?',
-    answer: 'PRAL (Pakistan Revenue Automation Limited) is FBR\'s technology partner that manages the electronic invoicing infrastructure. NexoERP connects directly to PRAL\'s API so that every invoice is automatically transmitted in the required format — no manual uploads, no separate software needed.',
+    answer:
+      "PRAL (Pakistan Revenue Automation Limited) is FBR's technology partner that manages the electronic invoicing infrastructure. NexoERP connects directly to PRAL's API so that every invoice is automatically transmitted in the required format — no manual uploads, no separate software needed.",
   },
   {
     question: 'What taxes does NexoERP handle automatically?',
-    answer: 'NexoERP manages FBR sales tax invoicing, withholding tax under Section 236, advance income tax, SRB (Sindh), PRA (Punjab), KPRA (KP) provincial taxes, EOBI payroll deductions, and PESSI deductions — all from one unified system.',
+    answer:
+      'NexoERP manages FBR sales tax invoicing, withholding tax under Section 236, advance income tax, SRB (Sindh), PRA (Punjab), KPRA (KP) provincial taxes, EOBI payroll deductions, and PESSI deductions — all from one unified system.',
   },
   {
     question: 'Does NexoERP work for both B2B and B2C FBR invoicing?',
-    answer: 'Absolutely. NexoERP handles both business-to-business and business-to-consumer invoicing. Whether you issue bulk invoices to distributors or point-of-sale receipts to walk-in customers, each transaction is transmitted to FBR with the correct format and tax treatment.',
+    answer:
+      'Absolutely. NexoERP handles both business-to-business and business-to-consumer invoicing. Whether you issue bulk invoices to distributors or point-of-sale receipts to walk-in customers, each transaction is transmitted to FBR with the correct format and tax treatment.',
   },
   {
-    question: 'What happens if my business doesn\'t integrate with FBR?',
-    answer: 'Businesses that fail to comply with FBR digital invoicing face financial penalties, potential suspension of their sales tax registration, blocked input tax adjustments, and inability to claim tax refunds. The penalties increase for continued non-compliance under the latest SRO 288(I)/2026 rules.',
+    question: "What happens if my business doesn't integrate with FBR?",
+    answer:
+      'Businesses that fail to comply with FBR digital invoicing face financial penalties, potential suspension of their sales tax registration, blocked input tax adjustments, and inability to claim tax refunds. The penalties increase for continued non-compliance under the latest SRO 288(I)/2026 rules.',
   },
   {
     question: 'How long does FBR integration setup take with NexoERP?',
-    answer: 'For businesses already using NexoERP, FBR integration can be activated in as little as 2–3 days. For new NexoERP implementations that include FBR compliance, the full setup typically takes 2–4 weeks depending on your business complexity and number of locations.',
+    answer:
+      'For businesses already using NexoERP, FBR integration can be activated in as little as 2–3 days. For new NexoERP implementations that include FBR compliance, the full setup typically takes 2–4 weeks depending on your business complexity and number of locations.',
   },
 ]
 
@@ -181,10 +207,13 @@ export default function FBRComplianceContent() {
           <div className='text-center max-w-4xl mx-auto'>
             <h1 className='text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight'>
               FBR-Integrated ERP for Pakistani Businesses —{' '}
-              <span className='text-primary-600 dark:text-primary-400'>NexoERP</span>
+              <span className='text-primary-600 dark:text-primary-400'>
+                NexoERP
+              </span>
             </h1>
             <p className='text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed'>
-              Stay 100% FBR-compliant, automate digital invoicing, and manage your entire business from a single platform.
+              Stay 100% FBR-compliant, automate digital invoicing, and manage
+              your entire business from a single platform.
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
               <OpenContactButton label='Book Free Demo' />
@@ -212,7 +241,9 @@ export default function FBRComplianceContent() {
                   className='flex items-center justify-center gap-2 px-4 py-3 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl shadow-sm'
                 >
                   <badge.icon className='w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0' />
-                  <span className='text-sm font-semibold text-gray-800 dark:text-gray-200'>{badge.label}</span>
+                  <span className='text-sm font-semibold text-gray-800 dark:text-gray-200'>
+                    {badge.label}
+                  </span>
                   <CheckCircle2 className='w-4 h-4 text-emerald-500 flex-shrink-0' />
                 </div>
               ))}
@@ -222,7 +253,7 @@ export default function FBRComplianceContent() {
           {/* Hero OG Image */}
           <div className='mt-12 max-w-5xl mx-auto rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-2xl'>
             <Image
-              src='https://placehold.co/1200x630'
+              src='FBR-integration-dashboard.png'
               alt='NexoERP FBR-Integrated Invoicing Dashboard with QR Code'
               width={1200}
               height={630}
@@ -245,20 +276,30 @@ export default function FBRComplianceContent() {
             </h2>
             <div className='space-y-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed'>
               <p>
-                Since August 2025, under <strong className='text-gray-900 dark:text-white'>SRO 709(I)/2025</strong>, every
-                sales-tax-registered business in Pakistan is legally required to electronically submit every invoice to FBR in
-                real time. This is not optional — it applies to manufacturers, retailers, distributors, and service
-                businesses across the country.
+                Since August 2025, under{' '}
+                <strong className='text-gray-900 dark:text-white'>
+                  SRO 709(I)/2025
+                </strong>
+                , every sales-tax-registered business in Pakistan is legally
+                required to electronically submit every invoice to FBR in real
+                time. This is not optional — it applies to manufacturers,
+                retailers, distributors, and service businesses across the
+                country.
               </p>
               <p>
-                Non-compliant businesses face financial penalties, blocked input tax adjustments, and potential suspension
-                of their sales tax registration. The recently proposed <strong className='text-gray-900 dark:text-white'>SRO
-                288(I)/2026</strong> expands these requirements further to cover income tax, service businesses, and CCTV
-                monitoring at POS terminals.
+                Non-compliant businesses face financial penalties, blocked input
+                tax adjustments, and potential suspension of their sales tax
+                registration. The recently proposed{' '}
+                <strong className='text-gray-900 dark:text-white'>
+                  SRO 288(I)/2026
+                </strong>{' '}
+                expands these requirements further to cover income tax, service
+                businesses, and CCTV monitoring at POS terminals.
               </p>
               <p className='text-primary-600 dark:text-primary-400 font-semibold'>
-                NexoERP handles this automatically — so your team keeps working exactly as before, while every invoice
-                reaches FBR without lifting a finger.
+                NexoERP handles this automatically — so your team keeps working
+                exactly as before, while every invoice reaches FBR without
+                lifting a finger.
               </p>
             </div>
           </div>
@@ -268,16 +309,21 @@ export default function FBRComplianceContent() {
       {/* ────────────────────────────────────────────────────────
           3. HOW NEXO HANDLES FBR COMPLIANCE — CORE CONTENT
       ──────────────────────────────────────────────────────── */}
-      <section id='how-it-works' className='py-24 bg-white dark:bg-black scroll-mt-24'>
+      <section
+        id='how-it-works'
+        className='py-24 bg-white dark:bg-black scroll-mt-24'
+      >
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center max-w-3xl mx-auto mb-16'>
             <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4'>
               How NexoERP&apos;s FBR Integration Works
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400'>
-              When a sale is recorded in NexoERP, the invoice is automatically structured in FBR&apos;s required format and
-              transmitted via PRAL API in real time. The system returns a unique Invoice Reference Number (IRN) and prints
-              the QR code on the customer receipt. No manual steps. No separate software.
+              When a sale is recorded in NexoERP, the invoice is automatically
+              structured in FBR&apos;s required format and transmitted via PRAL
+              API in real time. The system returns a unique Invoice Reference
+              Number (IRN) and prints the QR code on the customer receipt. No
+              manual steps. No separate software.
             </p>
           </div>
 
@@ -290,10 +336,16 @@ export default function FBRComplianceContent() {
                     <div className='w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center'>
                       <step.icon className='w-6 h-6 text-primary-600 dark:text-primary-400' />
                     </div>
-                    <span className='text-3xl font-black text-gray-200 dark:text-zinc-800'>{step.step}</span>
+                    <span className='text-3xl font-black text-gray-200 dark:text-zinc-800'>
+                      {step.step}
+                    </span>
                   </div>
-                  <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-2'>{step.title}</h3>
-                  <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>{step.description}</p>
+                  <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-2'>
+                    {step.title}
+                  </h3>
+                  <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
+                    {step.description}
+                  </p>
                 </div>
                 {/* Arrow connector (hidden on last item and mobile) */}
                 {idx < INTEGRATION_STEPS.length - 1 && (
@@ -317,9 +369,10 @@ export default function FBRComplianceContent() {
               Beyond FBR — Complete Pakistan Tax Compliance in One ERP
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400'>
-              FBR sales tax is just one piece. Your business also needs withholding tax, provincial revenue compliance,
-              EOBI, PESSI, and a Pakistan-ready chart of accounts. NexoERP handles all of it in a single system — no
-              patchwork of tools, no compliance gaps.
+              FBR sales tax is just one piece. Your business also needs
+              withholding tax, provincial revenue compliance, EOBI, PESSI, and a
+              Pakistan-ready chart of accounts. NexoERP handles all of it in a
+              single system — no patchwork of tools, no compliance gaps.
             </p>
           </div>
 
@@ -335,8 +388,12 @@ export default function FBRComplianceContent() {
                     <CheckCircle2 className='w-4 h-4 text-primary-600 dark:text-primary-400' />
                   </div>
                   <div>
-                    <h3 className='text-base font-bold text-gray-900 dark:text-white mb-1'>{feature.title}</h3>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>{feature.description}</p>
+                    <h3 className='text-base font-bold text-gray-900 dark:text-white mb-1'>
+                      {feature.title}
+                    </h3>
+                    <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -355,8 +412,9 @@ export default function FBRComplianceContent() {
               Which Businesses Need FBR-Integrated ERP?
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400'>
-              If your business is sales-tax-registered in Pakistan, FBR digital invoicing is not optional. Here&apos;s how
-              NexoERP serves the specific compliance needs of each industry.
+              If your business is sales-tax-registered in Pakistan, FBR digital
+              invoicing is not optional. Here&apos;s how NexoERP serves the
+              specific compliance needs of each industry.
             </p>
           </div>
 
@@ -374,9 +432,15 @@ export default function FBRComplianceContent() {
                   </div>
                   <ArrowRight className='w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors' />
                 </div>
-                <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-1'>{industry.name}</h3>
-                <p className='text-xs font-medium text-primary-600 dark:text-primary-400 mb-3'>{industry.subtitle}</p>
-                <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>{industry.description}</p>
+                <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-1'>
+                  {industry.name}
+                </h3>
+                <p className='text-xs font-medium text-primary-600 dark:text-primary-400 mb-3'>
+                  {industry.subtitle}
+                </p>
+                <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
+                  {industry.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -406,7 +470,9 @@ export default function FBRComplianceContent() {
                   id={`faq-trigger-${idx}`}
                   aria-controls={`faq-content-${idx}`}
                 >
-                  <span className='font-semibold text-gray-900 dark:text-white pr-8'>{faq.question}</span>
+                  <span className='font-semibold text-gray-900 dark:text-white pr-8'>
+                    {faq.question}
+                  </span>
                   {openFaq === idx ? (
                     <ChevronUp className='w-5 h-5 text-gray-500 shrink-0' />
                   ) : (
@@ -418,10 +484,14 @@ export default function FBRComplianceContent() {
                   role='region'
                   aria-labelledby={`faq-trigger-${idx}`}
                   className={`px-6 overflow-hidden transition duration-300 ease-in-out ${
-                    openFaq === idx ? 'max-h-[500px] pb-5 opacity-100' : 'max-h-0 opacity-0'
+                    openFaq === idx
+                      ? 'max-h-[500px] pb-5 opacity-100'
+                      : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>{faq.answer}</p>
+                  <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}
@@ -438,11 +508,13 @@ export default function FBRComplianceContent() {
             Get Your Business FBR-Compliant with NexoERP
           </h2>
           <p className='text-primary-100 text-lg mb-4 max-w-2xl mx-auto'>
-            Our Lahore-based team gets you fully compliant in days, not months. From FBR digital invoicing to withholding
-            tax, SRB, PRA, and payroll — one system, one setup, complete peace of mind.
+            Our Lahore-based team gets you fully compliant in days, not months.
+            From FBR digital invoicing to withholding tax, SRB, PRA, and payroll
+            — one system, one setup, complete peace of mind.
           </p>
           <p className='text-primary-200 text-base mb-10 max-w-xl mx-auto'>
-            Book a free initial consultation and let us assess your compliance readiness.
+            Book a free initial consultation and let us assess your compliance
+            readiness.
           </p>
           <OpenContactButton label='Book Free FBR Compliance Demo' />
         </div>
