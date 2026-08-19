@@ -4,15 +4,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import NextImage from 'next/image'
 import {
   ArrowLeft,
-  Plus,
   Trash2,
   Edit2,
   Loader2,
   Upload,
-  X,
-  Save,
   Star,
-  Tag,
 } from 'lucide-react'
 import { BlogPost, Testimonial } from '@/lib/types'
 import { supabase } from '@/lib/supabase'
@@ -36,7 +32,6 @@ const compressImage = (base64Str: string): Promise<string> => {
 }
 
 interface ContentManagerProps {
-  isArabic: boolean
   blogs: BlogPost[]
   setBlogs: (blogs: BlogPost[]) => void
   testimonials: Testimonial[]
@@ -45,7 +40,6 @@ interface ContentManagerProps {
 }
 
 const ContentManager: React.FC<ContentManagerProps> = ({
-  isArabic,
   blogs,
   setBlogs,
   testimonials,
@@ -212,13 +206,7 @@ const ContentManager: React.FC<ContentManagerProps> = ({
   }
 
   const handleDelete = async (id: string, table: 'blogs' | 'testimonials') => {
-    if (
-      !confirm(
-        isArabic
-          ? 'هل أنت متأكد من الحذف؟'
-          : 'Are you sure you want to delete this?',
-      )
-    )
+    if (!confirm('Are you sure you want to delete this?'))
       return
     const { error } = await supabase.from(table).delete().eq('id', id)
     if (error) alert('Delete Failed: ' + error.message)
@@ -265,7 +253,7 @@ const ContentManager: React.FC<ContentManagerProps> = ({
             onClick={onBack}
             className='text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-2 hover:text-primary-600'
           >
-            <ArrowLeft size={14} /> {isArabic ? 'العودة' : 'Back'}
+            <ArrowLeft size={14} /> Back
           </button>
           <div className='flex bg-white/10 p-1 rounded-2xl backdrop-blur-md border border-white/5'>
             <button
@@ -294,13 +282,7 @@ const ContentManager: React.FC<ContentManagerProps> = ({
           <div className='lg:col-span-1'>
             <div className='bg-white p-8 rounded-[2.5rem] shadow-2xl border border-zinc-100 sticky top-32'>
               <h3 className='text-xl font-black uppercase tracking-tighter text-zinc-900 mb-6'>
-                {editingId
-                  ? isArabic
-                    ? 'تعديل'
-                    : 'Edit Mode'
-                  : isArabic
-                    ? 'إضافة جديد'
-                    : 'Add New'}
+                {editingId ? 'Edit Mode' : 'Add New'}
               </h3>
 
               {activeTab === 'blogs' ? (

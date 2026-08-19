@@ -1,40 +1,24 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import {
-  ChevronRight,
-  Search,
-  Bell,
-  LayoutDashboard,
-  Calculator,
-  Package,
-  CreditCard,
-  Users,
-  ShoppingCart,
-  FileText,
-  Settings,
-} from 'lucide-react'
+import React from 'react'
+import { ChevronRight } from 'lucide-react'
 
 import { TRANSLATIONS } from '@/lib/constants'
 import Dashboard from './Dashboard'
 
-interface HeroProps {
-  isArabic: boolean
-}
-
-const Hero: React.FC<HeroProps> = ({ isArabic }) => {
+const Hero = () => {
   const openModal = (e: React.MouseEvent) => {
     e.preventDefault()
     window.dispatchEvent(
       new CustomEvent('open-contact-modal', {
         detail: {
-          subject: isArabic ? 'طلب عرض تجريبي مجاني' : 'Free Demo Request',
+          subject: 'Free Demo Request',
         },
       }),
     )
   }
 
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   return (
     <section className='relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-transparent dark:bg-transparent'>
@@ -64,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ isArabic }) => {
               className='w-full sm:w-auto px-10 py-5 bg-primary hover:bg-[#366872] text-white text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-primary/50 transition duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3'
             >
               {t.demo}
-              <ChevronRight className='w-6 h-6 rtl:rotate-180' />
+              <ChevronRight className='w-6 h-6' />
             </a>
           </div>
         </div>

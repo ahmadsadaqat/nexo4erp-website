@@ -1,9 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Menu, X, Moon, Sun, Languages, ChevronDown } from 'lucide-react'
+import { Menu, X, Moon, Sun, ChevronDown } from 'lucide-react'
 import { TRANSLATIONS, INDUSTRIES } from '@/lib/constants'
-import { useLanguage } from '@/components/language-provider'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -12,7 +11,6 @@ import Image from 'next/image'
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { isArabic, toggleLanguage } = useLanguage()
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
@@ -41,7 +39,7 @@ const Navbar: React.FC = () => {
     }
   }
 
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   const serviceLinks = [
     { name: 'ERPNext', href: '/services/erpnext-pakistan' },
@@ -97,7 +95,7 @@ const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Links */}
-        <div className='hidden md:flex items-center space-x-10 rtl:space-x-reverse'>
+        <div className='hidden md:flex items-center space-x-10'>
           <div className='relative group'>
             <button
               type='button'
@@ -176,20 +174,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
 
-          <div className='flex items-center space-x-6 border-l border-gray-300 dark:border-zinc-700 pl-8 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-8'>
-            <button
-              onClick={toggleLanguage}
-              aria-label={
-                isArabic
-                  ? 'Switch language to English'
-                  : 'Switch language to Arabic'
-              }
-              className='flex items-center gap-2 font-black text-[11px] uppercase text-gray-900 dark:text-white'
-            >
-              <Languages className='h-4 w-4' />
-              <span>{isArabic ? 'English' : 'العربية'}</span>
-            </button>
-
+          <div className='flex items-center border-l border-gray-300 dark:border-zinc-700 pl-8'>
             <button
               onClick={() => setTheme(isDark ? 'light' : 'dark')}
               aria-label='Toggle color theme'
@@ -336,22 +321,6 @@ const Navbar: React.FC = () => {
           ))}
 
           <div className='w-20 h-1 bg-primary-600/20 rounded-full my-4' />
-
-          <button
-            onClick={() => {
-              toggleLanguage()
-              setIsOpen(false)
-            }}
-            aria-label={
-              isArabic
-                ? 'Switch language to English'
-                : 'Switch language to Arabic'
-            }
-            className='flex items-center gap-3 text-gray-900 dark:text-white font-bold text-lg uppercase'
-          >
-            <Languages className='h-6 w-6 text-primary-600' />
-            <span>{isArabic ? 'Switch to English' : 'تحويل إلى العربية'}</span>
-          </button>
 
           <Link
             href='/contact'

@@ -5,13 +5,9 @@ import { SOLUTIONS_CONTENT, TRANSLATIONS, TRUST_POINTS } from '@/lib/constants';
 import { ArrowRight, CheckCircle2, Code, Database, Smartphone, Cloud } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 
-interface SolutionsProps {
-  isArabic: boolean;
-}
-
-const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
+const Solutions = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+  const t = TRANSLATIONS.en;
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -70,9 +66,9 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                           <div className="w-14 h-14 bg-primary-50 dark:bg-primary-900/10 rounded-full flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400">
                             <item.icon className="w-7 h-7" />
                          </div>
-                         <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isArabic ? item.titleAr : item.title}</h4>
+                         <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
                          
-                         <p className="text-xs text-gray-400 mt-2 opacity-70">{isArabic ? 'انقر للكشف عن التفاصيل' : 'Click to reveal details'}</p>
+                         <p className="text-xs text-gray-400 mt-2 opacity-70">Click to reveal details</p>
                          
                          <div className={`mt-auto w-full h-1 rounded-full transition-all duration-500 ${isActive ? 'bg-primary-500 shadow-[0_0_10px_rgba(66,128,139,0.8)]' : 'bg-gradient-to-r from-transparent via-primary-500/50 to-transparent opacity-50'}`}></div>
                       </div>
@@ -90,15 +86,15 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                             <item.icon className="w-5 h-5" />
                          </div>
 
-                         <h4 className="text-base font-bold text-white mb-2">{isArabic ? item.titleAr : item.title}</h4>
+                         <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
                          
                          <p className="text-gray-300 text-xs leading-relaxed mb-4">
-                            {isArabic ? item.descriptionAr : item.description}
+                            {item.description}
                          </p>
                          
                          <div className="mt-auto">
                             <a href="#features" onClick={(e) => { e.stopPropagation(); handleScroll(e, '#features'); }} className="inline-flex items-center text-primary-400 text-xs font-semibold hover:text-primary-300 transition-colors">
-                                {isArabic ? 'استكشف' : 'Explore'} <ArrowRight className="w-3 h-3 mx-1 rtl:rotate-180" />
+                                Explore <ArrowRight className="w-3 h-3 mx-1" />
                             </a>
                          </div>
                       </div>
@@ -112,7 +108,7 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
         {/* Detailed Breakdown */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <ScrollReveal>
-              <div className="space-y-8 rtl:text-right">
+              <div className="space-y-8">
                   <div className="flex gap-4">
                       <div className="flex-shrink-0 mt-1">
                           <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
@@ -120,12 +116,9 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                           </div>
                       </div>
                       <div>
-                          <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{isArabic ? 'نواة البيانات المركزية' : 'Centralized Data Core'}</h4>
+                          <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Centralized Data Core</h4>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                              {isArabic 
-                                ? 'في قلب NEXO 4 توجد بنية قاعدة بيانات قوية تقضي على صوامع البيانات. سواء حدثت عملية بيع عبر الإنترنت، في المتجر، أو عبر وكيل متنقل، فإن تحديث المخزون ينتشر فوراً عبر النظام البيئي بأكمله.'
-                                : 'At the heart of NEXO 4 is a robust database architecture that eliminates data silos. Whether a sale happens online, in-store, or via a mobile agent, the inventory update propagates instantly across the entire ecosystem.'
-                              }
+                              At the heart of NEXO 4 is a robust database architecture that eliminates data silos. Whether a sale happens online, in-store, or via a mobile agent, the inventory update propagates instantly across the entire ecosystem.
                           </p>
                       </div>
                   </div>
@@ -137,12 +130,9 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                           </div>
                       </div>
                       <div>
-                          <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{isArabic ? 'تطوير قائم على واجهة البرمجة (API-First)' : 'API-First Development'}</h4>
+                          <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">API-First Development</h4>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                              {isArabic
-                                ? 'نهجنا "Headless ERP" يعني أن منطق الواجهة الخلفية منفصل عن عرض الواجهة الأمامية. يسمح لنا هذا ببناء بوابات ويب مخصصة، أو تطبيقات جوال، أو حتى تكاملات إنترنت الأشياء (IoT) دون تعطيل منطق العمل الأساسي.'
-                                : 'Our "Headless ERP" approach means the backend logic is decoupled from the frontend presentation. This allows us to build custom web portals, mobile apps, or even IoT integrations without disrupting core business logic.'
-                              }
+                              Our "Headless ERP" approach means the backend logic is decoupled from the frontend presentation. This allows us to build custom web portals, mobile apps, or even IoT integrations without disrupting core business logic.
                           </p>
                       </div>
                   </div>
@@ -153,34 +143,34 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
                         onClick={openModal}
                         className="inline-flex items-center px-8 py-3 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 transform hover:-translate-y-1"
                        >
-                          {isArabic ? 'استشر مهندساً' : 'Consult an Architect'} <ArrowRight className="mx-2 w-4 h-4 rtl:rotate-180"/>
+                          Consult an Architect <ArrowRight className="mx-2 w-4 h-4"/>
                        </a>
                    </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <div className="bg-white/50 dark:bg-zinc-900/50 p-6 rounded-2xl border border-gray-100 dark:border-zinc-800 backdrop-blur-sm rtl:text-right">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">{isArabic ? 'مجموعة التقنيات والتوافق' : 'Tech Stack & Compatibility'}</h4>
+              <div className="bg-white/50 dark:bg-zinc-900/50 p-6 rounded-2xl border border-gray-100 dark:border-zinc-800 backdrop-blur-sm">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Tech Stack & Compatibility</h4>
                   <div className="space-y-4">
                       <div className="p-4 bg-white dark:bg-zinc-800 rounded-xl flex items-center gap-4 shadow-sm border border-gray-100 dark:border-zinc-700">
                           <Cloud className="w-8 h-8 text-sky-500" />
                           <div>
-                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">{isArabic ? 'البنية التحتية السحابية' : 'Cloud Infrastructure'}</h5>
+                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">Cloud Infrastructure</h5>
                               <p className="text-xs text-gray-500">AWS / Azure / Google Cloud</p>
                           </div>
                       </div>
                       <div className="p-4 bg-white dark:bg-zinc-800 rounded-xl flex items-center gap-4 shadow-sm border border-gray-100 dark:border-zinc-700">
                           <Smartphone className="w-8 h-8 text-green-500" />
                           <div>
-                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">{isArabic ? 'أطر عمل الجوال' : 'Mobile Frameworks'}</h5>
+                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">Mobile Frameworks</h5>
                               <p className="text-xs text-gray-500">React Native / Flutter / Native iOS & Android</p>
                           </div>
                       </div>
                       <div className="p-4 bg-white dark:bg-zinc-800 rounded-xl flex items-center gap-4 shadow-sm border border-gray-100 dark:border-zinc-700">
                           <Code className="w-8 h-8 text-orange-500" />
                           <div>
-                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">{isArabic ? 'تقنيات الواجهة الأمامية' : 'Frontend Technologies'}</h5>
+                              <h5 className="font-bold text-gray-900 dark:text-white text-sm">Frontend Technologies</h5>
                               <p className="text-xs text-gray-500">React / Vue / Next.js / Angular</p>
                           </div>
                       </div>
@@ -196,8 +186,8 @@ const Solutions: React.FC<SolutionsProps> = ({ isArabic }) => {
 
 export default Solutions;
 
-export const PakistanTrustSection: React.FC<SolutionsProps> = ({ isArabic }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+export const PakistanTrustSection = () => {
+  const t = TRANSLATIONS.en;
 
   return (
     <section className="py-20 bg-white/70 dark:bg-zinc-950/80 border-y border-gray-100 dark:border-zinc-900">
@@ -205,15 +195,13 @@ export const PakistanTrustSection: React.FC<SolutionsProps> = ({ isArabic }) => 
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">
-              {isArabic ? 'ثقة محلية' : 'Local Trust'}
+              Local Trust
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t.aboutHeader}
             </h3>
             <p className="text-lg text-gray-500 dark:text-gray-400">
-              {isArabic
-                ? 'خبرة تنفيذ عملية، فهم للامتثال الباكستاني، وملكية كاملة للمشروع من أول اجتماع حتى الدعم المستمر.'
-                : 'Hands-on implementation experience, Pakistani compliance fluency, and one accountable team from discovery through long-term support.'}
+              Hands-on implementation experience, Pakistani compliance fluency, and one accountable team from discovery through long-term support.
             </p>
           </div>
         </ScrollReveal>
@@ -221,12 +209,12 @@ export const PakistanTrustSection: React.FC<SolutionsProps> = ({ isArabic }) => 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {TRUST_POINTS.map((point, index) => (
             <ScrollReveal key={point.text} delay={index * 75}>
-              <div className="h-full bg-gray-50/90 dark:bg-zinc-900/90 rounded-2xl border border-gray-100 dark:border-zinc-800 p-5 shadow-sm backdrop-blur-md rtl:text-right">
+              <div className="h-full bg-gray-50/90 dark:bg-zinc-900/90 rounded-2xl border border-gray-100 dark:border-zinc-800 p-5 shadow-sm backdrop-blur-md">
                 <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                  {isArabic ? point.textAr : point.text}
+                  {point.text}
                 </p>
               </div>
             </ScrollReveal>

@@ -17,7 +17,7 @@ const Dashboard = () => {
     <div>
       <div className='flex h-auto md:h-[650px] text-gray-400 font-sans text-xs md:text-sm'>
         {/* Mock Sidebar */}
-        <div className='w-60 bg-transparent border-r rtl:border-r-0 rtl:border-l border-gray-200/20 dark:border-gray-800/50 hidden md:flex flex-col flex-shrink-0'>
+        <div className='w-60 bg-transparent border-r border-gray-200/20 dark:border-gray-800/50 hidden md:flex flex-col flex-shrink-0'>
           {/* Logo Section */}
           <div className='p-6 mb-2'>
             <Image

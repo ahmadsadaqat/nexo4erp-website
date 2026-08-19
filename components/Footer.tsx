@@ -3,20 +3,16 @@
 import React from 'react'
 import { Linkedin, Instagram } from 'lucide-react'
 import { SOCIALS, TRANSLATIONS } from '@/lib/constants'
-import { useLanguage } from '@/components/language-provider'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer: React.FC = () => {
-  const { isArabic } = useLanguage()
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
-
-
+  const t = TRANSLATIONS.en
 
   return (
     <footer className='bg-gray-900 dark:bg-black text-white pt-20 pb-10 border-t border-transparent dark:border-zinc-900'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 rtl:text-right'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16'>
           <div className='space-y-4'>
             <a
               href='#'
@@ -39,7 +35,7 @@ const Footer: React.FC = () => {
             <p className='text-gray-400 text-sm leading-relaxed mt-4'>
               {t.heroSubheadline}
             </p>
-            <div className='flex space-x-4 rtl:space-x-reverse pt-4'>
+            <div className='flex space-x-4 pt-4'>
               {SOCIALS.map((social) => (
                 <a
                   key={social.name}
@@ -100,7 +96,7 @@ const Footer: React.FC = () => {
                   href='/locations'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'المواقع' : 'Locations'}
+                  Locations
                 </Link>
               </li>
               <li>
@@ -138,9 +134,7 @@ const Footer: React.FC = () => {
                   href='/blog/erpnext-vs-odoo-pakistan'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic
-                    ? 'ERPNext مقابل Odoo في باكستان'
-                    : 'ERPNext vs Odoo in Pakistan'}
+                  ERPNext vs Odoo in Pakistan
                 </Link>
               </li>
               <li>
@@ -148,7 +142,7 @@ const Footer: React.FC = () => {
                   href='/testimonials'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'شهادات العملاء' : 'Testimonials'}
+                  Testimonials
                 </Link>
               </li>
               <li>
@@ -156,7 +150,7 @@ const Footer: React.FC = () => {
                   href='/faqs'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'الأسئلة الشائعة' : 'FAQs'}
+                  FAQs
                 </Link>
               </li>
               <li>
@@ -164,7 +158,7 @@ const Footer: React.FC = () => {
                   href='/careers'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'وظائف' : 'Careers'}
+                  Careers
                 </Link>
               </li>
             </ul>
@@ -178,7 +172,7 @@ const Footer: React.FC = () => {
                   href='/privacy'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'سياسة الخصوصية' : 'Privacy Policy'}
+                  Privacy Policy
                 </Link>
               </li>
               <li>
@@ -186,7 +180,7 @@ const Footer: React.FC = () => {
                   href='/terms'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'شروط الخدمة' : 'Terms of Service'}
+                  Terms of Service
                 </Link>
               </li>
               <li>
@@ -194,7 +188,7 @@ const Footer: React.FC = () => {
                   href='/cookie-policy'
                   className='hover:text-primary-400 transition-colors'
                 >
-                  {isArabic ? 'سياسة ملفات الارتباط' : 'Cookie Policy'}
+                  Cookie Policy
                 </Link>
               </li>
             </ul>

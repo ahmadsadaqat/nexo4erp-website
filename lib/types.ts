@@ -74,8 +74,6 @@ export interface Testimonial {
 export interface FAQItem {
   question: string;
   answer: string;
-  questionAr?: string;
-  answerAr?: string;
 }
 
 export interface BlogPost {

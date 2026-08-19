@@ -383,31 +383,6 @@
   border-radius: 2px;
 }
 
-/* RTL support */
-[dir='rtl'] .rtl\:rotate-180 {
-  transform: rotate(180deg);
-}
-[dir='rtl'] .rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-[dir='rtl'] .rtl\:text-right {
-  text-align: right;
-}
-[dir='rtl'] .rtl\:border-r {
-  border-right-width: 1px;
-}
-[dir='rtl'] .rtl\:border-r-0 {
-  border-right-width: 0px;
-}
-[dir='rtl'] .rtl\:border-l {
-  border-left-width: 1px;
-}
-[dir='rtl'] .rtl\:pr-4 {
-  padding-right: 1rem;
-}
-[dir='rtl'] .lg\:rtl\:pr-6 {
-  padding-right: 1.5rem;
-}
 html {
   scroll-behavior: smooth;
 }

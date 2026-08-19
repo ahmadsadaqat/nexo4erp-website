@@ -14,11 +14,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { TRANSLATIONS } from '@/lib/constants'
 import { sendContactEmail } from '@/lib/email' // Import the new service
 
-interface ContactProps {
-  isArabic: boolean
-}
-
-const Contact: React.FC<ContactProps> = ({ isArabic }) => {
+const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -28,7 +24,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -38,7 +34,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
       // Use the EmailJS service instead of the old fetch/Formspree
       const result = await sendContactEmail({
         ...formState,
-        subject: isArabic ? 'استفسار من نموذج التواصل' : 'Website Contact Form',
+        subject: 'Website Contact Form',
       })
 
       if (result.success) {
@@ -47,11 +43,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
         // Success message stays for 8 seconds
         setTimeout(() => setIsSuccess(false), 8000)
       } else {
-        alert(
-          isArabic
-            ? 'عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى.'
-            : 'Something went wrong. Please try again.',
-        )
+        alert('Something went wrong. Please try again.')
       }
     } catch (error) {
       console.error('Submission failed', error)
@@ -61,7 +53,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
   }
 
   const rawPhoneNumber = '+923329400079'
-  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent(isArabic ? 'مرحباً، أود الاستفسار عن حلول NEXO ERP.' : 'Hello, I would like to inquire about NEXO ERP solutions.')}`
+  const whatsappLink = `https://wa.me/923329400079?text=${encodeURIComponent('Hello, I would like to inquire about NEXO ERP solutions.')}`
 
   return (
     <section
@@ -71,7 +63,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
           <ScrollReveal>
-            <div className='rtl:text-right'>
+            <div>
               <h2 className='text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2'>
                 {t.contactHeader}
               </h2>
@@ -85,7 +77,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
               <div className='space-y-6'>
                 <a
                   href='mailto:info@nexo4erp.com'
-                  className='flex items-center space-x-4 rtl:space-x-reverse p-5 bg-white/90 dark:bg-zinc-900/90 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-500/30 transition-all border border-transparent dark:border-zinc-800 backdrop-blur-md group'
+                  className='flex items-center space-x-4 p-5 bg-white/90 dark:bg-zinc-900/90 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary-500/30 transition-all border border-transparent dark:border-zinc-800 backdrop-blur-md group'
                 >
                   <div className='p-3 bg-primary-100 dark:bg-primary-900/30 rounded-xl text-primary-600 group-hover:scale-110 transition-transform'>
                     <Mail className='h-6 w-6' />
@@ -101,7 +93,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                 </a>
 
                 <div className='p-5 bg-white/90 dark:bg-zinc-900/90 rounded-2xl shadow-sm border border-transparent dark:border-zinc-800 backdrop-blur-md'>
-                  <div className='flex items-center space-x-4 rtl:space-x-reverse mb-6'>
+                  <div className='flex items-center space-x-4 mb-6'>
                     <div className='p-3 bg-primary-100 dark:bg-primary-900/30 rounded-xl text-primary-600'>
                       <Phone className='h-6 w-6' />
                     </div>
@@ -109,10 +101,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       <p className='text-xs font-black uppercase tracking-widest text-gray-400 mb-1'>
                         {t.callUs}
                       </p>
-                      <span
-                        className='text-lg font-bold text-gray-900 dark:text-white'
-                        dir='ltr'
-                      >
+                      <span className='text-lg font-bold text-gray-900 dark:text-white'>
                         0332 9400079
                       </span>
                     </div>
@@ -123,7 +112,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       href={`tel:${rawPhoneNumber}`}
                       className='flex items-center justify-center gap-2 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-bold text-sm transition-all transform hover:-translate-y-1 shadow-lg shadow-primary-600/20 active:scale-95'
                     >
-                      <Phone size={16} /> {isArabic ? 'اتصل الآن' : 'Call Now'}
+                      <Phone size={16} /> Call Now
                     </a>
                     <a
                       href={whatsappLink}
@@ -136,7 +125,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                   </div>
                 </div>
 
-                <div className='flex items-center space-x-4 rtl:space-x-reverse p-5 bg-white/90 dark:bg-zinc-900/90 rounded-2xl shadow-sm border border-transparent dark:border-zinc-800 backdrop-blur-md'>
+                <div className='flex items-center space-x-4 p-5 bg-white/90 dark:bg-zinc-900/90 rounded-2xl shadow-sm border border-transparent dark:border-zinc-800 backdrop-blur-md'>
                   <div className='p-3 bg-amber-100 dark:bg-amber-900/30 rounded-xl text-amber-600'>
                     <Clock className='h-6 w-6' />
                   </div>
@@ -145,9 +134,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       {t.workingHours}
                     </p>
                     <p className='text-lg font-bold text-gray-900 dark:text-white'>
-                      {isArabic
-                        ? 'الاثنين–الجمعة، 9:00–17:00'
-                        : 'Mon–Fri, 9:00–17:00'}
+                      Mon–Fri, 9:00–17:00
                     </p>
                   </div>
                 </div>
@@ -156,7 +143,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className='bg-white/95 dark:bg-zinc-900/95 rounded-[2rem] shadow-xl p-10 border border-gray-100 dark:border-zinc-800 backdrop-blur-md rtl:text-right relative overflow-hidden min-h-[500px] flex flex-col justify-center'>
+            <div className='bg-white/95 dark:bg-zinc-900/95 rounded-[2rem] shadow-xl p-10 border border-gray-100 dark:border-zinc-800 backdrop-blur-md relative overflow-hidden min-h-[500px] flex flex-col justify-center'>
               <div className='absolute top-0 right-0 w-32 h-32 bg-primary-500/5 rounded-full blur-3xl -mr-16 -mt-16'></div>
 
               {isSuccess ? (
@@ -165,12 +152,10 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                     <CheckCircle2 size={40} className='animate-target-hit' />
                   </div>
                   <h4 className='text-3xl font-black text-gray-900 dark:text-white mb-4'>
-                    {isArabic ? 'تم الإرسال بنجاح!' : 'Message Sent!'}
+                    Message Sent!
                   </h4>
                   <p className='text-gray-500 dark:text-gray-400 max-w-sm mx-auto'>
-                    {isArabic
-                      ? 'شكراً لتواصلك معنا. لقد تم استلام استفسارك وسيقوم فريقنا بالرد عليك قريباً عبر البريد الإلكتروني.'
-                      : 'Thank you for reaching out. Your inquiry has been sent successfully and our team will get back to you shortly.'}
+                    Thank you for reaching out. Your inquiry has been sent successfully and our team will get back to you shortly.
                   </p>
                 </div>
               ) : (
@@ -195,7 +180,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                           setFormState({ ...formState, name: e.target.value })
                         }
                         className='w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-zinc-800 transition-all outline-none'
-                        placeholder={isArabic ? 'أدخل اسمك' : 'John Doe'}
+                        placeholder='John Doe'
                         required
                         disabled={isSubmitting}
                       />
@@ -217,11 +202,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                           setFormState({ ...formState, email: e.target.value })
                         }
                         className='w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-zinc-800 transition-all outline-none'
-                        placeholder={
-                          isArabic
-                            ? 'البريد الإلكتروني للعمل'
-                            : 'john@company.com'
-                        }
+                        placeholder='john@company.com'
                         required
                         disabled={isSubmitting}
                       />
@@ -243,9 +224,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                           setFormState({ ...formState, phone: e.target.value })
                         }
                         className='w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-zinc-800 transition-all outline-none'
-                        placeholder={
-                          isArabic ? '+92 3XX XXXXXXX' : '+92 3XX XXXXXXX'
-                        }
+                        placeholder='+92 3XX XXXXXXX'
                         disabled={isSubmitting}
                       />
                     </div>
@@ -268,11 +247,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                           })
                         }
                         className='w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:bg-white dark:focus:bg-zinc-800 transition-all outline-none custom-scrollbar'
-                        placeholder={
-                          isArabic
-                            ? 'أخبرنا عن احتياجات عملك...'
-                            : 'Tell us about your business needs...'
-                        }
+                        placeholder='Tell us about your business needs...'
                         required
                         disabled={isSubmitting}
                       ></textarea>
@@ -287,13 +262,13 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                         <>
                           <Loader2 className='w-4 h-4 animate-spin' />
                           <span>
-                            {isArabic ? 'جاري الإرسال...' : 'Sending...'}
+                            Sending...
                           </span>
                         </>
                       ) : (
                         <>
                           <span>{t.sendMessage}</span>
-                          <Send className='w-4 h-4 rtl:rotate-180' />
+                          <Send className='w-4 h-4' />
                         </>
                       )}
                     </button>

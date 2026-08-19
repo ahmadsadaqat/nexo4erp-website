@@ -1,17 +1,13 @@
 'use client'
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 import { FAQS, TRANSLATIONS } from '@/lib/constants';
 import ScrollReveal from '@/components/ScrollReveal';
 
-interface FAQProps {
-  isArabic: boolean;
-}
-
-const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
+const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+  const t = TRANSLATIONS.en;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -25,7 +21,7 @@ const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-xl text-primary-600 dark:text-primary-400 mb-4 transition-transform duration-300 hover:scale-110">
                <HelpCircle className="w-6 h-6" />
             </div>
-            <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">{isArabic ? 'الدعم' : 'Support'}</h2>
+            <h2 className="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm mb-2">Support</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t.supportHeader}</h3>
             <p className="text-xl text-gray-500 dark:text-gray-400">
               {t.supportSub}
@@ -45,10 +41,10 @@ const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left rtl:text-right focus:outline-none"
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
                   <span className={`text-lg font-medium transition-colors duration-300 ${openIndex === index ? 'text-primary-700 dark:text-primary-400' : 'text-gray-900 dark:text-white'}`}>
-                      {isArabic ? faq.questionAr ?? faq.question : faq.question}
+                      {faq.question}
                   </span>
                   <div className={`transform transition-transform duration-500 ease-in-out ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}>
                     <ChevronDown className={`w-5 h-5 ${openIndex === index ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`} />
@@ -61,8 +57,8 @@ const FAQ: React.FC<FAQProps> = ({ isArabic }) => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right">
-                      {isArabic ? faq.answerAr ?? faq.answer : faq.answer}
+                    <div className="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {faq.answer}
                     </div>
                   </div>
                 </div>

@@ -6,13 +6,9 @@ import { Check, ChevronRight } from 'lucide-react'
 import { FEATURES, FEATURE_TABS, TRANSLATIONS } from '@/lib/constants'
 import ScrollReveal from '@/components/ScrollReveal'
 
-interface FeaturesProps {
-  isArabic: boolean
-}
-
-const Features: React.FC<FeaturesProps> = ({ isArabic }) => {
+const Features = () => {
   const [activeTab, setActiveTab] = useState(FEATURE_TABS[0].id)
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   const openModal = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -43,7 +39,7 @@ const Features: React.FC<FeaturesProps> = ({ isArabic }) => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24'>
           {FEATURES.map((feature, index) => (
             <ScrollReveal key={index} delay={index * 100}>
-              <div className='group h-full p-8 bg-gray-50/90 dark:bg-zinc-900/90 rounded-2xl border border-transparent hover:border-primary-100 dark:border-zinc-800 dark:hover:border-primary-900/50 hover:bg-white dark:hover:bg-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-md rtl:text-right'>
+              <div className='group h-full p-8 bg-gray-50/90 dark:bg-zinc-900/90 rounded-2xl border border-transparent hover:border-primary-100 dark:border-zinc-800 dark:hover:border-primary-900/50 hover:bg-white dark:hover:bg-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-md'>
                 <div className='w-14 h-14 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'>
                   <feature.icon className='w-7 h-7 text-primary-600 dark:text-primary-400' />
                 </div>
@@ -83,7 +79,7 @@ const Features: React.FC<FeaturesProps> = ({ isArabic }) => {
                   activeTab === tab.id && (
                     <div
                       key={tab.id}
-                      className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up rtl:text-right'
+                      className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up'
                     >
                       <div>
                         <h4 className='text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4'>
@@ -110,7 +106,7 @@ const Features: React.FC<FeaturesProps> = ({ isArabic }) => {
                           className='inline-flex px-8 py-3 bg-zinc-950 text-white hover:bg-zinc-900 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 font-bold rounded-xl shadow-xl dark:shadow-white/10 transition-all duration-300 transform hover:-translate-y-1 items-center gap-2 cursor-pointer'
                         >
                           {t.learnMore}{' '}
-                          <ChevronRight className='w-4 h-4 rtl:rotate-180' />
+                          <ChevronRight className='w-4 h-4' />
                         </a>
                       </div>
                       <div className='relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group'>

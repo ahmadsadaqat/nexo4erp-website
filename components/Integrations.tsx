@@ -5,12 +5,8 @@ import Image from 'next/image'
 import { INTEGRATIONS, TRANSLATIONS } from '@/lib/constants'
 import ScrollReveal from '@/components/ScrollReveal'
 
-interface IntegrationsProps {
-  isArabic: boolean
-}
-
-const Integrations: React.FC<IntegrationsProps> = ({ isArabic }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+const Integrations = () => {
+  const t = TRANSLATIONS.en
 
   return (
     <section

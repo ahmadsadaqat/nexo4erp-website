@@ -9,17 +9,15 @@ import TrustedClients from './TrustedClients'
 import { Testimonial } from '@/lib/types'
 
 interface TestimonialsPageProps {
-  isArabic: boolean
   testimonials: Testimonial[]
   onBack: () => void
 }
 
 const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
-  isArabic,
   testimonials,
   onBack,
 }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   return (
     <div className='bg-transparent min-h-screen pt-[80px] md:pt-[96px]'>
@@ -30,15 +28,13 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
               onClick={onBack}
               className='inline-flex items-center gap-2 text-[10px] font-black text-gray-400 hover:text-primary-600 transition-colors mb-8 uppercase tracking-[0.2em]'
             >
-              <ArrowLeft className='w-3 h-3 rtl:rotate-180' /> {t.backHome}
+              <ArrowLeft className='w-3 h-3' /> {t.backHome}
             </button>
             <h1 className='text-4xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight'>
-              {isArabic ? 'قصص النجاح' : 'Success Stories'}
+              Success Stories
             </h1>
             <p className='text-xl text-gray-500 dark:text-gray-400 font-medium'>
-              {isArabic
-                ? 'تعرف على كيفية قيام NEXO 4 بتحويل العمليات لمؤسسات رائدة في المنطقة.'
-                : 'See how NEXO 4 has transformed operations for leading organizations across the region.'}
+              See how NEXO 4 has transformed operations for leading organizations across the region.
             </p>
           </ScrollReveal>
         </div>
@@ -49,8 +45,8 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {testimonials.map((testimonial, i) => (
               <ScrollReveal key={i} delay={i * 100}>
-                <div className='bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md p-10 rounded-3xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:shadow-2xl transition-all duration-500 group relative rtl:text-right h-full'>
-                  <Quote className='absolute top-10 right-10 opacity-10 text-primary-600 w-12 h-12 rtl:left-10 rtl:right-auto' />
+                <div className='bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md p-10 rounded-3xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:shadow-2xl transition-all duration-500 group relative h-full'>
+                  <Quote className='absolute top-10 right-10 opacity-10 text-primary-600 w-12 h-12' />
 
                   <div className='flex items-center gap-1 text-amber-500 mb-6'>
                     {[...Array(5)].map((_, i) => (
@@ -88,14 +84,10 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
             <ScrollReveal delay={300}>
               <div className='bg-primary-600/90 backdrop-blur-md rounded-3xl p-10 flex flex-col justify-center items-center text-center text-white shadow-xl hover:-translate-y-2 transition-transform h-full'>
                 <h4 className='text-2xl font-extrabold mb-4'>
-                  {isArabic
-                    ? 'كن قصة نجاحنا التالية'
-                    : 'Be Our Next Success Story'}
+                  Be Our Next Success Story
                 </h4>
                 <p className='text-primary-100 mb-8'>
-                  {isArabic
-                    ? 'دعنا نساعدك في تحقيق أقصى قدر من الكفاءة لعملياتك.'
-                    : 'Let us help you achieve maximum efficiency for your operations.'}
+                  Let us help you achieve maximum efficiency for your operations.
                 </p>
                 <button
                   onClick={() =>
@@ -103,8 +95,7 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
                   }
                   className='px-8 py-3 bg-white text-primary-700 font-bold rounded-xl shadow-lg hover:bg-primary-50 transition-colors flex items-center gap-2'
                 >
-                  {isArabic ? 'ابدأ اليوم' : 'Get Started'}{' '}
-                  <ArrowRight size={18} className='rtl:rotate-180' />
+                  Get Started <ArrowRight size={18} />
                 </button>
               </div>
             </ScrollReveal>
@@ -113,7 +104,7 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
       </section>
 
       <div className='py-20 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md border-t border-gray-100 dark:border-zinc-900'>
-        <TrustedClients isArabic={isArabic} />
+        <TrustedClients />
       </div>
     </div>
   )

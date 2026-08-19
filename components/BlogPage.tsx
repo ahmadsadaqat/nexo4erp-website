@@ -6,11 +6,8 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  User,
   ArrowRight,
   Share2,
-  Tag,
-  ChevronRight,
   Check,
 } from 'lucide-react'
 import { TRANSLATIONS } from '@/lib/constants'
@@ -18,7 +15,6 @@ import { BlogPost } from '@/lib/types'
 import ScrollReveal from '@/components/ScrollReveal'
 
 interface BlogPageProps {
-  isArabic: boolean
   blogs: BlogPost[]
   selectedPost: BlogPost | null
   onPostSelect: (post: BlogPost) => void
@@ -27,14 +23,13 @@ interface BlogPageProps {
 }
 
 const BlogPage: React.FC<BlogPageProps> = ({
-  isArabic,
   blogs,
   selectedPost,
   onPostSelect,
   onBack,
   onGoToBlogList,
 }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
   const [filter, setFilter] = useState('All')
   const [copied, setCopied] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -100,9 +95,9 @@ const BlogPage: React.FC<BlogPageProps> = ({
                 onClick={onGoToBlogList}
                 className='flex items-center gap-2 px-5 py-3 bg-white/70 dark:bg-zinc-900/80 backdrop-blur-xl border border-gray-100 dark:border-zinc-800 rounded-full shadow-xl hover:shadow-primary-500/20 text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-all group'
               >
-                <ArrowLeft className='w-4 h-4 rtl:rotate-180 transform group-hover:-translate-x-1 rtl:group-hover:translate-x-1 transition-transform' />
+                <ArrowLeft className='w-4 h-4 transform group-hover:-translate-x-1 transition-transform' />
                 <span className='text-[10px] font-black uppercase tracking-[0.2em]'>
-                  {isArabic ? 'العودة' : 'Back to Insights'}
+                  Back to Insights
                 </span>
               </button>
             </div>
@@ -121,7 +116,7 @@ const BlogPage: React.FC<BlogPageProps> = ({
                   <Share2 className='w-4 h-4 group-hover:scale-110 transition-transform' />
                 )}
                 <span className='text-[10px] font-black uppercase tracking-[0.2em]'>
-                  {isArabic ? 'مشاركة' : 'Share'}
+                  Share
                 </span>
               </button>
             </div>
@@ -171,7 +166,7 @@ const BlogPage: React.FC<BlogPageProps> = ({
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <div className='prose prose-lg md:prose-xl dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-[1.8] rtl:text-right font-sans'>
+            <div className='prose prose-lg md:prose-xl dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-[1.8] font-sans'>
               {selectedPost.content.split('\n\n').map((para, i) => (
                 <p key={i} className='mb-8'>
                   {para}
@@ -185,10 +180,10 @@ const BlogPage: React.FC<BlogPageProps> = ({
           <div className='max-w-7xl mx-auto px-4'>
             <div className='text-center mb-12'>
               <h3 className='text-[10px] font-black text-primary-600 dark:text-primary-400 uppercase tracking-[0.3em] mb-4'>
-                {isArabic ? 'مقالات ذات صلة' : 'More to explore'}
+                More to explore
               </h3>
               <h4 className='text-3xl font-extrabold text-gray-900 dark:text-white'>
-                {isArabic ? 'مقالات ذات صلة' : 'Related Insights'}
+                Related Insights
               </h4>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
@@ -235,15 +230,13 @@ const BlogPage: React.FC<BlogPageProps> = ({
               onClick={onBack}
               className='inline-flex items-center gap-2 text-[10px] font-black text-gray-400 hover:text-primary-600 transition-colors mb-8 uppercase tracking-[0.3em]'
             >
-              <ArrowLeft className='w-3 h-3 rtl:rotate-180' /> {t.backHome}
+              <ArrowLeft className='w-3 h-3' /> {t.backHome}
             </button>
             <h1 className='text-5xl md:text-8xl font-black text-gray-900 dark:text-white mb-8 leading-none tracking-tighter'>
-              {isArabic ? 'رؤى نكسو' : 'NEXO Insights'}
+              NEXO Insights
             </h1>
             <p className='text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed'>
-              {isArabic
-                ? 'مقالات متعمقة حول تكنولوجيا ERP.'
-                : 'In-depth articles on ERP technology, digital transformation, and the future of intelligent business.'}
+              In-depth articles on ERP technology, digital transformation, and the future of intelligent business.
             </p>
           </ScrollReveal>
         </div>
@@ -265,7 +258,7 @@ const BlogPage: React.FC<BlogPageProps> = ({
             {filteredPosts.map((post, i) => (
               <ScrollReveal key={post.id} delay={i * 100}>
                 <div
-                  className='group flex flex-col h-full bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-zinc-800/50 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-700 cursor-pointer rtl:text-right'
+                  className='group flex flex-col h-full bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-zinc-800/50 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-700 cursor-pointer'
                   onClick={() => onPostSelect(post)}
                 >
                   <div className='relative h-64 overflow-hidden'>
@@ -300,8 +293,7 @@ const BlogPage: React.FC<BlogPageProps> = ({
                       {post.excerpt}
                     </p>
                     <div className='flex items-center gap-3 text-primary-600 font-black text-xs uppercase tracking-widest group-hover:gap-5 transition-all'>
-                      {isArabic ? 'اقرأ المزيد' : 'Read Article'}{' '}
-                      <ArrowRight className='w-4 h-4 rtl:rotate-180' />
+                      Read Article <ArrowRight className='w-4 h-4' />
                     </div>
                   </div>
                 </div>

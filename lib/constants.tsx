@@ -141,101 +141,23 @@ export const TRANSLATIONS: any = {
     understood: 'Understood',
     agreed: 'Agreed',
   },
-  ar: {
-    heroTag: 'شريك تنفيذ ERPNext و Odoo',
-    heroHeadline: 'خدمات تنفيذ ERPNext و Odoo للشركات في باكستان',
-    heroSubheadline:
-      'NEXO ERP شركة تنفيذ ERP مقرها لاهور، بخبرة عملية واسعة في Frappe ERPNext و Odoo. نساعد شركات التصنيع والتجزئة والرعاية الصحية والخدمات اللوجستية في باكستان على التخلص من العمل اليدوي وتوحيد العمليات والنمو عبر أنظمة ERP مفتوحة المصدر تناسب طريقة عملها فعلاً.',
-    solutions: 'الخدمات',
-    features: 'المميزات',
-    industries: 'الصناعات',
-    editions: 'إصدارات نيكسو',
-    blog: 'المدونة',
-    about: 'من نحن',
-    demo: 'احجز استشارة مجانية',
-    contactSales: 'تحدث إلى المبيعات',
-    requestQuote: 'طلب عرض سعر',
-    editionsHeader: 'اختر إصدارك',
-    editionsSub: 'حدد الإطار الذي يتماشى مع نضج عملك وأهداف نموك.',
-    sectorsHeader: 'الصناعات التي نفذنا لها ERP',
-    sectorsSub: 'تنفيذ ERPNext و Odoo مصمم لتحديات كل قطاع.',
-    ecosystemHeader: 'خدمات ERP متكاملة مبنية حول عملك',
-    ecosystemSub:
-      'نحن لا نثبت برنامجاً فقط. يعمل مستشارو Frappe و Odoo مع فريقك من التحليل والإعداد إلى التدريب والإطلاق والدعم المستمر.',
-    capabilitiesHeader: 'مميزات قوية',
-    capabilitiesSub:
-      'مجموعة كاملة من الأدوات المصممة لتحسين كل جانب من جوانب عمليات عملك.',
-    integrationsHeader: 'تكامل سلس مع أدواتك المفضلة',
-    trustedClientsHeader: 'موثوق به من قبل قادة الصناعة',
-    aboutHeader: 'لماذا تختار الشركات في باكستان NEXO ERP',
-    supportHeader: 'أسئلة ERPNext و Odoo، بإجابات واضحة',
-    supportSub:
-      'إجابات مباشرة حول مدة التنفيذ، نقل البيانات، الامتثال المحلي، الدعم، واختيار نظام ERP الأنسب في باكستان.',
-    exploreEdition: 'استكشف الإصدار',
-    learnMore: 'تعرف على المزيد',
-    consultSpecialist: 'استشر متخصصاً',
-    requestIndustryDemo: 'طلب عرض تجريبي للصناعة',
-    backHome: 'العودة للرئيسية',
-    contactHeader: 'تواصل معنا',
-    contactSub: 'تحدث إلى مستشاري ERP لدينا',
-    contactDesc:
-      'سواء كنت تستكشف ERP لأول مرة أو تريد الانتقال من نظامك الحالي، يسعدنا فهم متطلباتك ومساعدتك على اختيار المسار الصحيح بدون ضغط مبيعات.',
-    emailUs: 'راسلنا بالبريد الإلكتروني',
-    callUs: 'اتصل بنا',
-    whatsappUs: 'راسلنا عبر واتساب',
-    whatsappChat: 'الدردشة عبر واتساب',
-    workingHours: 'ساعات العمل',
-    scheduleDemo: 'احجز عرضاً تجريبياً',
-    fullName: 'الاسم الكامل',
-    bizEmail: 'البريد الإلكتروني للعمل',
-    phone: 'رقم الهاتف',
-    message: 'الرسالة',
-    sendMessage: 'إرسال الرسالة',
-    footerProduct: 'الخدمات',
-    footerResources: 'الموارد',
-    footerLegal: 'قانوني',
-    testimonialsHeader: 'آراء العملاء',
-    testimonialsSub: 'موثوق به من قبل قادة الصناعة',
-    testimonialsDesc: 'اطلع على ما يقوله شركاؤنا عن رحلتهم مع NEXO ERP.',
-    blogHeader: 'رؤى',
-    blogSub: 'أحدث الأخبار والمقالات',
-    blogDesc:
-      'ابق في الطليعة مع رؤى الخبراء حول تقنية ERP والتحول الرقمي ونمو الأعمال.',
-    modalConnect: 'تواصل مع NEXO 4',
-    modalSub: 'أكمل التفاصيل أدناه لبدء رحلتك.',
-    modalSubject: 'الموضوع',
-    modalSubjectPlaceholder: 'مثال: تنفيذ ERPNext',
-    modalSubmit: 'إرسال الطلب',
-    understood: 'مفهوم',
-    agreed: 'أوافق',
-  },
 }
 
 export const TRUST_POINTS = [
   {
     text: 'Extensive Frappe ERPNext expertise — not a generalist IT firm that learned ERPNext last month',
-    textAr:
-      'خبرة واسعة في Frappe ERPNext، ولسنا شركة تقنية عامة تعلمت ERPNext مؤخراً',
   },
   {
     text: 'Pakistan-based team — we understand local tax (FBR), EOBI, payroll, and compliance requirements',
-    textAr:
-      'فريق مقره باكستان يفهم متطلبات FBR و EOBI والرواتب والامتثال المحلي',
   },
   {
     text: 'Open-source advantage — no per-user licensing fees; ERPNext and Odoo are free at the core',
-    textAr:
-      'ميزة الأنظمة مفتوحة المصدر: بدون رسوم ترخيص لكل مستخدم، فـ ERPNext و Odoo مجانيان في الأساس',
   },
   {
     text: 'Full project ownership — one team from scoping to support, no handoffs to third parties',
-    textAr:
-      'ملكية كاملة للمشروع من التحليل إلى الدعم، بفريق واحد دون تسليم لطرف ثالث',
   },
   {
     text: 'Proven across 6 industries — manufacturing, retail, healthcare, NGO, logistics, and services',
-    textAr:
-      'خبرة مثبتة في 6 قطاعات: التصنيع، التجزئة، الرعاية الصحية، المنظمات غير الربحية، الخدمات اللوجستية، والخدمات المهنية',
   },
 ]
 
@@ -243,61 +165,43 @@ export const SOLUTIONS_CONTENT = [
   {
     id: 'erpnext-implementation',
     title: 'Fresh ERPNext Implementation',
-    titleAr: 'تنفيذ ERPNext من البداية',
     description:
       'From initial scoping to go-live, we implement ERPNext (via our nexoERP platform) tailored to your industry \u2014 manufacturing, retail, NGO, healthcare, logistics, or professional services.',
-    descriptionAr:
-      'من دراسة المتطلبات حتى الإطلاق، ننفذ ERPNext عبر منصة nexoERP بما يناسب قطاعك، سواء التصنيع أو التجزئة أو المنظمات غير الربحية أو الرعاية الصحية أو الخدمات اللوجستية أو الخدمات المهنية.',
     icon: Database,
   },
   {
     id: 'odoo-implementation',
     title: 'Odoo Implementation',
-    titleAr: 'تنفيذ Odoo',
     description:
       'Full Odoo ERP deployment for Pakistani businesses. We configure accounting, inventory, CRM, HR, and manufacturing modules to match your exact workflows.',
-    descriptionAr:
-      'تنفيذ كامل لنظام Odoo ERP للشركات في باكستان، مع إعداد المحاسبة والمخزون و CRM والموارد البشرية والتصنيع وفق سير عملك الفعلي.',
     icon: Globe,
   },
   {
     id: 'customization',
     title: 'Customization & Module Development',
-    titleAr: 'التخصيص وتطوير الوحدات',
     description:
       'Our Frappe framework developers build custom doctypes, reports, workflows, and integrations \u2014 so your ERP works exactly the way your team works.',
-    descriptionAr:
-      'يطور فريق Frappe لدينا نماذج وتقارير وسير عمل وتكاملات مخصصة ليعمل نظام ERP بالطريقة التي يعمل بها فريقك.',
     icon: Code,
   },
   {
     id: 'migration',
     title: 'Migration from Legacy Software',
-    titleAr: 'الانتقال من الأنظمة القديمة',
     description:
       'Moving from QuickBooks, Microsoft Dynamics, SAP B1, or a custom system? We handle data migration, mapping, validation, and cutover with minimal downtime.',
-    descriptionAr:
-      'تنتقل من QuickBooks أو Microsoft Dynamics أو SAP B1 أو نظام مخصص؟ ندير نقل البيانات والربط والتحقق والانتقال النهائي بأقل توقف ممكن.',
     icon: ArrowLeftRight,
   },
   {
     id: 'training',
     title: 'Training & Onboarding',
-    titleAr: 'التدريب وتهيئة المستخدمين',
     description:
       'Structured training programs for end users, department heads, and system administrators \u2014 delivered in Urdu or English across Pakistan.',
-    descriptionAr:
-      'برامج تدريب منظمة للمستخدمين ومديري الأقسام ومسؤولي النظام، باللغة الأردية أو الإنجليزية في مختلف أنحاء باكستان.',
     icon: BookOpen,
   },
   {
     id: 'support',
     title: 'Ongoing Support & Maintenance',
-    titleAr: 'الدعم والصيانة المستمرة',
     description:
       'Post go-live, we\u2019re still here. Monthly support retainers, bug fixes, system updates, new module rollouts, and performance reviews.',
-    descriptionAr:
-      'بعد الإطلاق نبقى معك عبر باقات دعم شهرية، إصلاحات، تحديثات، إطلاق وحدات جديدة، ومراجعات أداء دورية.',
     icon: Shield,
   },
 ]
@@ -1453,57 +1357,36 @@ export const FAQS: FAQItem[] = [
     question: 'How long does an ERPNext or Odoo implementation take?',
     answer:
       'It depends on your business size and complexity. A standard ERPNext implementation for a small business can be ready in 2\u20134 weeks. Larger implementations with custom modules, data migration, and multi-department rollouts typically take 3\u20136 months. We provide a dedicated implementation manager and a clear timeline from day one.',
-    questionAr: 'كم تستغرق عملية تنفيذ ERPNext أو Odoo؟',
-    answerAr:
-      'يعتمد ذلك على حجم العمل وتعقيده. يمكن تجهيز تنفيذ ERPNext القياسي للشركات الصغيرة خلال 2 إلى 4 أسابيع. أما المشاريع الأكبر التي تشمل وحدات مخصصة ونقل بيانات وتطبيقاً على عدة أقسام فتستغرق عادة من 3 إلى 6 أشهر. نوفر مدير تنفيذ مخصصاً وجدولاً زمنياً واضحاً من اليوم الأول.',
   },
   {
     question: 'Can I migrate data from QuickBooks, Tally, or SAP?',
     answer:
       'Yes. We handle full data migration from legacy systems including QuickBooks, Tally, Microsoft Dynamics, SAP B1, and custom-built software. Our team manages schema mapping, data extraction, transformation, validation, and parallel-run testing so nothing gets lost.',
-    questionAr: 'هل يمكن نقل البيانات من QuickBooks أو Tally أو SAP؟',
-    answerAr:
-      'نعم. نتولى نقل البيانات بالكامل من الأنظمة القديمة مثل QuickBooks و Tally و Microsoft Dynamics و SAP B1 والأنظمة المخصصة. يدير فريقنا ربط الحقول واستخراج البيانات وتحويلها والتحقق منها واختبار التشغيل الموازي لضمان عدم فقدان أي بيانات.',
   },
   {
     question: 'Do you handle FBR tax configuration and Pakistani compliance?',
     answer:
       'Absolutely. We configure FBR sales tax, withholding tax, and income tax. We also set up EOBI and PESSI payroll deductions, Pakistani chart of accounts, and SRB (Sindh Revenue Board) compliance where applicable. Local compliance is built into every implementation.',
-    questionAr: 'هل تتولون إعداد ضرائب FBR والامتثال في باكستان؟',
-    answerAr:
-      'بالتأكيد. نعد ضريبة المبيعات والخصم الضريبي وضريبة الدخل وفق FBR، كما نضبط خصومات EOBI و PESSI للرواتب ودليل الحسابات الباكستاني ومتطلبات SRB عند الحاجة. الامتثال المحلي جزء أساسي من كل تنفيذ.',
   },
   {
     question: 'What is the difference between ERPNext and Odoo?',
     answer:
       'Both are excellent open-source ERPs. ERPNext (Frappe) excels at manufacturing, NGO accounting, and deep customization without breaking upgrades. Odoo has a more polished UI and stronger POS and e-commerce modules. We implement both and recommend the right fit based on your industry and requirements.',
-    questionAr: 'ما الفرق بين ERPNext و Odoo؟',
-    answerAr:
-      'كلاهما نظام ERP مفتوح المصدر وممتاز. يتميز ERPNext المبني على Frappe في التصنيع ومحاسبة المنظمات غير الربحية والتخصيص العميق مع الحفاظ على استقرار التحديثات. يتميز Odoo بواجهة أكثر صقلاً ووحدات أقوى لنقاط البيع والتجارة الإلكترونية. ننفذ النظامين ونوصي بالأنسب حسب قطاعك ومتطلباتك.',
   },
   {
     question: 'What is nexoERP?',
     answer:
       'nexoERP is our branded ERPNext implementation \u2014 Frappe ERPNext configured, customised, and optimised for Pakistani business workflows. You get the full power of open-source ERPNext (zero licensing fees) with our layer of industry-specific customizations, local compliance configurations, and dedicated support.',
-    questionAr: 'ما هو nexoERP؟',
-    answerAr:
-      'nexoERP هو تنفيذنا الخاص لنظام ERPNext: إعداد وتخصيص وتحسين Frappe ERPNext ليتوافق مع سير عمل الشركات في باكستان. تحصل على قوة ERPNext مفتوح المصدر بدون رسوم ترخيص، مع تخصيصات قطاعية وإعدادات امتثال محلي ودعم مخصص.',
   },
   {
     question: 'Do you provide post-implementation support?',
     answer:
       'Yes. We offer monthly support retainers covering bug fixes, user queries, system updates, new module rollouts, and monthly performance reviews. You get a dedicated point of contact \u2014 not a ticket queue.',
-    questionAr: 'هل تقدمون دعماً بعد التنفيذ؟',
-    answerAr:
-      'نعم. نقدم باقات دعم شهرية تشمل إصلاح الأخطاء واستفسارات المستخدمين وتحديثات النظام وإطلاق وحدات جديدة ومراجعات أداء شهرية. سيكون لديك مسؤول تواصل مخصص، وليس مجرد نظام تذاكر.',
   },
   {
     question: 'Is the system customizable?',
     answer:
       'Deeply. ERPNext\u2019s Frappe framework allows us to add custom fields, workflows, print formats, reports, and entirely new modules without modifying core code \u2014 which keeps upgrades stable. Odoo offers similar flexibility through its studio and Python customization layer.',
-    questionAr: 'هل يمكن تخصيص النظام؟',
-    answerAr:
-      'بدرجة كبيرة. يتيح إطار Frappe في ERPNext إضافة حقول مخصصة وسير عمل ونماذج طباعة وتقارير ووحدات كاملة دون تعديل الكود الأساسي، مما يحافظ على استقرار التحديثات. ويوفر Odoo مرونة مشابهة عبر Studio وطبقة التخصيص بلغة Python.',
   },
 ]
 

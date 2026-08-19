@@ -7,12 +7,8 @@ import { Check } from 'lucide-react';
 import { PACKAGE_TIERS, TRANSLATIONS } from '@/lib/constants';
 import ScrollReveal from '@/components/ScrollReveal';
 
-interface PricingProps {
-  isArabic: boolean;
-}
-
-const Pricing: React.FC<PricingProps> = ({ isArabic }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+const Pricing: React.FC = () => {
+  const t = TRANSLATIONS.en;
   
   const openModal = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -45,17 +41,17 @@ const Pricing: React.FC<PricingProps> = ({ isArabic }) => {
               >
                 {tier.isPopular && (
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary-600 to-primary-400 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                    {isArabic ? 'الأكثر طلباً' : 'Most Popular'}
+                    Most Popular
                   </div>
                 )}
 
-                <div className="p-8 rtl:text-right">
+                <div className="p-8">
                   <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.name}</h4>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">{tier.target}</p>
                   
                   <div className="mb-6">
                     {/* Fix: PackageTier doesn't have a specific price property, showing Custom Pricing as default */}
-                    <span className="text-4xl font-extrabold text-gray-900 dark:text-white">{isArabic ? 'تسعير مخصص' : 'Custom Pricing'}</span>
+                    <span className="text-4xl font-extrabold text-gray-900 dark:text-white">Custom Pricing</span>
                   </div>
 
                   <ul className="space-y-4 mb-8">
@@ -77,7 +73,7 @@ const Pricing: React.FC<PricingProps> = ({ isArabic }) => {
                         : 'bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-900 dark:text-white shadow-md hover:shadow-lg'
                     }`}
                   >
-                    {isArabic ? 'اطلب عرضاً مخصصاً' : 'Get a Custom Quote'}
+                    Get a Custom Quote
                   </a>
                 </div>
               </div>

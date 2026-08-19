@@ -8,17 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { Testimonial } from '@/lib/types'
 
 interface TestimonialsProps {
-  isArabic: boolean
   testimonials: Testimonial[]
   onSeeAll?: () => void
 }
 
 const Testimonials: React.FC<TestimonialsProps> = ({
-  isArabic,
   testimonials,
   onSeeAll,
 }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   return (
     <section
@@ -43,9 +41,9 @@ const Testimonials: React.FC<TestimonialsProps> = ({
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-16'>
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 150}>
-              <div className='bg-white/95 dark:bg-zinc-900/95 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-800 relative flex flex-col backdrop-blur-md hover:transform hover:-translate-y-2 transition-transform duration-300 h-full rtl:text-right overflow-hidden'>
+              <div className='bg-white/95 dark:bg-zinc-900/95 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-800 relative flex flex-col backdrop-blur-md hover:transform hover:-translate-y-2 transition-transform duration-300 h-full overflow-hidden'>
                 {/* 1. FIXED QUOTE OVERLAP: Lower opacity and z-index */}
-                <Quote className='absolute top-4 right-4 rtl:left-4 rtl:right-auto w-12 h-12 text-primary-100/40 dark:text-primary-900/20 transform rtl:scale-x-[-1] z-0' />
+                <Quote className='absolute top-4 right-4 w-12 h-12 text-primary-100/40 dark:text-primary-900/20 z-0' />
 
                 {/* 2. RATING STARS: Added above the quote text */}
                 <div className='flex gap-1 mb-4 relative z-10'>
@@ -94,10 +92,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({
               onClick={onSeeAll}
               className='inline-flex items-center px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1 cursor-pointer gap-2'
             >
-              {isArabic
-                ? 'اقرأ المزيد من قصص النجاح'
-                : 'Read All Success Stories'}{' '}
-              <ArrowRight size={18} className='rtl:rotate-180' />
+              Read All Success Stories <ArrowRight size={18} />
             </button>
           </ScrollReveal>
         </div>

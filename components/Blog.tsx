@@ -8,19 +8,17 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { BlogPost } from '@/lib/types'
 
 interface BlogProps {
-  isArabic: boolean
   blogs: BlogPost[]
   onReadMore: (post: BlogPost) => void
   onSeeAll: () => void
 }
 
 const Blog: React.FC<BlogProps> = ({
-  isArabic,
   blogs,
   onReadMore,
   onSeeAll,
 }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
   // Show only top 3 on home page
   const featuredPosts = blogs.slice(0, 3)
@@ -49,7 +47,7 @@ const Blog: React.FC<BlogProps> = ({
           {featuredPosts.map((post, index) => (
             <ScrollReveal key={post.id} delay={index * 100}>
               <div
-                className='group flex flex-col h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary-900/10 dark:hover:shadow-primary-900/20 border border-gray-100 dark:border-zinc-800 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer rtl:text-right'
+                className='group flex flex-col h-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary-900/10 dark:hover:shadow-primary-900/20 border border-gray-100 dark:border-zinc-800 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer'
                 onClick={() => onReadMore(post)}
               >
                 {/* Image Container */}
@@ -61,7 +59,7 @@ const Blog: React.FC<BlogProps> = ({
                     sizes='(max-width: 768px) 100vw, 33vw'
                     className='object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out'
                   />
-                  <div className='absolute top-4 left-4 rtl:left-auto rtl:right-4'>
+                  <div className='absolute top-4 left-4'>
                     <span className='px-3 py-1 bg-white/90 dark:bg-black/80 backdrop-blur-sm text-primary-700 dark:text-primary-400 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm'>
                       {post.category}
                     </span>
@@ -70,7 +68,7 @@ const Blog: React.FC<BlogProps> = ({
 
                 {/* Content */}
                 <div className='flex flex-col flex-grow p-6'>
-                  <div className='flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 space-x-3 rtl:space-x-reverse'>
+                  <div className='flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 space-x-3'>
                     <div className='flex items-center'>
                       <Calendar className='w-3 h-3 mx-1' />
                       {post.date}
@@ -90,9 +88,8 @@ const Blog: React.FC<BlogProps> = ({
                     {post.excerpt}
                   </p>
 
-                  <div className='mt-auto pt-4 border-t border-gray-50 dark:border-zinc-800 flex items-center text-primary-600 dark:text-primary-400 font-semibold text-sm group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform'>
-                    {isArabic ? 'اقرأ المقال' : 'Read Article'}{' '}
-                    <ArrowRight className='w-4 h-4 mx-2 rtl:rotate-180' />
+                  <div className='mt-auto pt-4 border-t border-gray-50 dark:border-zinc-800 flex items-center text-primary-600 dark:text-primary-400 font-semibold text-sm group-hover:translate-x-1 transition-transform'>
+                    Read Article <ArrowRight className='w-4 h-4 mx-2' />
                   </div>
                 </div>
               </div>
@@ -105,8 +102,7 @@ const Blog: React.FC<BlogProps> = ({
             onClick={onSeeAll}
             className='inline-flex items-center px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1'
           >
-            {isArabic ? 'عرض جميع المقالات' : 'View All Insights'}{' '}
-            <ArrowRight className='mx-2 w-4 h-4 rtl:rotate-180' />
+            View All Insights <ArrowRight className='mx-2 w-4 h-4' />
           </button>
         </div>
       </div>

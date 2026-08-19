@@ -8,19 +8,8 @@ import { INDUSTRIES, TRANSLATIONS } from '@/lib/constants'
 
 import ScrollReveal from '@/components/ScrollReveal'
 
-import { Industry } from '@/lib/types'
-
-interface IndustriesProps {
-  isArabic: boolean
-
-  onSelectIndustry?: (industry: Industry) => void
-}
-
-const Industries: React.FC<IndustriesProps> = ({
-  isArabic,
-  onSelectIndustry,
-}) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+const Industries = () => {
+  const t = TRANSLATIONS.en
 
   return (
     <section id='industries' className='py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black'>
@@ -62,11 +51,11 @@ const Industries: React.FC<IndustriesProps> = ({
 
                 {/* Accent Line */}
 
-                <div className='absolute top-0 left-0 rtl:left-auto rtl:right-0 w-2 h-full bg-primary-500 transform -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20'></div>
+                <div className='absolute top-0 left-0 w-2 h-full bg-primary-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20'></div>
 
                 {/* Content Layer */}
 
-                <div className='absolute inset-0 p-8 flex flex-col justify-end z-10 rtl:text-right'>
+                <div className='absolute inset-0 p-8 flex flex-col justify-end z-10'>
                   <div className='mb-4 inline-flex p-3 bg-white/10 backdrop-blur-md rounded-2xl w-fit group-hover:bg-primary-500 group-hover:text-white transition-all duration-300'>
                     <industry.icon className='w-8 h-8 text-white' />
                   </div>
@@ -81,7 +70,7 @@ const Industries: React.FC<IndustriesProps> = ({
 
                   <div className='flex items-center text-primary-400 font-bold text-sm'>
                     {t.exploreEdition}{' '}
-                    <span className='mx-2 transform group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform'>
+                    <span className='mx-2 transform group-hover:translate-x-2 transition-transform'>
                       →
                     </span>
                   </div>

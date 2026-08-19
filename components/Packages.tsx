@@ -5,19 +5,15 @@ import { Check, ArrowRight } from 'lucide-react';
 import { PACKAGE_TIERS, TRANSLATIONS } from '@/lib/constants';
 import ScrollReveal from '@/components/ScrollReveal';
 
-interface PackagesProps {
-  isArabic: boolean;
-}
-
-const Packages: React.FC<PackagesProps> = ({ isArabic }) => {
+const Packages: React.FC = () => {
   const openModal = (e: React.MouseEvent, pkgName: string) => {
     e.preventDefault();
     window.dispatchEvent(new CustomEvent('open-contact-modal', { 
-      detail: { subject: isArabic ? `استفسار عن إصدار: ${pkgName}` : `Edition Inquiry: ${pkgName}` } 
+      detail: { subject: `Edition Inquiry: ${pkgName}` } 
     }));
   };
 
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en;
+  const t = TRANSLATIONS.en;
   const erpPackages = PACKAGE_TIERS.filter(p => p.category === 'ERP');
   const hrmsPackages = PACKAGE_TIERS.filter(p => p.category === 'HRMS');
 
@@ -37,7 +33,7 @@ const Packages: React.FC<PackagesProps> = ({ isArabic }) => {
         {/* ERP Section */}
         <ScrollReveal>
           <div className="mb-12">
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 rtl:border-l-0 rtl:border-r-4 border-primary-500 px-4 uppercase tracking-wider">Business ERP Editions</h4>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-primary-500 px-4 uppercase tracking-wider">Business ERP Editions</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
               {erpPackages.map((tier, index) => (
                 <div 
@@ -77,7 +73,7 @@ const Packages: React.FC<PackagesProps> = ({ isArabic }) => {
                           : 'bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-900 dark:text-white'
                       }`}
                     >
-                      {t.learnMore} <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                      {t.learnMore} <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -89,7 +85,7 @@ const Packages: React.FC<PackagesProps> = ({ isArabic }) => {
         {/* HRMS Section */}
         <ScrollReveal delay={200}>
           <div className="mt-20">
-            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 rtl:border-l-0 rtl:border-r-4 border-emerald-500 px-4 uppercase tracking-wider">Specialized People Management (HRMS Editions)</h4>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-emerald-500 px-4 uppercase tracking-wider">Specialized People Management (HRMS Editions)</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
               {hrmsPackages.map((tier, index) => (
                 <div 

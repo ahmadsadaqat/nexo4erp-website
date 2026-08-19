@@ -18,14 +18,8 @@ const ClientLogo = ({ src, alt }: { src: string; alt: string }) => (
   </div>
 )
 
-interface TrustedClientsProps {
-  isArabic?: boolean
-}
-
-const TrustedClients: React.FC<TrustedClientsProps> = ({
-  isArabic = false,
-}) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+const TrustedClients = () => {
+  const t = TRANSLATIONS.en
 
   const logos = [
     { src: '/companies/Vital-petroleum.svg', alt: 'Vital petroleum' },
@@ -43,15 +37,13 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
   const complianceLogos = [
     {
       alt: 'PSEB',
-      label: isArabic
-        ? 'شركة تكنولوجيا معلومات مسجلة'
-        : 'Registered IT Company',
+      label: 'Registered IT Company',
       link: '#',
     },
     {
       src: '/FBR.svg',
       alt: 'FBR',
-      label: isArabic ? 'فواتير إلكترونية معتمدة' : 'Authorized E-Invoicing',
+      label: 'Authorized E-Invoicing',
       link: '#',
     },
   ]

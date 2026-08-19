@@ -11,12 +11,8 @@ declare global {
   }
 }
 
-interface ContactModalProps {
-  isArabic: boolean
-}
-
-const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+const ContactModal: React.FC = () => {
+  const t = TRANSLATIONS.en
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -32,7 +28,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
   useEffect(() => {
     const handleOpen = (e: any) => {
       const subject =
-        e.detail?.subject || (isArabic ? 'استفسار عام' : 'General Inquiry')
+        e.detail?.subject || 'General Inquiry'
       setFormState((prev) => ({ ...prev, subject }))
       setIsOpen(true)
       setIsSuccess(false)
@@ -46,7 +42,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
         'open-contact-modal',
         handleOpen as EventListener,
       )
-  }, [isArabic])
+  }, [])
 
   const handleClose = () => {
     setIsVisible(false)
@@ -94,11 +90,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
       }
     } catch (error) {
       console.error('Submission error', error)
-      alert(
-        isArabic
-          ? 'عذراً، حدث خطأ ما'
-          : 'Something went wrong. Please try again.',
-      )
+      alert('Something went wrong. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -118,7 +110,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
       <div
         className={`relative w-full max-w-lg bg-white dark:bg-zinc-900 rounded-[2rem] shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10 transform transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${isVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-8 opacity-0'}`}
       >
-        <div className='absolute top-6 right-6 rtl:right-auto rtl:left-6 z-10'>
+        <div className='absolute top-6 right-6 z-10'>
           <button
             onClick={handleClose}
             className='p-2 bg-gray-100 dark:bg-zinc-800 rounded-full hover:bg-red-500 hover:text-white transition-all duration-300 text-gray-500'
@@ -127,19 +119,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
           </button>
         </div>
 
-        <div className='p-8 md:p-12 rtl:text-right'>
+        <div className='p-8 md:p-12'>
           {isSuccess ? (
             <div className='py-12 text-center'>
               <div className='w-24 h-24 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-6 text-emerald-600 dark:text-emerald-400 shadow-lg'>
                 <CheckCircle2 size={48} />
               </div>
               <h3 className='text-3xl font-black text-gray-900 dark:text-white mb-3'>
-                {isArabic ? 'تم الإرسال!' : 'Message Sent'}
+                Message Sent
               </h3>
               <p className='text-gray-500 dark:text-gray-400 text-lg'>
-                {isArabic
-                  ? 'سيتواصل معك فريقنا في أقرب وقت ممكن.'
-                  : 'Our team will contact you shortly.'}
+                Our team will contact you shortly.
               </p>
             </div>
           ) : (
@@ -165,7 +155,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                         setFormState({ ...formState, name: e.target.value })
                       }
                       className='w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all'
-                      placeholder={isArabic ? 'الاسم' : 'John Doe'}
+                      placeholder='John Doe'
                       required
                     />
                   </div>
@@ -199,9 +189,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                         setFormState({ ...formState, phone: e.target.value })
                       }
                       className='w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all'
-                      placeholder={
-                        isArabic ? '+92 3XX XXXXXXX' : '+92 3XX XXXXXXX'
-                      }
+                      placeholder='+92 3XX XXXXXXX'
                     />
                   </div>
 
@@ -232,9 +220,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                         setFormState({ ...formState, message: e.target.value })
                       }
                       className='w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all'
-                      placeholder={
-                        isArabic ? 'كيف يمكننا مساعدتك؟' : 'How can we help?'
-                      }
+                      placeholder='How can we help?'
                       required
                     ></textarea>
                   </div>
@@ -248,12 +234,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className='w-6 h-6 animate-spin' />
-                      <span>{isArabic ? 'جاري الإرسال' : 'SENDING'}</span>
+                      <span>SENDING</span>
                     </>
                   ) : (
                     <>
-                      <span>{isArabic ? 'إرسال الطلب' : 'SUBMIT REQUEST'}</span>
-                      <Send className='w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform rtl:rotate-180' />
+                      <span>SUBMIT REQUEST</span>
+                      <Send className='w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
                     </>
                   )}
                 </button>

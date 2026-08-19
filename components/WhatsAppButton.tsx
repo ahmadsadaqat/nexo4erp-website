@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { MessageCircle } from 'lucide-react'
 import { TRANSLATIONS } from '@/lib/constants'
-import { useLanguage } from '@/components/language-provider'
 
 declare global {
   interface Window {
@@ -14,12 +13,10 @@ declare global {
 const WHATSAPP_NUMBER = '923329400079'
 
 export default function WhatsAppButton() {
-  const { isArabic } = useLanguage()
-  const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
+  const t = TRANSLATIONS.en
 
-  const message = isArabic
-    ? 'مرحباً، أود التحدث عبر واتساب بخصوص خدمات NEXO ERP.'
-    : 'Hello, I would like to chat on WhatsApp about NEXO ERP services.'
+  const message =
+    'Hello, I would like to chat on WhatsApp about NEXO ERP services.'
 
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
