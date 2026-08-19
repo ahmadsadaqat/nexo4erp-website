@@ -43,7 +43,6 @@ const footerLinks: FooterSection[] = [
     links: [
       { title: 'Privacy Policy', href: '/privacy' },
       { title: 'Terms of Service', href: '/terms' },
-      { title: 'Refund Policy', href: '/refund-policy' },
     ],
   },
   {

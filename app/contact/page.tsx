@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+  }
+}
+
 import {
   ArrowLeft,
   Mail,
@@ -64,6 +70,13 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
+
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'generate_lead',
+      lead_type: 'contact_form',
+    })
+
     // Dispatch the contact modal event as the backend is wired there
     window.dispatchEvent(new Event('open-contact-modal'))
     setStatus('idle')

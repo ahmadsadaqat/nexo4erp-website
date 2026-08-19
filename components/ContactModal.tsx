@@ -5,6 +5,12 @@ import { X, Send, Loader2, CheckCircle2 } from 'lucide-react'
 import { TRANSLATIONS } from '@/lib/constants'
 import { sendContactEmail } from '@/lib/email' // Import your EmailJS service
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+  }
+}
+
 interface ContactModalProps {
   isArabic: boolean
 }
@@ -65,6 +71,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
       })
 
       if (result.success) {
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          event: 'generate_lead',
+          lead_type: 'contact_form',
+        })
+
         setIsSuccess(true)
         setFormState({
           name: '',
