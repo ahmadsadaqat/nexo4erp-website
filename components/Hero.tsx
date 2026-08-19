@@ -27,11 +27,6 @@ const Hero = () => {
 
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         <div className='text-center max-w-4xl mx-auto animate-fade-in-up'>
-          <div className='inline-flex items-center px-4 py-2 rounded-full bg-primary-50 dark:bg-zinc-900 text-primary-600 dark:text-primary-400 font-medium text-sm mb-8 border border-transparent dark:border-zinc-800'>
-            <span className='w-2 h-2 rounded-full bg-primary-600 mx-2 animate-pulse'></span>
-            {t.heroTag}
-          </div>
-
           <h1 className='text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-6'>
             {t.heroHeadline}
           </h1>

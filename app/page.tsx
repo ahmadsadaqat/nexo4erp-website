@@ -22,9 +22,9 @@ export default function HomePage() {
   return (
     <main className='relative z-10'>
       <Hero />
+      <FbrIntegrationBanner />
       <TrustedClients />
       <Solutions />
-      <FbrIntegrationBanner />
       <PakistanTrustSection />
       <Industries />
       <Integrations />
@@ -35,11 +35,7 @@ export default function HomePage() {
       />
       <Packages />
       <About />
-      <Blog
-        blogs={BLOG_POSTS}
-        onReadMore={() => {}}
-        onSeeAll={() => {}}
-      />
+      <Blog blogs={BLOG_POSTS} onReadMore={() => {}} onSeeAll={() => {}} />
       <FAQ />
       <Contact />
     </main>
