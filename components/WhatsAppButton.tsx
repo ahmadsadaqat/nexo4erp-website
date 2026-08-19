@@ -5,6 +5,12 @@ import { MessageCircle } from 'lucide-react'
 import { TRANSLATIONS } from '@/lib/constants'
 import { useLanguage } from '@/components/language-provider'
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+  }
+}
+
 const WHATSAPP_NUMBER = '923329400079'
 
 export default function WhatsAppButton() {
@@ -23,6 +29,15 @@ export default function WhatsAppButton() {
       target='_blank'
       rel='noopener noreferrer nofollow'
       aria-label={t.whatsappChat}
+      onClick={() => {
+        window.dataLayer = window.dataLayer || []
+
+        window.dataLayer.push({
+          event: 'whatsapp_click',
+          contact_method: 'whatsapp',
+          button_location: 'floating_button',
+        })
+      }}
       className='fixed bottom-5 right-5 z-[90] inline-flex items-center gap-3 rounded-full bg-emerald-500 px-4 py-3 text-white shadow-2xl shadow-emerald-500/30 transition-transform duration-300 hover:-translate-y-1 hover:bg-emerald-600 md:bottom-6 md:right-6'
     >
       <MessageCircle className='h-5 w-5' />

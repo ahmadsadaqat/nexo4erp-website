@@ -16,6 +16,12 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+  }
+}
+
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm() {
@@ -46,6 +52,15 @@ export function ContactForm() {
       if (!res.ok) {
         throw new Error(data?.error || 'Something went wrong.')
       }
+
+      // Tell Google Tag Manager that a lead was successfully submitted
+      window.dataLayer = window.dataLayer || []
+
+      window.dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'contact_form',
+      })
+
       setStatus('success')
       e.currentTarget.reset()
     } catch (err: unknown) {
@@ -123,7 +138,7 @@ export function ContactForm() {
             aria-live='polite'
             className={cn(
               'min-h-5 text-sm',
-              isSuccess ? 'text-foreground' : 'text-destructive'
+              isSuccess ? 'text-foreground' : 'text-destructive',
             )}
           >
             {isSubmitting && (
