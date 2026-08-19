@@ -76,6 +76,7 @@ const Navbar: React.FC = () => {
             width={160}
             height={60}
             sizes='(max-width: 768px) 120px, 160px'
+            style={{ width: 'auto', height: 'auto' }}
             className={`w-auto h-8 md:h-9 transition-all duration-300 dark:hidden ${
               isScrolled ? 'md:h-9' : 'md:h-10'
             }`}
@@ -84,9 +85,10 @@ const Navbar: React.FC = () => {
           <Image
             src='/nexoerp-white.svg'
             alt='Nexo ERP'
-            width={160}
-            height={60}
+            width={0}
+            height={0}
             sizes='(max-width: 768px) 120px, 160px'
+            // style={{ width: '160', height: 'auto' }}
             className={`hidden w-auto h-8 md:h-9 transition-all duration-300 dark:block ${
               isScrolled ? 'md:h-9' : 'md:h-10'
             }`}
@@ -216,6 +218,7 @@ const Navbar: React.FC = () => {
               width={120}
               height={40}
               sizes='120px'
+              style={{ width: 'auto', height: 'auto' }}
               className='h-10 w-auto dark:hidden'
               priority
             />
@@ -225,6 +228,7 @@ const Navbar: React.FC = () => {
               width={120}
               height={40}
               sizes='120px'
+              style={{ width: 'auto', height: 'auto' }}
               className='hidden h-10 w-auto dark:block'
               priority
             />

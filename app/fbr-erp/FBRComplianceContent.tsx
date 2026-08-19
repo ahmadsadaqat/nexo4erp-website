@@ -253,7 +253,7 @@ export default function FBRComplianceContent() {
           {/* Hero OG Image */}
           <div className='mt-12 max-w-5xl mx-auto rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-2xl'>
             <Image
-              src='FBR-integration-dashboard.png'
+              src='/FBR-integration-dashboard.png'
               alt='NexoERP FBR-Integrated Invoicing Dashboard with QR Code'
               width={1200}
               height={630}

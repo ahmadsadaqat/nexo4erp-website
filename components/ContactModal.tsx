@@ -141,7 +141,16 @@ const ContactModal: React.FC = () => {
                 {t.modalSub}
               </p>
 
-              <form onSubmit={handleSubmit} className='space-y-4' suppressHydrationWarning>
+              <form
+                onSubmit={handleSubmit}
+                className='space-y-4'
+                suppressHydrationWarning
+                autoComplete='off'
+                data-form-type='other'
+                data-lpignore='true'
+                data-1p-ignore='true'
+                data-nordpass-ignore='true'
+              >
                 <div className='grid grid-cols-1 gap-4'>
                   <div>
                     <label className='block text-[11px] font-bold uppercase text-gray-400 mb-2 tracking-widest'>
@@ -150,6 +159,10 @@ const ContactModal: React.FC = () => {
                     <input
                       type='text'
                       suppressHydrationWarning
+                      autoComplete='off'
+                      data-lpignore='true'
+                      data-1p-ignore='true'
+                      data-nordpass-ignore='true'
                       value={formState.name}
                       onChange={(e) =>
                         setFormState({ ...formState, name: e.target.value })
@@ -167,6 +180,10 @@ const ContactModal: React.FC = () => {
                     <input
                       type='email'
                       suppressHydrationWarning
+                      autoComplete='off'
+                      data-lpignore='true'
+                      data-1p-ignore='true'
+                      data-nordpass-ignore='true'
                       value={formState.email}
                       onChange={(e) =>
                         setFormState({ ...formState, email: e.target.value })
@@ -184,6 +201,10 @@ const ContactModal: React.FC = () => {
                     <input
                       type='tel'
                       suppressHydrationWarning
+                      autoComplete='off'
+                      data-lpignore='true'
+                      data-1p-ignore='true'
+                      data-nordpass-ignore='true'
                       value={formState.phone}
                       onChange={(e) =>
                         setFormState({ ...formState, phone: e.target.value })
@@ -200,6 +221,10 @@ const ContactModal: React.FC = () => {
                     <input
                       type='text'
                       suppressHydrationWarning
+                      autoComplete='off'
+                      data-lpignore='true'
+                      data-1p-ignore='true'
+                      data-nordpass-ignore='true'
                       value={formState.subject}
                       onChange={(e) =>
                         setFormState({ ...formState, subject: e.target.value })
@@ -215,6 +240,11 @@ const ContactModal: React.FC = () => {
                     </label>
                     <textarea
                       rows={3}
+                      suppressHydrationWarning
+                      autoComplete='off'
+                      data-lpignore='true'
+                      data-1p-ignore='true'
+                      data-nordpass-ignore='true'
                       value={formState.message}
                       onChange={(e) =>
                         setFormState({ ...formState, message: e.target.value })

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Mail,
   Phone,
@@ -15,6 +15,7 @@ import { TRANSLATIONS } from '@/lib/constants'
 import { sendContactEmail } from '@/lib/email' // Import the new service
 
 const Contact: React.FC = () => {
+  const [isMounted, setIsMounted] = useState(false)
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -23,6 +24,10 @@ const Contact: React.FC = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const t = TRANSLATIONS.en
 
@@ -163,7 +168,16 @@ const Contact: React.FC = () => {
                   <h4 className='text-2xl font-black text-gray-900 dark:text-white mb-8 tracking-tight'>
                     {t.scheduleDemo}
                   </h4>
-                  <form onSubmit={handleSubmit} className='space-y-6' suppressHydrationWarning>
+                  <form
+                    onSubmit={handleSubmit}
+                    className='space-y-6'
+                    suppressHydrationWarning
+                    autoComplete='off'
+                    data-form-type='other'
+                    data-lpignore='true'
+                    data-1p-ignore='true'
+                    data-nordpass-ignore='true'
+                  >
                     <div className='group' suppressHydrationWarning>
                       <label
                         htmlFor='name'
@@ -175,6 +189,10 @@ const Contact: React.FC = () => {
                         type='text'
                         id='name'
                         suppressHydrationWarning
+                        autoComplete='off'
+                        data-lpignore='true'
+                        data-1p-ignore='true'
+                        data-nordpass-ignore='true'
                         value={formState.name}
                         onChange={(e) =>
                           setFormState({ ...formState, name: e.target.value })
@@ -197,6 +215,10 @@ const Contact: React.FC = () => {
                         type='email'
                         id='email'
                         suppressHydrationWarning
+                        autoComplete='off'
+                        data-lpignore='true'
+                        data-1p-ignore='true'
+                        data-nordpass-ignore='true'
                         value={formState.email}
                         onChange={(e) =>
                           setFormState({ ...formState, email: e.target.value })
@@ -219,6 +241,10 @@ const Contact: React.FC = () => {
                         type='tel'
                         id='phone'
                         suppressHydrationWarning
+                        autoComplete='off'
+                        data-lpignore='true'
+                        data-1p-ignore='true'
+                        data-nordpass-ignore='true'
                         value={formState.phone}
                         onChange={(e) =>
                           setFormState({ ...formState, phone: e.target.value })
@@ -239,6 +265,11 @@ const Contact: React.FC = () => {
                       <textarea
                         id='message'
                         rows={4}
+                        suppressHydrationWarning
+                        autoComplete='off'
+                        data-lpignore='true'
+                        data-1p-ignore='true'
+                        data-nordpass-ignore='true'
                         value={formState.message}
                         onChange={(e) =>
                           setFormState({
