@@ -75,20 +75,22 @@ const Navbar: React.FC = () => {
           <Image
             src='/nexoerp-black.svg'
             alt='Nexo ERP'
-            width={150}
-            height={48}
-            className={`w-auto transition-all duration-300 dark:hidden ${
-              isScrolled ? 'h-8 md:h-9' : 'h-10 md:h-12'
+            width={160}
+            height={60}
+            sizes='(max-width: 768px) 120px, 160px'
+            className={`w-auto h-8 md:h-9 transition-all duration-300 dark:hidden ${
+              isScrolled ? 'md:h-9' : 'md:h-10'
             }`}
             priority
           />
           <Image
             src='/nexoerp-white.svg'
             alt='Nexo ERP'
-            width={150}
-            height={48}
-            className={`w-auto transition-all duration-300 hidden dark:block ${
-              isScrolled ? 'h-8 md:h-9' : 'h-10 md:h-12'
+            width={160}
+            height={60}
+            sizes='(max-width: 768px) 120px, 160px'
+            className={`hidden w-auto h-8 md:h-9 transition-all duration-300 dark:block ${
+              isScrolled ? 'md:h-9' : 'md:h-10'
             }`}
             priority
           />
@@ -226,19 +228,19 @@ const Navbar: React.FC = () => {
             <Image
               src='/nexoerp-black.svg'
               alt='Nexo ERP'
-              width={150}
+              width={120}
               height={40}
-              style={{ width: 'auto' }}
-            className='h-10 w-auto dark:hidden'
+              sizes='120px'
+              className='h-10 w-auto dark:hidden'
               priority
             />
             <Image
               src='/nexoerp-white.svg'
               alt='Nexo ERP'
-              width={150}
+              width={120}
               height={40}
-              style={{ width: 'auto' }}
-            className='h-10 w-auto hidden dark:block'
+              sizes='120px'
+              className='hidden h-10 w-auto dark:block'
               priority
             />
           </>
@@ -272,9 +274,13 @@ const Navbar: React.FC = () => {
               className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter flex items-center justify-center gap-2 w-full focus:outline-none'
             >
               {t.solutions}
-              <ChevronDown className={`w-6 h-6 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`w-6 h-6 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`}
+              />
             </button>
-            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileSolutionsOpen ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div
+              className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileSolutionsOpen ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}
+            >
               {serviceLinks.map((service) => (
                 <Link
                   key={service.href}
@@ -294,9 +300,13 @@ const Navbar: React.FC = () => {
               className='text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tighter flex items-center justify-center gap-2 w-full focus:outline-none'
             >
               {t.industries}
-              <ChevronDown className={`w-6 h-6 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`w-6 h-6 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`}
+              />
             </button>
-            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileIndustriesOpen ? 'max-h-[800px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div
+              className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${mobileIndustriesOpen ? 'max-h-[800px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}
+            >
               {INDUSTRIES.map((industry) => (
                 <Link
                   key={industry.id}

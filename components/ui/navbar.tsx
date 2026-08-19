@@ -60,6 +60,7 @@ export const Navbar = () => {
                   alt='NEXO ERP Logo'
                   width={136}
                   height={34}
+                  style={{ width: 'auto', height: 'auto' }}
                   className='h-[34px] w-auto dark:hidden'
                   priority
                 />
@@ -68,6 +69,7 @@ export const Navbar = () => {
                   alt='NEXO ERP Logo'
                   width={136}
                   height={34}
+                  style={{ width: 'auto', height: 'auto' }}
                   className='hidden h-[34px] w-auto dark:block'
                   priority
                 />

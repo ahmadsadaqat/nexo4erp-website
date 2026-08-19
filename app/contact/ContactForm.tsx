@@ -46,7 +46,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+      <form onSubmit={handleSubmit(onSubmit)} className='space-y-4' suppressHydrationWarning>
         <div>
           <label htmlFor='name' className='block text-sm font-medium'>
             Name
@@ -54,6 +54,7 @@ export function ContactForm() {
           <input
             id='name'
             type='text'
+            suppressHydrationWarning
             {...register('name')} // Register the input
             className='mt-1 block w-full rounded-md border-gray-300 shadow-sm'
           />
@@ -69,6 +70,7 @@ export function ContactForm() {
           <input
             id='email'
             type='email'
+            suppressHydrationWarning
             {...register('email')}
             className='mt-1 block w-full rounded-md border-gray-300 shadow-sm'
           />
@@ -84,6 +86,7 @@ export function ContactForm() {
           <input
             id='phone'
             type='tel'
+            suppressHydrationWarning
             {...register('phone')}
             placeholder='+92 3XX XXXXXXX'
             className='mt-1 block w-full rounded-md border-gray-300 shadow-sm'

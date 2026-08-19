@@ -74,6 +74,7 @@ export function Footer() {
             alt='Nexo ERP'
             width={200}
             height={200}
+            style={{ width: 'auto', height: 'auto' }}
             className='w-auto h-auto'
           />
           <p className='text-muted-foreground mt-8 text-sm md:mt-0'>

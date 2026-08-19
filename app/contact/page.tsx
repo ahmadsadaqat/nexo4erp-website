@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <h2 className='text-xl font-bold text-gray-900 dark:text-white mb-6'>
                   Send Us a Message
                 </h2>
-                <form onSubmit={handleSubmit} className='space-y-5'>
+                <form onSubmit={handleSubmit} className='space-y-5' suppressHydrationWarning>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
                     <div>
                       <label className='block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2'>
@@ -194,6 +194,7 @@ export default function ContactPage() {
                       <input
                         type='text'
                         required
+                        suppressHydrationWarning
                         value={form.name}
                         onChange={(e) =>
                           setForm({ ...form, name: e.target.value })
@@ -209,6 +210,7 @@ export default function ContactPage() {
                       <input
                         type='email'
                         required
+                        suppressHydrationWarning
                         value={form.email}
                         onChange={(e) =>
                           setForm({ ...form, email: e.target.value })
@@ -224,6 +226,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type='text'
+                      suppressHydrationWarning
                       value={form.company}
                       onChange={(e) =>
                         setForm({ ...form, company: e.target.value })
@@ -239,6 +242,7 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={form.service}
+                        suppressHydrationWarning
                         onChange={(e) =>
                           setForm({ ...form, service: e.target.value })
                         }
@@ -257,6 +261,7 @@ export default function ContactPage() {
                         <MessageCircle className='absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400' />
                         <input
                           type='tel'
+                          suppressHydrationWarning
                           value={form.whatsapp}
                           onChange={(e) =>
                             setForm({ ...form, whatsapp: e.target.value })

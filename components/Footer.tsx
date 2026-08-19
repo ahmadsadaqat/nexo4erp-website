@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
                 alt='NEXO ERP'
                 width={150}
                 height={48}
-                style={{ width: 'auto' }}
-            className='h-12 w-auto object-contain'
+                style={{ width: 'auto', height: 'auto' }}
+                className='h-12 w-auto object-contain'
               />
             </a>
 

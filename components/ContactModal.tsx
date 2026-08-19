@@ -151,7 +151,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                 {t.modalSub}
               </p>
 
-              <form onSubmit={handleSubmit} className='space-y-4'>
+              <form onSubmit={handleSubmit} className='space-y-4' suppressHydrationWarning>
                 <div className='grid grid-cols-1 gap-4'>
                   <div>
                     <label className='block text-[11px] font-bold uppercase text-gray-400 mb-2 tracking-widest'>
@@ -159,6 +159,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                     </label>
                     <input
                       type='text'
+                      suppressHydrationWarning
                       value={formState.name}
                       onChange={(e) =>
                         setFormState({ ...formState, name: e.target.value })
@@ -175,6 +176,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                     </label>
                     <input
                       type='email'
+                      suppressHydrationWarning
                       value={formState.email}
                       onChange={(e) =>
                         setFormState({ ...formState, email: e.target.value })
@@ -191,6 +193,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                     </label>
                     <input
                       type='tel'
+                      suppressHydrationWarning
                       value={formState.phone}
                       onChange={(e) =>
                         setFormState({ ...formState, phone: e.target.value })
@@ -208,6 +211,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isArabic }) => {
                     </label>
                     <input
                       type='text'
+                      suppressHydrationWarning
                       value={formState.subject}
                       onChange={(e) =>
                         setFormState({ ...formState, subject: e.target.value })

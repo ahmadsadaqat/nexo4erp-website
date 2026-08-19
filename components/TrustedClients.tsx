@@ -11,9 +11,9 @@ const ClientLogo = ({ src, alt }: { src: string; alt: string }) => (
       alt={alt}
       width={200}
       height={80}
-      loading="eager"
+      loading='eager'
       style={{ width: 'auto' }}
-            className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition duration-300 dark:brightness-110'
+      className='h-16 md:h-20 w-auto object-contain max-w-[200px] drop-shadow-md transition duration-300 dark:brightness-110'
     />
   </div>
 )
@@ -28,10 +28,15 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
   const t = isArabic ? TRANSLATIONS.ar : TRANSLATIONS.en
 
   const logos = [
-    { src: '/Vital-petroleum.svg', alt: 'Vital petroleum' },
-    { src: '/lalkhan-oil-mill.svg', alt: 'Lal Khan oil mill' },
-    { src: '/united-bakers-and-sweets.svg', alt: 'United bakers and sweets' },
-    { src: '/saheeb-trading-company.svg', alt: 'Saheeb Trading' },
+    { src: '/companies/Vital-petroleum.svg', alt: 'Vital petroleum' },
+    { src: '/companies/lalkhan-oil-mill.svg', alt: 'Lal Khan oil mill' },
+    {
+      src: '/companies/united-bakers-and-sweets.svg',
+      alt: 'United bakers and sweets',
+    },
+    { src: '/companies/saheeb-trading-company.svg', alt: 'Saheeb Trading' },
+    { src: '/companies/Senior-Circle.png', alt: 'Senior Circle' },
+    { src: '/companies/Water-Qo.png', alt: 'Water Qo' },
   ]
 
   // Compliance Data
@@ -98,28 +103,28 @@ const TrustedClients: React.FC<TrustedClientsProps> = ({
                     <Image
                       src='/PSEB.svg'
                       alt='pakistan software export board'
-                      width={280}
-                      height={112}
-                      style={{ width: 'auto' }}
-            className='h-20 md:h-28 w-auto block dark:hidden group-hover:scale-110 transition-transform drop-shadow-lg'
+                      width={220}
+                      height={88}
+                      sizes='220px'
+                      className='h-20 w-auto md:h-28 block dark:hidden group-hover:scale-110 transition-transform drop-shadow-lg'
                     />
                     <Image
                       src='/White-PSEB.svg'
                       alt='pakistan software export board'
-                      width={280}
-                      height={112}
-                      style={{ width: 'auto' }}
-            className='h-20 md:h-28 w-auto hidden dark:block group-hover:scale-110 transition-transform drop-shadow-lg'
+                      width={220}
+                      height={88}
+                      sizes='220px'
+                      className='hidden h-20 w-auto md:h-28 dark:block group-hover:scale-110 transition-transform drop-shadow-lg'
                     />
                   </>
                 ) : (
                   <Image
                     src={item.src!}
                     alt={item.alt}
-                    width={280}
-                    height={112}
-                    style={{ width: 'auto' }}
-            className='h-20 md:h-28 w-auto block group-hover:scale-110 transition-transform drop-shadow-lg'
+                    width={220}
+                    height={88}
+                    sizes='220px'
+                    className='h-20 w-auto md:h-28 block group-hover:scale-110 transition-transform drop-shadow-lg'
                   />
                 )}
               </div>

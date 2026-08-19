@@ -25,7 +25,7 @@ const Dashboard = () => {
               alt='NEXO ERP Logo'
               width={100}
               height={32}
-              style={{ width: 'auto' }}
+              style={{ width: 'auto', height: 'auto' }}
               className='h-8 w-auto object-contain'
               priority
             />

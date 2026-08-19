@@ -16,7 +16,7 @@ export default function TermsPage() {
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 dark:text-white">Terms of Service</h1>
           <div className="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
-            <p className="mb-4 text-sm text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+            <p className="mb-4 text-sm text-muted-foreground" suppressHydrationWarning>Last updated: {new Date().toLocaleDateString()}</p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">1. Agreement to Terms</h2>
             <p>

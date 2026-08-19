@@ -178,8 +178,8 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                   <h4 className='text-2xl font-black text-gray-900 dark:text-white mb-8 tracking-tight'>
                     {t.scheduleDemo}
                   </h4>
-                  <form onSubmit={handleSubmit} className='space-y-6'>
-                    <div className='group'>
+                  <form onSubmit={handleSubmit} className='space-y-6' suppressHydrationWarning>
+                    <div className='group' suppressHydrationWarning>
                       <label
                         htmlFor='name'
                         className='block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500'
@@ -189,6 +189,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       <input
                         type='text'
                         id='name'
+                        suppressHydrationWarning
                         value={formState.name}
                         onChange={(e) =>
                           setFormState({ ...formState, name: e.target.value })
@@ -200,7 +201,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       />
                     </div>
 
-                    <div className='group'>
+                    <div className='group' suppressHydrationWarning>
                       <label
                         htmlFor='email'
                         className='block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500'
@@ -210,6 +211,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       <input
                         type='email'
                         id='email'
+                        suppressHydrationWarning
                         value={formState.email}
                         onChange={(e) =>
                           setFormState({ ...formState, email: e.target.value })
@@ -225,7 +227,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       />
                     </div>
 
-                    <div className='group'>
+                    <div className='group' suppressHydrationWarning>
                       <label
                         htmlFor='phone'
                         className='block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500'
@@ -235,6 +237,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       <input
                         type='tel'
                         id='phone'
+                        suppressHydrationWarning
                         value={formState.phone}
                         onChange={(e) =>
                           setFormState({ ...formState, phone: e.target.value })
@@ -247,7 +250,7 @@ const Contact: React.FC<ContactProps> = ({ isArabic }) => {
                       />
                     </div>
 
-                    <div className='group'>
+                    <div className='group' suppressHydrationWarning>
                       <label
                         htmlFor='message'
                         className='block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest transition-colors group-focus-within:text-primary-500'
