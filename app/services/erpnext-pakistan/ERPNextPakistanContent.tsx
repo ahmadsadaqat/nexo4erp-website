@@ -459,8 +459,8 @@ export default function ERPNextPakistanContent() {
 
           <div className='mb-16 max-w-5xl mx-auto'>
             <Image
-              src='/erpnext-implementation-process.png'
-              alt='Implementation Process Workflow'
+              src='/NexoERP-software-implementation-process-workflow.webp'
+              alt='NexoERP Software Implementation Process Workflow'
               width={1200}
               height={675}
               className='w-full h-auto rounded-2xl shadow-sm border border-gray-200 dark:border-zinc-800'

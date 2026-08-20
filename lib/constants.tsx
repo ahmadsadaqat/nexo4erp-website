@@ -1323,7 +1323,7 @@ export const PACKAGE_TIERS: PackageTier[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Sidrah Hassan',
-    role: 'Head of HR – Sidrah Faisal',
+    role: 'Head of HR – Vital Petroleum',
 
     quote:
       'NEXO 4 ERP streamlined our HR and Payroll operations with an efficient, integrated system. The ESS solution has made employee self-service easier while improving accuracy and reducing manual work',

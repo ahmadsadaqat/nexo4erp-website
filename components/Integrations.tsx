@@ -1,6 +1,3 @@
-'use client'
-
-import React from 'react'
 import Image from 'next/image'
 import { INTEGRATIONS, TRANSLATIONS } from '@/lib/constants'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -25,7 +22,7 @@ const Integrations = () => {
             <ScrollReveal key={index} delay={index * 50} width='auto'>
               <div className='flex flex-col items-center justify-center group relative cursor-default'>
                 <div
-                  className='bg-white/60 dark:bg-zinc-900/60 rounded-lg p-4 w-32 h-20 flex items-center justify-center
+                  className='bg-white/60 dark:bg-zinc-900/60 rounded-lg p-8 w-28 h-16 flex items-center justify-center
                     opacity-90 group-hover:opacity-100
                     transform transition-all duration-300 ease-out
                     group-hover:bg-white dark:group-hover:bg-zinc-800
@@ -34,10 +31,10 @@ const Integrations = () => {
                   <Image
                     src={app.logo}
                     alt={app.name}
-                    width={120}
-                    height={48}
+                    width={100}
+                    height={30}
                     style={{ width: 'auto', height: 'auto' }}
-                    className='w-auto h-12 object-contain transition-all duration-300'
+                    className='w-auto h-8 object-contain transition-all duration-300'
                   />
                 </div>
                 {/* Name below */}
