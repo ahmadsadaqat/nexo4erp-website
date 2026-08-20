@@ -61,7 +61,7 @@ const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
                   <div className='flex items-center gap-4 border-t border-gray-50 dark:border-zinc-800 pt-8 mt-auto'>
                     <div className='w-16 h-16 rounded-full overflow-hidden border-4 border-primary-50 dark:border-primary-900/20'>
                       <Image
-                        src={testimonial.image}
+                        src={testimonial.image || ''}
                         alt={testimonial.name}
                         width={64}
                         height={64}

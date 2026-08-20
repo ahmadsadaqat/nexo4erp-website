@@ -31,10 +31,10 @@ const Industries = () => {
             <ScrollReveal key={index} delay={index * 50}>
               <Link
                 href={`/industries/${industry.id}`}
-                className='block relative h-80 group rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-800 overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br from-primary-900 via-primary-800 to-black'
+                className='block relative h-80 group rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-800 overflow-hidden transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br from-primary-900 via-primary-800 to-black'
               >
                 {/* Background Image Layer */}
-                <div className='absolute inset-0 transition-transform duration-700 group-hover:scale-110'>
+                <div className='absolute inset-0 transition-transform duration-300 group-hover:scale-110'>
                   <Image
                     src={industry.bgImage}
                     alt={industry.name}
@@ -47,16 +47,16 @@ const Industries = () => {
 
                 {/* Overlay Layers - Darker by default for better text visibility */}
 
-                <div className='absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:via-black/70 transition-colors duration-300'></div>
+                <div className='absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:via-black/70 transition-colors duration-200'></div>
 
                 {/* Accent Line */}
 
-                <div className='absolute top-0 left-0 w-2 h-full bg-primary-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20'></div>
+                <div className='absolute top-0 left-0 w-2 h-full bg-primary-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-250 z-20'></div>
 
                 {/* Content Layer */}
 
                 <div className='absolute inset-0 p-8 flex flex-col justify-end z-10'>
-                  <div className='mb-4 inline-flex p-3 bg-white/10 backdrop-blur-md rounded-2xl w-fit group-hover:bg-primary-500 group-hover:text-white transition-all duration-300'>
+                  <div className='mb-4 inline-flex p-3 bg-white/10 backdrop-blur-md rounded-2xl w-fit group-hover:bg-primary-500 group-hover:text-white transition-all duration-200'>
                     <industry.icon className='w-8 h-8 text-white' />
                   </div>
 
@@ -64,7 +64,7 @@ const Industries = () => {
                     {industry.name}
                   </h4>
 
-                  <p className='text-gray-300 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0 line-clamp-2'>
+                  <p className='text-gray-300 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-250 transform translate-y-4 group-hover:translate-y-0 line-clamp-2'>
                     {industry.description}
                   </p>
 

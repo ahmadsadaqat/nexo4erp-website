@@ -33,7 +33,7 @@ const FAQ: React.FC = () => {
           {FAQS.map((faq, index) => (
             <ScrollReveal key={index} delay={index * 50}>
               <div 
-                className={`bg-white dark:bg-zinc-900 rounded-2xl border transition-all duration-500 ease-in-out overflow-hidden ${
+                className={`bg-white dark:bg-zinc-900 rounded-2xl border transition-all duration-200 ease-out overflow-hidden ${
                     openIndex === index 
                     ? 'border-primary-500 shadow-md ring-1 ring-primary-500/20' 
                     : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:hover:border-zinc-700'
@@ -43,16 +43,16 @@ const FAQ: React.FC = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
-                  <span className={`text-lg font-medium transition-colors duration-300 ${openIndex === index ? 'text-primary-700 dark:text-primary-400' : 'text-gray-900 dark:text-white'}`}>
+                  <span className={`text-lg font-medium transition-colors duration-200 ${openIndex === index ? 'text-primary-700 dark:text-primary-400' : 'text-gray-900 dark:text-white'}`}>
                       {faq.question}
                   </span>
-                  <div className={`transform transition-transform duration-500 ease-in-out ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}>
+                  <div className={`transform transition-transform duration-200 ease-out ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}>
                     <ChevronDown className={`w-5 h-5 ${openIndex === index ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`} />
                   </div>
                 </button>
                 
                 <div 
-                  className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                  className={`grid transition-[grid-template-rows] duration-200 ease-out ${
                       openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >

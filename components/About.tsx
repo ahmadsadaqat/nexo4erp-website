@@ -100,20 +100,20 @@ const About = () => {
              
              <div className="space-y-12">
                  {/* Sep 2025: Inception */}
-                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                      <div className="flex-1 md:text-right order-2 md:order-1">
                          <h5 className="text-xl font-bold text-gray-900 dark:text-white">Sep 2025: Inception</h5>
                          <p className="text-gray-600 dark:text-gray-400 mt-2">Four visionaries came together with a shared goal: to redefine ERP solutions with simplicity, power, and adaptability.</p>
                      </div>
-                     <div className={`w-14 h-14 bg-amber-100 dark:bg-amber-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-amber-600 dark:text-amber-500 shrink-0 order-1 md:order-2 shadow-lg shadow-amber-500/10 transition-transform duration-500 ${isVisible ? 'scale-100' : 'scale-0'}`}>
+                     <div className={`w-14 h-14 bg-amber-100 dark:bg-amber-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-amber-600 dark:text-amber-500 shrink-0 order-1 md:order-2 shadow-lg shadow-amber-500/10 transition-transform duration-300 ${isVisible ? 'scale-100' : 'scale-0'}`}>
                          <Users className="w-6 h-6" />
                      </div>
                      <div className="flex-1 order-3 md:order-3"></div>
                  </div>
                  {/* Oct 2025: The Pivot */}
-                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-300 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                      <div className="flex-1 order-3 md:order-1"></div>
-                     <div className={`w-14 h-14 bg-blue-100 dark:bg-blue-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-blue-600 dark:text-blue-500 shrink-0 order-1 md:order-2 shadow-lg shadow-blue-500/10 transition-transform duration-500 delay-500 ${isVisible ? 'scale-100' : 'scale-0'}`}>
+                     <div className={`w-14 h-14 bg-blue-100 dark:bg-blue-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-blue-600 dark:text-blue-500 shrink-0 order-1 md:order-2 shadow-lg shadow-blue-500/10 transition-transform duration-300 delay-150 ${isVisible ? 'scale-100' : 'scale-0'}`}>
                          <Cloud className="w-6 h-6" />
                      </div>
                      <div className="flex-1 order-2 md:order-3">
@@ -122,20 +122,20 @@ const About = () => {
                      </div>
                  </div>
                   {/* Nov 2025: Full-Suite Launch */}
-                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-300 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                      <div className="flex-1 md:text-right order-2 md:order-1">
                          <h5 className="text-xl font-bold text-gray-900 dark:text-white">Nov 2025: Full-Suite Launch</h5>
                          <p className="text-gray-600 dark:text-gray-400 mt-2">Introduced complete ERP modules, along with mobile apps and API integrations for seamless business connectivity.</p>
                      </div>
-                     <div className={`w-14 h-14 bg-purple-100 dark:bg-purple-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-purple-600 dark:text-purple-500 shrink-0 order-1 md:order-2 shadow-lg shadow-purple-500/10 transition-transform duration-500 delay-1000 ${isVisible ? 'scale-100' : 'scale-0'}`}>
+                     <div className={`w-14 h-14 bg-purple-100 dark:bg-purple-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-purple-600 dark:text-purple-500 shrink-0 order-1 md:order-2 shadow-lg shadow-purple-500/10 transition-transform duration-300 delay-300 ${isVisible ? 'scale-100' : 'scale-0'}`}>
                          <Rocket className="w-6 h-6" />
                      </div>
                      <div className="flex-1 order-3 md:order-3"></div>
                  </div>
                  {/* Dec 2025: Empowering Businesses */}
-                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-700 delay-[1500ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                 <div className={`flex flex-col md:flex-row items-center justify-between gap-8 relative z-10 transition-all duration-300 delay-[450ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                      <div className="flex-1 order-3 md:order-1"></div>
-                     <div className={`w-14 h-14 bg-emerald-100 dark:bg-emerald-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-emerald-600 dark:text-emerald-500 shrink-0 order-1 md:order-2 shadow-lg shadow-emerald-500/10 transition-transform duration-500 delay-[1500ms] ${isVisible ? 'scale-100' : 'scale-0'}`}>
+                     <div className={`w-14 h-14 bg-emerald-100 dark:bg-emerald-900/20 rounded-full border-4 border-white dark:border-zinc-900 flex items-center justify-center text-emerald-600 dark:text-emerald-500 shrink-0 order-1 md:order-2 shadow-lg shadow-emerald-500/10 transition-transform duration-300 delay-[450ms] ${isVisible ? 'scale-100' : 'scale-0'}`}>
                          <TrendingUp className="w-6 h-6" />
                      </div>
                      <div className="flex-1 order-2 md:order-3">

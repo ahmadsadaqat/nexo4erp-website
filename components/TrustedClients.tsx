@@ -31,6 +31,10 @@ const TrustedClients = () => {
     { src: '/companies/saheeb-trading-company.svg', alt: 'Saheeb Trading' },
     { src: '/companies/Senior-Circle.png', alt: 'Senior Circle' },
     { src: '/companies/Water-Qo.png', alt: 'Water Qo' },
+    {
+      src: '/companies/Oncolink-pharmaceutical-distributor.png',
+      alt: 'Oncolink Pharmaceutical Distributor',
+    },
   ]
 
   // Compliance Data

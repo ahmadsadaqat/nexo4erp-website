@@ -63,15 +63,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
                 </div>
 
                 <div className='flex items-center mt-auto relative z-10'>
-                  <div className='w-12 h-12 rounded-full overflow-hidden mx-4 border-2 border-primary-100 dark:border-primary-900 flex-shrink-0'>
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={48}
-                      height={48}
-                      className='w-full h-full object-cover'
-                    />
-                  </div>
                   <div className='min-w-0'>
                     <h5 className='font-bold text-gray-900 dark:text-white truncate'>
                       {testimonial.name}

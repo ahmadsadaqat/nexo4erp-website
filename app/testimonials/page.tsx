@@ -87,11 +87,6 @@ export default function TestimonialsPage() {
                 </p>
 
                 <div className='flex items-center gap-4 pt-6 border-t border-gray-50 dark:border-zinc-800'>
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className='w-12 h-12 rounded-full object-cover ring-2 ring-primary-100 dark:ring-primary-900/30'
-                  />
                   <div>
                     <h3 className='font-bold text-gray-900 dark:text-white'>
                       {testimonial.name}

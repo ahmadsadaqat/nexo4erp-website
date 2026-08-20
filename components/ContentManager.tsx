@@ -536,7 +536,7 @@ const ContentManager: React.FC<ContentManagerProps> = ({
                 >
                   <div className='flex items-center gap-4'>
                     <NextImage
-                      src={t.image}
+                      src={t.image || ''}
                       alt={t.name}
                       width={48}
                       height={48}

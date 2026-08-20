@@ -1322,28 +1322,25 @@ export const PACKAGE_TIERS: PackageTier[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'Alexander Vance',
-    role: 'CEO, VITAL',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80',
+    name: 'Sidrah Hassan',
+    role: 'Head of HR – Sidrah Faisal',
+
     quote:
-      'Implementing NEXO 4 was the turning point for VITAL. We unified our global supply chain and saw a 40% efficiency boost in the first quarter alone.',
+      'NEXO 4 ERP streamlined our HR and Payroll operations with an efficient, integrated system. The ESS solution has made employee self-service easier while improving accuracy and reducing manual work',
   },
   {
-    name: 'Sarah Jenkins',
-    role: 'CFO, Summit Manufacturing',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80',
+    name: 'Afzal Ahmad',
+    role: 'CEO & Director – Lal Khan Oil Mills',
+
     quote:
-      'NEXO ERP transformed our financial closing process from weeks to days. The real-time insights are a game-changer for our strategic planning.',
+      'NEXO 4 ERP transformed our business from manual registers to a complete digital ERP system. The implementation improved our control over accounts, inventory, sales, purchasing, and daily operations. Their team understood our requirements and delivered a smooth transition to a more efficient way of working.',
   },
   {
-    name: 'Michael Chen',
-    role: 'Operations Director, TechFlow',
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80',
+    name: 'Kashif',
+    role: 'Director – Pak United Foods (Pvt.) Ltd.',
+
     quote:
-      "The modular approach allowed us to scale without buying unnecessary features. It's the most flexible system we've used in a decade.",
+      'NEXO 4 ERP helped us bring our Mart, Bakery, and Restaurant operations onto one integrated system. It has given us better control, visibility, and efficiency across all three businesses',
   },
 ]
 
